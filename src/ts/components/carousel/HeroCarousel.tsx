@@ -32,7 +32,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
       carouselName: '.carousel-hero',
       sliderName: '.carousel-hero__slider',
       contentLength: dataWithClones.length,
-      intervalTime: 10000
+      intervalTime: 8000
     }
 
     const sliderTransition = useSliderTransition(sliderProps);
