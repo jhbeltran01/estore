@@ -39,6 +39,10 @@
         width: 60%;
         padding: 1em;
         text-align: center;
+
+        @include viewport.xl {
+          width: 80%;
+        }
       }
     }
 
