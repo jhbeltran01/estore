@@ -1,0 +1,46 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.hero {
+  padding: 1em;
+
+  @include viewport.large {
+    padding: 1em 0;
+  }
+
+  &__list {
+    margin: 2rem 0;
+    list-style-type: none;
+    background-color: var.$white;
+
+
+    @include viewport.large {
+      margin: unset;
+    }
+  }
+
+  &__link {
+    padding: 0.5em 2em;
+    border-bottom: 1px solid var.$white-2 ;
+    display: block;
+    color: var.$black-2;
+    text-decoration: none;
+    transition: var.$transition-primary;
+
+
+    &:hover .hero__icon {
+      color: var.$black;
+    }
+
+    &:hover {
+      color: var.$light-red;
+    }
+  }
+
+  &__icon {
+    color: var.$light-red;
+    margin-right: 1rem;
+    transition: var.$transition-primary;
+  }
+}

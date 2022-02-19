@@ -1,0 +1,148 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.layer {
+  background-color: var.$gray;
+  width: 30px;
+  height: 2px;
+}
+
+// background
+.bg-black {
+  background-color: var.$black;
+}
+.bg-white {
+  background-color: var.$white-2;
+}
+.bg-white-2 {
+  background-color: var.$white;
+}
+
+// colors
+.clr-light-red {
+  color: var.$light-red;
+}
+.clr-black {
+  color: var.$black;
+}
+
+
+// font-size
+.fs-14 {
+  font-size: var.$fs-14;
+}
+.fs-15 {
+  font-size: var.$fs-15;
+}
+
+// position items
+.pos-item {
+  position: absolute;
+  right: 0;
+
+  &-2 {
+    position: absolute;
+    right: 0;
+  }
+}
+.pos-relative {
+  position: relative;
+}
+.pos-absolute {
+  position: absolute;
+}
+
+
+// margins
+.mar-right {
+  margin-right: 1rem;
+}
+.mar-x {
+  margin: 0 1rem;
+
+  &-2 {
+    @include viewport.large {
+      margin: 0 3rem;
+    }
+  }
+}
+.mar-bot {
+  margin-bottom: 0.2rem;
+}
+.mar-bot-2 {
+  margin-bottom: 1rem;
+}
+
+
+// paddings
+.pad-1 {
+  padding: 1em;
+}
+.pad-2 {
+  padding: 2em 1em;
+}
+.pad-3 {
+  @include viewport.large {
+    padding: 0 4em;
+  }
+}
+
+.pad-4 {
+  @include viewport.large {
+    padding: 0 3em;
+  }
+}
+
+// hide element
+.hide-in-mobile {
+  display: none;
+}
+
+
+// overflows
+.overflow-hidden {
+  overflow-x: hidden;
+}
+
+
+// stars
+.star {
+  color: var.$light-red;
+  margin: 0 0.1rem;
+  transition: var.$transition-primary;
+}
+
+
+// text-alignment
+.align-just {
+  text-align: justify;
+}
+
+
+// show or hide element
+.show {
+  height: 272px;
+}
+
+.show-2 {
+  height: fit-content;
+}
+
+// active 
+.active-page {
+  color: var.$white;
+
+  @include viewport.large {
+    color: var.$black;
+  }
+
+}
+
+
+// push element
+.push-right {
+  @include viewport.large {
+    margin-left: auto;
+  }
+}

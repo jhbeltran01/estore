@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Customer Name",
+    "imgSrc": "images/review-1.jpg",
+    "imgDesc": "A beautiful blonde woman",
+    "profession": "Profession",
+    "rating": 5,
+    "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum suscipit earum aspernatur consequuntur, nobis temporibus."
+  },
+  {
+    "name": "Customer Name",
+    "imgSrc": "images/review-2.jpg",
+    "imgDesc": "a man wearing blue t-shirt",
+    "profession": "Profession",
+    "rating": 5,
+    "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum suscipit earum aspernatur consequuntur, nobis temporibus."
+  },
+  {
+    "name": "Customer Name",
+    "imgSrc": "images/review-3.jpg",
+    "imgDesc": "A beautiful woman with black shirt",
+    "profession": "Profession",
+    "rating": 5,
+    "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum suscipit earum aspernatur consequuntur, nobis temporibus."
+  }
+]

@@ -1,0 +1,20 @@
+@use '../abstract/variables' as var;
+
+.search-input-field {
+  border: 1px solid var.$light-red;
+  width: 100%;
+  padding: 0 0.9em;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.input-field {
+  &-1 {
+    width: 100%;
+    height: 40px;
+    padding: 0 1em;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var.$white
+  }
+}

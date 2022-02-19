@@ -1,0 +1,27 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.search-bar {
+  padding: 1em;
+  text-align: center;
+
+  @include viewport.medium {
+    text-align: right;
+  }
+
+
+  @include viewport.large {
+    padding: 1em 0;
+  }
+
+  &__logo {
+    width: 212px;
+    height: 53px;
+    margin: auto;
+
+    @include viewport.medium {
+      margin: unset;
+    }
+  }
+}

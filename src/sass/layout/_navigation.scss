@@ -1,0 +1,48 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.nav {
+  background-color: var.$black;
+  transition: var.$transition-primary;
+  height: 0;
+  overflow: hidden;
+
+  @include viewport.large {
+    height: fit-content;
+    background-color: var.$light-red;
+    overflow: unset;
+  }
+
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1em 1em;
+    
+
+    @include viewport.large {
+      padding: 0.5em 0;
+    }
+  }
+
+
+  &__link {
+    color: var.$gray;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    transition: var.$transition-primary;
+
+    &:hover {
+      color: var.$white;
+    }
+
+
+    @include viewport.large {
+      margin-bottom: unset;
+      text-transform: uppercase;
+      color: var.$white;
+    }
+  }
+}

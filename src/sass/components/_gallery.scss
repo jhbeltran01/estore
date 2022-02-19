@@ -1,0 +1,51 @@
+@use '../abstract/variables' as var;
+@use '../abstract/placeholders' as *;
+@use '../abstract/breakpoints' as viewport;
+
+.gallery {
+  position: relative;
+
+  &--max-height {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
+  &:hover &__overlay {
+    opacity: 1;
+  }
+  &:hover &__desc {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+
+  &__overlay {
+    @extend %overlay;
+    background-color: var.$dark-red;
+  }
+
+
+  &__img {
+    @include viewport.medium {
+      min-height: 200px;
+      object-fit: cover;
+    }
+
+    &-2 {
+      @include viewport.medium {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  &__desc {
+    text-align: center;
+    width: 80%;
+    color: var.$white;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: var.$transition-primary;
+  }
+}

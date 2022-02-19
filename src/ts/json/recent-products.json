@@ -1,0 +1,32 @@
+[
+  {
+    "imgSrc": "images/product-6.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99
+  },
+  {
+    "imgSrc": "images/product-7.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99
+  },
+  {
+    "imgSrc": "images/product-8.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99
+  },
+  {
+    "imgSrc": "images/product-9.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99
+  },
+  {
+    "imgSrc": "images/product-10.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99
+  }
+]

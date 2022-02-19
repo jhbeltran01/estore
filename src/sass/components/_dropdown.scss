@@ -1,0 +1,69 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.dropdown {
+  @include viewport.large {
+    position: relative;
+  }
+
+
+  &:hover &__content {
+    padding: 0.5em 0;
+  }
+
+  &:hover &__content--height-on-hover-1 {
+    height: 136px;
+  }
+
+
+  &:hover &__content--height-on-hover-2 {
+    height: 96px;
+  }
+
+  &:hover &__title {
+    color: var.$white;
+  }
+
+  &__title {
+    cursor: pointer;
+
+    &::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+  }
+
+  &__content {
+    background-color: var.$light-red;
+    list-style-type: none;
+    height: 0;
+    transition: var.$transition-primary;
+    overflow: hidden;
+
+
+    @include viewport.large {
+      position: absolute;
+      z-index: 1000;
+      min-width: 180px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 0.5em 1.5em;
+    transition: var.$transition-primary;
+
+
+    &:hover {
+      background-color: var.$white;
+    }
+  }
+}

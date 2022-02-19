@@ -1,0 +1,11 @@
+@use '../abstract/breakpoints' as viewport;
+
+.wrapper {
+  padding: 0 1.5em;
+
+  &-2 {
+    @include viewport.medium {
+      padding: 0 1em;
+    }
+  }
+}

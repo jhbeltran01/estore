@@ -1,0 +1,14 @@
+[
+  {
+    "imgSrc": "images/slider-1.jpg",
+    "desc": "Some text goes here that describes the image"
+  },
+  {
+    "imgSrc": "images/slider-2.jpg",
+    "desc": "Some text goes here that describes the image"
+  },
+  {
+    "imgSrc": "images/slider-3.jpg",
+    "desc": "Some text goes here that describes the image"
+  }
+]

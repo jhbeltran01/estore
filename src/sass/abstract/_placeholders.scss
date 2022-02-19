@@ -1,0 +1,20 @@
+@use './variables' as var;
+
+%overlay {
+  position: absolute;
+  inset: 0 0 0 0;
+  opacity: 0;
+  transition: var.$transition-primary;
+}
+
+
+%btn-hover {
+  background-color: var.$light-red;
+  color: var.$white;
+}
+
+
+%flex-just-between {
+  display: flex;
+  justify-content: space-between;
+}

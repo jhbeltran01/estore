@@ -1,0 +1,70 @@
+@use '../abstract/variables' as var;
+@use '../abstract/placeholders' as *;
+@use '../abstract/breakpoints' as viewport;
+
+.card {
+  position: relative;
+  overflow: hidden;
+
+  &:hover &__overlay {
+    opacity: 1;
+  }
+  &:hover &__content {
+    background-color: var.$light-red;
+  }
+  &:hover .star {
+    color: var.$white;
+  }
+  &:hover .btn-secondary {
+    background-color: var.$white;
+    color: var.$light-red;
+  }
+  &:hover &__img {
+    transform: scale(1.1);
+  }
+  &:hover &__call-to-action {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+
+  &__content {
+    text-align: center;
+    padding: 1em;
+    background-color: var.$black;
+    color: var.$white;
+    transition: var.$transition-primary;
+  }
+
+
+  &__title {
+    font: {
+      size: var.$fs-18;
+      weight: 400;
+    }
+  }
+
+
+  &__img {
+    z-index: -1;
+    position: relative;
+    transition: var.$transition-primary;
+  }
+
+  &__prize {
+    font-size: var.$fs-28;
+  }
+
+
+  &__overlay {
+    @extend %overlay;
+    background-color: var.$dark-red-2;
+  }
+
+
+  &__call-to-action {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var.$transition-primary;
+  }
+}
