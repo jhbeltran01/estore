@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
+import useSliderTransition from '../../hooks/useSliderTransition';
 import { HeroContentType } from '../../types/HeroContentType';
 import Content from './contents/HeroContent';
 
@@ -26,31 +27,15 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
   }, [])
 
 
-
   useEffect(() => {
-    const carousel = document.querySelector('.carousel-hero') as HTMLDivElement;
-    const slider = carousel.querySelector('.carousel-hero__slider') as HTMLDivElement;
-    let displayedContent = 1;
+    const sliderProps = {
+      carouselName: '.carousel-hero',
+      sliderName: '.carousel-hero__slider',
+      contentLength: dataWithClones.length,
+      intervalTime: 10000
+    }
 
-    slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
-
-    const sliderTransition = setInterval(() => {
-      if (displayedContent < dataWithClones.length - 1) {
-        ++displayedContent;
-        slider.style.transition = '500ms ease-in-out';
-        console.log(carousel.clientWidth, displayedContent);
-        slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
-      }
-    }, 10000)
-
-
-    slider.addEventListener('transitionend', () => {
-      if (displayedContent === dataWithClones.length - 1) {
-        slider.style.transition = 'unset';
-        slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
-        displayedContent = 1;
-      }
-    })
+    const sliderTransition = useSliderTransition(sliderProps);
 
     return () => {
       clearInterval(sliderTransition);
