@@ -55,11 +55,17 @@
 
   &-hero {
     background-color: var.$white;
-    border: none;
+    border: 1px solid var.$white;
     padding: 0.4rem 0.9rem;
     color: var.$light-red;
     font-size: var.$fs-16;
     border-radius: 5px;
+    transition: var.$transition-primary;
+
+    &:hover {
+      background-color: var.$light-red;
+      color: var.$white;
+    }
   }
 
 
