@@ -5,9 +5,3 @@
 @use './components/' as *;
 @use './pages/' as *;
 @use './themes/' as *;
-
-.card {
-  &_1 {
-    background-color: green;
-  }
-}
