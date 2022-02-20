@@ -6,9 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const entryPoints = {
-  home: "./src/ts/home.tsx",
+  home: "./src/ts/Home.tsx",
   main: "./src/styles.ts",
-  products: "./src/ts/products.tsx",
+  products: "./src/ts/Products.tsx",
   toggleMobileNavMenu: './src/ts/ts/toggleMobileNavMenu.ts'
 }
 

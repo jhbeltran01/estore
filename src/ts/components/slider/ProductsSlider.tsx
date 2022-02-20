@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductsContent from './contents/ProductsContent';
 
-import { Products } from '../../home';
+import { Products } from '../../Home';
 
 function ProductsSlider() {
   const products = useContext(Products);
