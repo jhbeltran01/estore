@@ -35,6 +35,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
       intervalTime: 8000
     }
 
+    // useSliderTransition returns a reference to a setInterval function
     const sliderTransition = useSliderTransition(sliderProps);
 
     return () => {
