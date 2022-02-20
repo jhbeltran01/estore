@@ -1,0 +1,72 @@
+[
+  {
+    "imgSrc": "images/product-1.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "featured"
+  },
+  {
+    "imgSrc": "images/product-2.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "featured"
+  },
+  {
+    "imgSrc": "images/product-3.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "featured"
+  },
+  {
+    "imgSrc": "images/product-4.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "featured"
+  },
+  {
+    "imgSrc": "images/product-5.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "featured"
+  },
+  {
+    "imgSrc": "images/product-6.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "recent"
+  },
+  {
+    "imgSrc": "images/product-7.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "recent"
+  },
+  {
+    "imgSrc": "images/product-8.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "recent"
+  },
+  {
+    "imgSrc": "images/product-9.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "recent"
+  },
+  {
+    "imgSrc": "images/product-10.jpg",
+    "name": "Product Name",
+    "rating": 5,
+    "prize": 99,
+    "category": "recent"
+  }
+]

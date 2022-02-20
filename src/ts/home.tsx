@@ -5,13 +5,13 @@ import Header from "./components/header/Header";
 import ProductCategory from "./components/ProductCategory";
 import TestimonialCarousel from "./components/carousel/TestimonialCarousel";
 import carouselContent from './json/carousel-content.json'
-import featuredProducts from './json/featured-products.json';
-import recentProducts from './json/recent-products.json'
+import products from './json/products.json';
 import testimonials from './json/testimonials.json'
 
 export const Products = React.createContext([{}]);
 
-
+const featuredProducts = products.filter(product => product.category === 'featured')
+const recentProducts = products.filter(product => product.category === 'recent');
 
 const App = (): JSX.Element => {
   return (
