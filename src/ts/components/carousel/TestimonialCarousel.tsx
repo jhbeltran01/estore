@@ -24,8 +24,8 @@ function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
     (
       <div className='carousel-testimonial mar-x-2'>
         <div className='carousel-testimonial__overlay flex-container-3'>
-          <button className='btn-next-2 btn-next-2--left'><i className="fas fa-chevron-left"></i></button>
-          <button className='btn-next-2 btn-next-2--right'><i className="fas fa-chevron-right"></i></button>
+          <button className='btn-next-2 btn-next-2--left'></button>
+          <button className='btn-next-2 btn-next-2--right'></button>
         </div>
 
         <div className='carousel-testimonial__slider flex'>
