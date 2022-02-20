@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import logo from '../../../../public/images/logo.png';
+import Search1 from '../elements/Search1';
 
 
 function Header() {
@@ -10,10 +11,7 @@ function Header() {
         <div className='search-bar  grid-container-1'>
           <img className='search-bar__logo' src={logo} alt="E-Store Logo" />
 
-          <form className='form-1' action="GET">
-            <input className='search-input-field' type="search" name="search" id="search" placeholder='Search' />
-            <button className='btn-search pos-item clr-light-red'><i className="fa fa-search"></i></button>
-          </form>
+          <Search1 />
 
           <div>
             <button className='btn-primary mar-right'><i className="fa fa-heart"></i>(0)</button>
