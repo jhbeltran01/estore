@@ -136,8 +136,12 @@
   @include viewport.large {
     color: var.$black;
   }
-
 }
+.active-page-item {
+  background-color: var.$black;
+  color: var.$white ;
+}
+
 
 
 // push element

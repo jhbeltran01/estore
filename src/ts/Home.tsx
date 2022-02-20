@@ -8,7 +8,7 @@ import carouselContent from './json/carousel-content.json'
 import products from './json/products.json';
 import testimonials from './json/testimonials.json'
 
-export const Products = React.createContext([{}]);
+export const ProductsJSON = React.createContext([{}]);
 
 const featuredProducts = products.filter(product => product.category === 'featured')
 const recentProducts = products.filter(product => product.category === 'recent');
@@ -19,13 +19,13 @@ const App = (): JSX.Element => {
       <Header />
       <HeroCarousel data={carouselContent} />
 
-      <Products.Provider value={featuredProducts}>
+      <ProductsJSON.Provider value={featuredProducts}>
         <ProductCategory productCategory='Featured Products' targetElement='featured-products' />
-      </Products.Provider>
+      </ProductsJSON.Provider>
 
-      <Products.Provider value={recentProducts}>
+      <ProductsJSON.Provider value={recentProducts}>
         <ProductCategory productCategory='Recent Products' targetElement='recent-products' />
-      </Products.Provider>
+      </ProductsJSON.Provider>
 
       <TestimonialCarousel testimonials={testimonials} />
     </React.Fragment>

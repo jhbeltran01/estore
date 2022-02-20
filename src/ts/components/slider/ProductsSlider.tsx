@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductsContent from './contents/ProductsContent';
 
-import { Products } from '../../Home';
+import { ProductsJSON } from '../../Home';
 
 function ProductsSlider() {
-  const products = useContext(Products);
+  const products = useContext(ProductsJSON);
   const [carouselWidth, setCarouselWidth] = useState(0);
 
   const determineCarouselWidth = (): void => {
@@ -23,18 +23,33 @@ function ProductsSlider() {
 
   useEffect(updateCarouselWidth, [])
 
+  let responsiveWidth = 0;
+
+  const isMediumViewport: boolean = carouselWidth >= 736;
+  const isLargeViewport: boolean = carouselWidth >= 992;
+
+  if (isLargeViewport) {
+    setCarouselWidth(carouselWidth / 4);
+  } else if (isMediumViewport) {
+    setCarouselWidth(carouselWidth / 3)
+  } else {
+    // do nothing
+  }
+
+
   return (
     <div className='carousel-products mar-x-2'>
       <div className='carousel-products__slider flex'>
         {
           products.map((datum: any, index: number) =>
             <ProductsContent
-              key={index}
+              key={datum.id}
               imgSrc={datum.imgSrc}
               name={datum.name}
               rating={datum.rating}
               prize={datum.prize}
-              cardWidth={carouselWidth} />)
+              cardWidth={carouselWidth}
+              isForCarousel={true} />)
         }
       </div>
     </div>

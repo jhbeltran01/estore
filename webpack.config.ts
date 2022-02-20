@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const entryPoints = {
   home: "./src/ts/Home.tsx",
   main: "./src/styles.ts",
-  products: "./src/ts/Products.tsx",
+  products: "./src/ts/ProductsPage.tsx",
   toggleMobileNavMenu: './src/ts/ts/toggleMobileNavMenu.ts'
 }
 

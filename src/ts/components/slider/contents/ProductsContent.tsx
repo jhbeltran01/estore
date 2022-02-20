@@ -1,32 +1,14 @@
 import React from 'react';
 import useRating from '../../../hooks/useRating';
+import ProductsContentProps from '../../../types/ProductContentProps';
 
-type ProductsContentProps = {
-  imgSrc: string,
-  name: string,
-  rating: number,
-  prize: number,
-  cardWidth: number
-}
 
-function ProductsContent({ imgSrc, name, rating, prize, cardWidth }: ProductsContentProps) {
+
+function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
   const stars: JSX.Element[] = useRating(rating);
 
-  let responsiveWidth = 0;
-
-  const isMediumViewport: boolean = cardWidth >= 736;
-  const isLargeViewport: boolean = cardWidth >= 992;
-
-  if (isLargeViewport) {
-    responsiveWidth = cardWidth / 4;
-  } else if (isMediumViewport) {
-    responsiveWidth = cardWidth / 3;
-  } else {
-    responsiveWidth = cardWidth;
-  }
-
   return (
-    <div className='wrapper-2' style={{ minWidth: responsiveWidth }}>
+    <div className='wrapper-2' style={isForCarousel ? { minWidth: cardWidth } : {}}>
       <div className='card'>
         <div className='card__content'>
           <h2 className='card__title'>{name}</h2>
