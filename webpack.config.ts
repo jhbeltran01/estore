@@ -8,11 +8,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const entryPoints = {
   home: "./src/ts/home.tsx",
   main: "./src/styles.ts",
+  products: "./src/ts/products.tsx",
   toggleMobileNavMenu: './src/ts/ts/toggleMobileNavMenu.ts'
 }
 
 const htmlPageName = [
-  'index'
+  'index',
+  'products'
 ]
 
 const htmlTemplates = htmlPageName.map(name => (
