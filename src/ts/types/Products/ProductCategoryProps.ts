@@ -1,4 +1,5 @@
 export type ProductCategoryProps = {
   productCategory: string,
-  targetElement: string
+  targetElement: string,
+  products: any
 }

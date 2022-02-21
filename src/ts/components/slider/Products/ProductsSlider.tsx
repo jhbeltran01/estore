@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductsContent from './ProductsContent';
 
-import { ProductsJSON } from '../../../Home';
+type ProductsSliderProps = {
+  products: any
+}
 
-function ProductsSlider() {
-  const products = useContext(ProductsJSON);
+const ProductsSlider = ({ products }: ProductsSliderProps): JSX.Element => {
   const [carouselWidth, setCarouselWidth] = useState(0);
 
   const determineCarouselWidth = (): void => {
