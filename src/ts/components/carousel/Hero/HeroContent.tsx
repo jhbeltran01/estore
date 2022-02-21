@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HeroContentProps } from '../../../types/HeroContentProps';
+import { HeroContentProps } from '../../../types/Hero/HeroContentProps';
 
 const HeroContent = ({ imgSrc, desc, imgWidth }: HeroContentProps): JSX.Element => {
   return (

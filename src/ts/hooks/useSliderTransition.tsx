@@ -1,4 +1,4 @@
-import { UseSliderTransitionProps } from "../types/UseSliderTransitionProps";
+import { UseSliderTransitionProps } from "../types/Slider/UseSliderTransitionProps";
 
 const useSliderTransition = ({ carouselName, sliderName, contentLength, intervalTime }: UseSliderTransitionProps) => {
   const carousel = document.querySelector(carouselName) as HTMLDivElement;

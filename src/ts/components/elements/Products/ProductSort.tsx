@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "./Select";
+import Select from "../Select/Select";
 
 const ProductSort = (): JSX.Element => {
   const productSortOptions = ['Newest', 'Popular', 'Most Sale']

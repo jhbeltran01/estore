@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import products from '../json/products.json'
 import Pagination from './pagination/Pagination';
-import ProductsContent from './slider/contents/ProductsContent';
+import ProductsContent from './slider/Products/ProductsContent';
 
 type ProductsPagination = {
   numberOfItemPerPage: number

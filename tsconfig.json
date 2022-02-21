@@ -16,7 +16,40 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "src",
+    "paths": {
+      "carousel": [
+        "ts/components/carousel"
+      ],
+      "element": [
+        "ts/components/elements"
+      ],
+      "filter": [
+        "ts/components/filter"
+      ],
+      "header": [
+        "ts/components/header"
+      ],
+      "pagination": [
+        "ts/components/pagination"
+      ],
+      "slider": [
+        "ts/components/slider"
+      ],
+      "Types": [
+        "ts/types"
+      ],
+      "hooks": [
+        "ts/hooks"
+      ],
+      "ts": [
+        "ts/ts"
+      ],
+      "json": [
+        "ts/json"
+      ]
+    }
   },
   "include": [
     "src"

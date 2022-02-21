@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import ProductRange from '../elements/ProductRange';
-import ProductSort from '../elements/ProductSort';
-import Search2 from '../elements/Search2';
+import ProductRange from '../elements/Products/ProductRange';
+import ProductSort from '../elements/Products/ProductSort';
+import Search2 from '../elements/Searchs/Search2';
 
 const Filter = (): JSX.Element => {
 

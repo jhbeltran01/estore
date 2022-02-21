@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ProductsContent from './contents/ProductsContent';
+import ProductsContent from './ProductsContent';
 
-import { ProductsJSON } from '../../Home';
+import { ProductsJSON } from '../../../Home';
 
 function ProductsSlider() {
   const products = useContext(ProductsJSON);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Select from './Select'
+import Select from '../Select/Select'
 
 const ProductRange = (): JSX.Element => {
   let productPriceRange: string[] = [];

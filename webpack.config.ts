@@ -5,6 +5,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const entryPoints = {
   home: "./src/ts/Home.tsx",
   main: "./src/styles.ts",
@@ -64,6 +65,18 @@ const config: Configuration = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      carousel: path.resolve(__dirname, 'src/ts/components/carousel'),
+      element: path.resolve(__dirname, 'src/ts/components/elements'),
+      filter: path.resolve(__dirname, 'src/ts/components/filter'),
+      header: path.resolve(__dirname, 'src/ts/components/header'),
+      pagination: path.resolve(__dirname, 'src/ts/components/pagination'),
+      slider: path.resolve(__dirname, 'src/ts/components/slider'),
+      Types: path.resolve(__dirname, 'src/ts/types'),
+      hooks: path.resolve(__dirname, 'src/ts/hooks'),
+      ts: path.resolve(__dirname, 'src/ts/ts'),
+      json: path.resolve(__dirname, 'src/ts/json')
+    }
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({

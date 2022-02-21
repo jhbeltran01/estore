@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
-import useSliderTransition from '../../hooks/useSliderTransition';
-import { HeroContentType } from '../../types/HeroContentType';
-import Content from './contents/HeroContent';
+import useSliderTransition from '../../../hooks/useSliderTransition';
+import { HeroContentType } from '../../../types/Hero/HeroContentType';
+import Content from './HeroContent';
 
 type HeroCarouselProps = {
   data: HeroContentType[]
@@ -32,7 +32,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
       carouselName: '.carousel-hero',
       sliderName: '.carousel-hero__slider',
       contentLength: dataWithClones.length,
-      intervalTime: 8000
+      intervalTime: 5000
     }
 
     // useSliderTransition returns a reference to a setInterval function

@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import HeroCarousel from "./components/carousel/HeroCarousel";
+import HeroCarousel from "./components/carousel/Hero/HeroCarousel";
 import Header from "./components/header/Header";
 import ProductCategory from "./components/ProductCategory";
-import TestimonialCarousel from "./components/carousel/TestimonialCarousel";
+import TestimonialCarousel from "./components/carousel/Testimonial/TestimonialCarousel";
 import carouselContent from './json/carousel-content.json'
 import products from './json/products.json';
 import testimonials from './json/testimonials.json'

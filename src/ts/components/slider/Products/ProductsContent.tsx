@@ -1,6 +1,6 @@
 import React from 'react';
 import useRating from '../../../hooks/useRating';
-import ProductsContentProps from '../../../types/ProductContentProps';
+import ProductsContentProps from '../../../types/Products/ProductContentProps';
 
 
 
