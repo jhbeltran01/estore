@@ -15,7 +15,8 @@ const entryPoints = {
 
 const htmlPageName = [
   'index',
-  'products'
+  'products',
+  'product-detail'
 ]
 
 const htmlTemplates = htmlPageName.map(name => (

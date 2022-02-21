@@ -36,6 +36,10 @@
 
     &:hover {
       color: var.$white;
+
+      @include viewport.large {
+        color: var.$black;
+      }
     }
 
 

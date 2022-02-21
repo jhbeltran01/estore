@@ -177,19 +177,28 @@
 
 .btn-pagination {
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid var.$black-2;
   border-right:none;
   padding: 0.2em 1em;
+  transition: var.$transition-primary;
+  color: var.$black-2;
+
 
   &:first-of-type {
-    border: 1px solid black;
+    border: 1px solid  var.$black-2;
     border-right: none;
     border-radius: 5px 0 0 5px;
   }
 
   &:last-of-type {
-    border: 1px solid black;
+    border: 1px solid var.$black-2;
     border-radius: 0px 5px 5px 0px;
+  }
+
+  
+  &:hover:not(.active-page-item) {
+    background-color: var.$black;
+    color: var.$light-red;
   }
 }
 
@@ -199,6 +208,14 @@
   border: 1px solid var.$black;
   border-radius: 4px;
   margin: 0 0.3rem 0.3rem 0;
+  padding: 0.3em 0.5em;
   background-color: transparent;
   font-size: var.$fs-14;
+  transition: var.$transition-primary;
+
+  &:hover {
+    background-color: var.$light-red;
+    color: var.$white;
+    border-color: var.$light-red;
+  }
 }
