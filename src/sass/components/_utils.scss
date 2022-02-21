@@ -55,6 +55,9 @@
 
 
 // margins
+.mar {
+  margin: 2rem 1rem;
+}
 .mar-right {
   margin-right: 1rem;
 }
@@ -66,6 +69,9 @@
       margin: 0 3rem;
     }
   }
+}
+.mar-y {
+  margin: 1rem 0
 }
 .mar-bot {
   margin-bottom: 0.2rem;
@@ -124,10 +130,13 @@
 .show {
   height: 272px;
 }
-
 .show-2 {
   height: fit-content;
 }
+.show-3 {
+  display: block;
+}
+
 
 // active 
 .active-page {
@@ -149,4 +158,17 @@
   @include viewport.large {
     margin-left: auto;
   }
+}
+
+
+//arrow
+
+.arrow {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
 }

@@ -1,20 +1,31 @@
-import React from 'react'
-import Option from '../Options/Option'
+import React, { useEffect } from "react";
+import Dropdown from "../dropdown/Dropdown";
 
-type SelectProps = {
+type ProductSortProps = {
+  title: string,
+  id: string,
   options: string[]
 }
 
-const Select = ({ options }: SelectProps): JSX.Element => {
+const Select = ({ title, id, options }: ProductSortProps): JSX.Element => {
+
+  useEffect(() => {
+    const customSelect = document.getElementById(id);
+    const dropdownContent = customSelect?.querySelector('.dropdown-2__content')
+
+    customSelect?.addEventListener('click', () => {
+      dropdownContent?.classList.toggle('show-3')
+    })
+  }, [])
+
+
+
   return (
-    <select name="product-sort" id="product-sort">
-      {
-        options.map((option: string, index: number) =>
-          <Option key={index} value={option} />
-        )
-      }
-    </select>
+    <div className='select-custom flex-container-3 mar-bot' id={id}>
+      <span>{title}</span>
+      <Dropdown options={options} />
+    </div>
   )
 }
 
-export default Select
+export default Select;

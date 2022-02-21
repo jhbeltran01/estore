@@ -1,17 +1,14 @@
 @use '../abstract/breakpoints' as viewport;
 
-.form {
-  &-1 {
-    position: relative;
-    margin: 1rem 0;
-    overflow: hidden;
+.form-1 {
+  position: relative;
+  overflow: hidden;
 
-    &--max-width {
-      max-width: 400px;
-    }
+  &--max-width {
+    max-width: 400px;
+  }
 
-    @include viewport.medium {
-      flex: 12;
-    }
+  @include viewport.medium {
+    flex: 12;
   }
 }

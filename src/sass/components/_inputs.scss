@@ -8,6 +8,16 @@
   height: 40px;
 }
 
+
+.search-input-field-2 {
+  border: 1px solid var.$black;
+  width: 100%;
+  padding: 0 0.9em;
+  border-radius: 4px;
+  height: 40px;
+}
+
+
 .input-field {
   &-1 {
     width: 100%;
@@ -17,4 +27,10 @@
     overflow: hidden;
     border: 1px solid var.$white
   }
+}
+
+.select-custom {
+  border: 1px solid var.$black;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
 }

@@ -67,3 +67,27 @@
     }
   }
 }
+
+
+.dropdown-2 {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    background-color: var.$white;
+    top: 28.3px;
+    right: 0;
+    width: 150px;
+    display: none;
+    z-index: 100;
+  }
+
+  &__option {
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$white-2;
+    }
+  }
+}
