@@ -5,6 +5,10 @@ import Header from '../components/header/Header'
 import ProductsPagination from '../page-section/ProductsPagination';
 import ProductsSlider from '../components/slider/Products/ProductsSlider';
 import products from '../json/products.json';
+import Tags from '../components/tags/Tags';
+
+const tags = ['Lorem ipsum', 'Vivamus', 'Phasellus', 'pulvinar', 'Curabitur', 'Fusce',
+  'Sem quis', 'Mollis metus', 'Sit amet', 'Vel posuere', 'orci luctus', 'Nam lorem']
 
 function App() {
   return (
@@ -17,6 +21,10 @@ function App() {
 
       {
         ReactDOM.createPortal(<ProductsSlider products={products} />, document.getElementById('products-slider')!)
+      }
+
+      {
+        ReactDOM.createPortal(<Tags tags={tags} />, document.getElementById('tags')!)
       }
     </React.Fragment>
   )
