@@ -18,7 +18,9 @@ function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel
         </div>
 
         <div className='pos-relative'>
-          <img className='card__img' src={imgSrc} alt="" />
+          <div className='overflow-hidden-2'>
+            <img className='card__img' src={imgSrc} alt="" />
+          </div>
           <div className='card__overlay grid-center'>
             <div className='card__call-to-action'>
               <button className='btn-action'><i className="fa fa-cart-plus"></i></button>

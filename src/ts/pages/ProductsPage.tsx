@@ -13,11 +13,11 @@ const tags = ['Lorem ipsum', 'Vivamus', 'Phasellus', 'pulvinar', 'Curabitur', 'F
 function App() {
   return (
     <React.Fragment>
-      {/* <Header /> */}
+      <Header />
 
       <Filter />
 
-      {/* <ProductsPagination numberOfItemPerPage={9} />
+      <ProductsPagination numberOfItemPerPage={9} products={products} />
 
       {
         ReactDOM.createPortal(<ProductsSlider products={products} />, document.getElementById('products-slider')!)
@@ -25,7 +25,7 @@ function App() {
 
       {
         ReactDOM.createPortal(<Tags tags={tags} />, document.getElementById('tags')!)
-      } */}
+      }
     </React.Fragment>
   )
 }

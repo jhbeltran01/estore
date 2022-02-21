@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import products from '../json/products.json'
 import Pagination from '../components/pagination/Pagination';
 import ProductsContent from '../components/slider/Products/ProductsContent';
 
 type ProductsPagination = {
-  numberOfItemPerPage: number
+  numberOfItemPerPage: number,
+  products: any[]
 }
 
-function ProductsPagination({ numberOfItemPerPage }: ProductsPagination) {
+function ProductsPagination({ numberOfItemPerPage, products }: ProductsPagination) {
   const [productsToBeDisplayed, setProductsToBeDisplayed] = useState(products.slice(0, numberOfItemPerPage));
 
 
@@ -24,8 +24,8 @@ function ProductsPagination({ numberOfItemPerPage }: ProductsPagination) {
 
   return ReactDOM.createPortal(
     (
-      <div>
-        <div>
+      <div className='product-view'>
+        <div className='product-view__content grid-3-column-responsive'>
           {
             productsToBeDisplayed.map((product) => {
               return <ProductsContent

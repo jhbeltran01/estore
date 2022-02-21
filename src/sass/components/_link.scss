@@ -1,0 +1,23 @@
+@use '../abstract/variables' as var;
+
+.brand-link {
+  text-decoration: none;
+  color: var.$black;
+  margin-bottom: 1rem;
+  transition: var.$transition-primary;
+
+  &:hover {
+    color: var.$light-red;
+    margin-left: 1rem;
+  }
+  &:hover::before {
+    content: '\f101';
+  }
+
+  &::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 5px;
+  }
+}

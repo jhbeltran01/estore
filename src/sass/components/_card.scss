@@ -20,7 +20,7 @@
     color: var.$light-red;
   }
   &:hover &__img {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   &:hover &__call-to-action {
     transform: translateY(0);
@@ -46,8 +46,6 @@
 
 
   &__img {
-    z-index: -1;
-    position: relative;
     transition: var.$transition-primary;
   }
 

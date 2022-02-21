@@ -1,0 +1,15 @@
+@use '../abstract/variables' as var;
+@use '../abstract/breakpoints' as viewport;
+
+
+.sidebar {
+  margin: 0 1rem;
+  padding: 2em 0;
+  background-color: var.$white;
+  height: max-content;
+
+
+  @include viewport.large {
+    margin: 2rem 1rem;
+  }
+}

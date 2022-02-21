@@ -10,7 +10,7 @@ const Tags = ({ tags }: TagsProps): JSX.Element => {
     <div>
       {
         tags.map((tag: string, index: number) => (
-          <button key={index}>{tag}</button>
+          <button className='btn-tag' key={index}>{tag}</button>
         ))
       }
     </div>

@@ -75,44 +75,67 @@
 
 
 
-  <main>
+  <main class="grid-2-column-responsive-5 pad-8">
     <section>
       <div id="filter"></div>
 
       <div id="products-pagination"></div>
     </section>
 
-    <section>
-      <h2>Category</h2>
+    <aside class="sidebar grid">
+      <div class="pad-6">
+        <h2>Category</h2>
 
-      <ul class="hero__list flex-container-responsive-3">
-        <li><a class="hero__link" href="#"><i class="hero__icon fa fa-female"></i>Fashion & Beauty</a></li>
-        <li><a class="hero__link" href="#"><i class="hero__icon fa fa-child"></i>Kid & Babies Clothes</a></li>
-        <li><a class="hero__link" href="#"><i class="hero__icon fa fa-tshirt"></i>Men & Women Clothes</a></li>
-        <li><a class="hero__link" href="#"><i class="hero__icon fa fa-mobile-alt"></i>Gadgets & Accessories</a></li>
-        <li><a class="hero__link" href="#"><i class="hero__icon fa fa-microchip"></i>Electronics & Accessories</a></li>
-      </ul>
-
-      <div id="products-slider"></div>
-
-      <div>
-        <h2>Our Brands</h2>
-        <ul>
-          <li><a href="#"><span>Nulla</span><span>(45)</span></a></li>
-          <li><a href="#"><span>Curabitur</span><span>(34)</span></a></li>
-          <li><a href="#"><span>Nunc</span><span>(67)</span></a></li>
-          <li><a href="#"><span>Ullamcorper</span><span>(74)</span></a></li>
-          <li><a href="#"><span>Fusce</span><span>(89)</span></a></li>
-          <li><a href="#"><span>Sagittis</span><span>(28)</span></a></li>
+        <ul class="hero__list mar-y flex-container-responsive-3">
+          <li><a class="hero__link pad-5" href="#"><i class="hero__icon fa fa-female"></i>Fashion & Beauty</a></li>
+          <li><a class="hero__link pad-5" href="#"><i class="hero__icon fa fa-child"></i>Kid & Babies Clothes</a></li>
+          <li><a class="hero__link pad-5" href="#"><i class="hero__icon fa fa-tshirt"></i>Men & Women Clothes</a></li>
+          <li><a class="hero__link pad-5" href="#"><i class="hero__icon fa fa-mobile-alt"></i>Gadgets & Accessories</a>
+          </li>
+          <li><a class="hero__link pad-5" href="#"><i class="hero__icon fa fa-microchip"></i>Electronics &
+              Accessories</a>
+          </li>
         </ul>
       </div>
 
-      <div>
-        <h2>Tags</h2>
+      <div class="pad-7 overflow-hidden" id="products-slider"></div>
+
+      <div class="pad-6">
+        <h2 class="mar-y">Our Brands</h2>
+        <ul class="style-type-none">
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Nulla</a>
+            <span class="clr-gray fs-14">(45)</span>
+          </li>
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Curabitur</a>
+            <span class="clr-gray fs-14">(34)</span>
+          </li>
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Nunc</a>
+            <span class="clr-gray fs-14">(67)</span>
+          </li>
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Ullamcorper</a>
+            <span class="clr-gray fs-14">(74)</span>
+          </li>
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Fusce</a>
+            <span class="clr-gray fs-14">(89)</span>
+          </li>
+          <li class="flex-container-2">
+            <a class="brand-link" href="#">Sagittis</a>
+            <span class="clr-gray fs-14">(28)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pad-6">
+        <h2 class="mar-y">Tags Cloud</h2>
 
         <div id="tags"></div>
       </div>
-    </section>
+    </aside>
   </main>
 
   <section class="carousel-brands">

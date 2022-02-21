@@ -1,0 +1,25 @@
+@use '../abstract/breakpoints' as viewport;
+@use '../abstract/variables' as var;
+
+
+.product-view {
+  margin: 2em 0;
+  padding: 0 1em;
+
+  
+  @include viewport.medium {
+    padding: 0;
+  }
+
+  &__content {
+    & > div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.filter {
+  background-color: var.$white;
+  margin: 2rem 1rem;
+  padding: 2em;
+}

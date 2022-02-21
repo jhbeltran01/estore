@@ -48,7 +48,8 @@ const Pagination = ({ numberOfPage, updateContentToBeDisplayed }: PaginationProp
     buttonNumbers.push(
       <button
         key={number}
-        id={`${number}`} className={pageNumber === number ? 'active-page-item' : ''}
+        id={`${number}`}
+        className={pageNumber === number ? 'btn-pagination active-page-item' : 'btn-pagination'}
         onClick={goToClickedPageNumber}
       >
         {number}
@@ -59,10 +60,12 @@ const Pagination = ({ numberOfPage, updateContentToBeDisplayed }: PaginationProp
 
 
   return (
-    <div>
-      <button onClick={goToPreviousPage}>Previous</button>
-      {buttonNumbers}
-      <button onClick={goToNextPage}>Next</button>
+    <div className='grid-center'>
+      <div>
+        <button className='btn-pagination' onClick={goToPreviousPage}>Previous</button>
+        {buttonNumbers}
+        <button className='btn-pagination' onClick={goToNextPage}>Next</button>
+      </div>
     </div>
   )
 }

@@ -39,7 +39,7 @@ const ProductsSlider = ({ products }: ProductsSliderProps): JSX.Element => {
 
 
   return (
-    <div className='carousel-products mar-x-2'>
+    <div className='carousel-products'>
       <div className='carousel-products__slider flex'>
         {
           products.map((datum: any, index: number) =>

@@ -5,11 +5,14 @@
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column
+}
+
 .flex-container {
   &-1 {
-    display: flex;
+    @extend %flex-just-between;
     flex-direction: column;
-    justify-content: space-between;
   }
 
 
@@ -18,9 +21,8 @@
   }
 
   &-3 {
-    display: flex;
+    @extend %flex-just-between;
     align-items: center;
-    justify-content: space-between;
   }
 
   &-4 {
@@ -36,7 +38,6 @@
 
   &-6 {
     display: flex;
-    gap: 0 10px;
     align-items: center;
   }
 }
