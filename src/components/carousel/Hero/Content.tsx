@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { HeroContentProps } from '@Types/Hero/HeroContentProps';
 
-const HeroContent = ({ imgSrc, desc, imgWidth }: HeroContentProps): JSX.Element => {
+const Content = ({ imgSrc, desc, imgWidth }: HeroContentProps): JSX.Element => {
   return (
     <div style={{ minWidth: imgWidth }} className='carousel-hero__content'>
       <img className='carousel-hero__img' src={imgSrc} alt="" />
@@ -15,4 +15,4 @@ const HeroContent = ({ imgSrc, desc, imgWidth }: HeroContentProps): JSX.Element 
   );
 }
 
-export default HeroContent;
+export default Content;

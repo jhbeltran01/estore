@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ProductsContent from './ProductsContent';
+import ProductsContent from './Content';
 
 type ProductsSliderProps = {
   products: any

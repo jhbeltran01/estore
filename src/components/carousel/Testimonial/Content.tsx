@@ -3,7 +3,7 @@ import useRating from '@Hooks/useRating'
 import { TestimonialContentProps } from '@Types/Testimonial/TestimonialContentProps';
 
 
-function TestimonialContent({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {
+function Content({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {
   const ratingElement = useRating(rating);
 
   const responsiveWidth = wrapperWidth > 768 ? wrapperWidth / 2 : wrapperWidth;
@@ -28,4 +28,4 @@ function TestimonialContent({ imgSrc, imgDesc, name, profession, testimonial, ra
   );
 }
 
-export default TestimonialContent;
+export default Content;

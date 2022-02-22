@@ -4,7 +4,7 @@ import ProductsContentProps from '@Types/Products/ProductContentProps';
 
 
 
-function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
+function Content({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
   const stars: JSX.Element[] = useRating(rating);
 
   return (
@@ -42,4 +42,4 @@ function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel
   );
 }
 
-export default ProductsContent;
+export default Content;

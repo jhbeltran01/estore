@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import TestimonialContent from './TestimonialContent';
+import TestimonialContent from './Content';
 import { TestimonialType } from '@Types/Testimonial/TestimonialType'
 
 

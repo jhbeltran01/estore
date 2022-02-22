@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
 import useSliderTransition from '@Hooks/useSliderTransition';
 import { HeroContentType } from '@Types/Hero/HeroContentType';
-import Content from './HeroContent';
+import HeroContent from './Content';
 
 type HeroCarouselProps = {
   data: HeroContentType[]
@@ -58,7 +58,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
         <div className='carousel-hero__slider flex'>
           {
             dataWithClones.map((datum: any, index: number) => (
-              <Content
+              <HeroContent
                 key={index}
                 imgSrc={datum.imgSrc}
                 desc={datum.desc}
