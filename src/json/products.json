@@ -5,7 +5,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "featured"
+    "category": "featured",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "2",
@@ -13,7 +56,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "featured"
+    "category": "featured",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "3",
@@ -21,7 +107,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "featured"
+    "category": "featured",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "4",
@@ -29,7 +158,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "featured"
+    "category": "featured",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "5",
@@ -37,7 +209,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "featured"
+    "category": "featured",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "6",
@@ -45,7 +260,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "recent"
+    "category": "recent",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "7",
@@ -53,7 +311,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "recent"
+    "category": "recent",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "8",
@@ -61,7 +362,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "recent"
+    "category": "recent",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "9",
@@ -69,7 +413,50 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "recent"
+    "category": "recent",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   },
   {
     "id": "10",
@@ -77,6 +464,49 @@
     "name": "Product Name",
     "rating": 5,
     "prize": 99,
-    "category": "recent"
+    "category": "recent",
+    "description": {
+      "title": "Product Description",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo."
+    },
+    "specification": {
+      "title": "Product Specification",
+      "specifications": [
+        {
+          "id": "1",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "2",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "3",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "4",
+          "specification": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id": "5",
+          "specification": "Lorem ipsum dolor sit amet"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      },
+      {
+        "name": "Phasellus Gravida",
+        "date": "01 Jan 2020",
+        "rating": 5,
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }
+    ]
   }
 ]
