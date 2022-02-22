@@ -10,15 +10,14 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const entryPoints = {
   home: "./src/pages/Home.tsx",
   main: "./src/styles.ts",
-  products: "./src/pages/ProductsPage.tsx",
+  products: "./src/pages/Products.tsx",
   productsDetail: "./src/pages/ProductsDetail.tsx",
-  toggleMobileNavMenu: './src/utils/toggleMobileNavMenu.ts'
 }
 
 const htmlPageName = [
   'index',
   'products',
-  'product-detail'
+  'products-detail'
 ]
 
 const htmlTemplates = htmlPageName.map(name => (
