@@ -19,9 +19,15 @@ const App = (): JSX.Element => {
       <Header />
       <HeroCarousel data={carouselContent} />
 
-      <ProductCategory productCategory='Featured Products' products={featuredProducts} targetElement='featured-products' />
+      <ProductCategory
+        productCategory='Featured Products'
+        products={featuredProducts}
+        targetElement='featured-products' />
 
-      <ProductCategory productCategory='Recent Products' products={featuredProducts} targetElement='recent-products' />
+      <ProductCategory
+        productCategory='Recent Products'
+        products={featuredProducts}
+        targetElement='recent-products' />
 
       <TestimonialCarousel testimonials={testimonials} />
     </React.Fragment>
