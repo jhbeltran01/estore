@@ -11,6 +11,7 @@ const entryPoints = {
   home: "./src/pages/Home.tsx",
   main: "./src/styles.ts",
   products: "./src/pages/ProductsPage.tsx",
+  productsDetail: "./src/pages/ProductsDetail.tsx",
   toggleMobileNavMenu: './src/utils/toggleMobileNavMenu.ts'
 }
 

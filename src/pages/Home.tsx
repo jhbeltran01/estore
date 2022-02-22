@@ -7,6 +7,7 @@ import TestimonialCarousel from "@Components/carousel/Testimonial/TestimonialCar
 import carouselContent from '@Json/carousel-content.json'
 import products from '@Json/products.json';
 import testimonials from '@Json/testimonials.json'
+import "@Utils/toggleMobileNavMenu";
 
 export const ProductsJSON = React.createContext([{}]);
 
