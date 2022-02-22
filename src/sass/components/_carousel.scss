@@ -2,139 +2,138 @@
 @use '../abstract/placeholders' as *;
 @use '../abstract/breakpoints' as viewport;
 
-.carousel {
-  &-hero {  
-    margin: 2rem 0;
-    overflow: hidden;
+
+.carousel-hero {  
+  margin: 2rem 0;
+  overflow: hidden;
 
 
-    @include viewport.medium {
-      margin: 0;
+  @include viewport.medium {
+    margin: 0;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+
+  &__img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: left;
+
+
+    @include viewport.xl {
+      width: auto;
     }
+  }
 
-    &__content {
-      position: relative;
-    }
+  &__caption {
+    inset: 0 0 0 0;
+    position: absolute;
 
-
-    &__img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      object-position: left;
-
+    &-content {
+      background-color: var.$dark-red;
+      color: var.$white;
+      width: 60%;
+      padding: 1em;
+      text-align: center;
 
       @include viewport.xl {
-        width: auto;
+        width: 80%;
       }
-    }
-
-    &__caption {
-      inset: 0 0 0 0;
-      position: absolute;
-
-      &-content {
-        background-color: var.$dark-red;
-        color: var.$white;
-        width: 60%;
-        padding: 1em;
-        text-align: center;
-
-        @include viewport.xl {
-          width: 80%;
-        }
-      }
-    }
-
-
-    &__desc {
-      font: {
-        weight: 700;
-        size: var.$fs-22;
-      }
-      color: var.$white;
-      margin-bottom: 1.5rem;
     }
   }
 
 
-  &-brands {
-    margin: 2rem 0;
-    padding: 2em 1em;
-    background-color: var.$white;
+  &__desc {
+    font: {
+      weight: 700;
+      size: var.$fs-22;
+    }
+    color: var.$white;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+.carousel-brands {
+  margin: 2rem 0;
+  padding: 2em 1em;
+  background-color: var.$white;
+
+
+  @include viewport.large {
+    padding: 2em 4em;
+  }
+
+  &__img {
+    @include viewport.large {
+      width: 150px;
+      height: 80px;
+    }
+
+
+    @include viewport.xl {
+      margin: 0 6rem;
+    }
+  }
+}
+
+
+.carousel-products {
+  overflow-x: hidden;
+}
+
+
+.carousel-testimonial {
+  margin: 2rem 0;
+  overflow-x: hidden;
+  position: relative; 
+  
+
+  &:hover .btn-next-2 {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+
+  &__name {
+    font: {
+      size: var.$fs-22;
+      family: var.$source-code;
+      weight: 700;
+    }
+    margin-bottom: 0.2rem;
+  }
+
+
+  &__profession {
+    font-size: var.$fs-14;
+    margin-bottom: 0.2rem;
+  }
+
+
+  &__img {
+    max-height: 200px;
+    max-width: 200px
+  }
+  
+  
+  &__desc {
+    text-align: justify;
 
 
     @include viewport.large {
-      padding: 2em 4em;
-    }
-
-    &__img {
-      @include viewport.large {
-        width: 150px;
-        height: 80px;
-      }
-
-
-      @include viewport.xl {
-        margin: 0 6rem;
-      }
+      text-align: unset;
     }
   }
 
 
-  &-products {
-    overflow-x: hidden;
-  }
-
-
-  &-testimonial {
-    margin: 2rem 0;
-    overflow-x: hidden;
-    position: relative; 
-   
-
-    &:hover .btn-next-2 {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-
-    &__name {
-      font: {
-        size: var.$fs-22;
-        family: var.$source-code;
-        weight: 700;
-      }
-      margin-bottom: 0.2rem;
-    }
-
-
-    &__profession {
-      font-size: var.$fs-14;
-      margin-bottom: 0.2rem;
-    }
-
-
-    &__img {
-      max-height: 200px;
-      max-width: 200px
-    }
-    
-    
-    &__desc {
-      text-align: justify;
-
-
-      @include viewport.large {
-        text-align: unset;
-      }
-    }
-
-
-    &__overlay {
-      @extend %overlay;
-      opacity: 1;
-      padding: 1.5em;
-    }
+  &__overlay {
+    @extend %overlay;
+    opacity: 1;
+    padding: 1.5em;
   }
 }
