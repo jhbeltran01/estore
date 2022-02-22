@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import Search2 from '../elements/Search/Search2';
-import Select from '../elements/Select/Select';
+import Search2 from '@Components/elements/Search/Search2';
+import Select from '@Components/elements/Select/Select';
 
 const sortOptions = ['Newest', 'Popular', 'Most Sale']
 let prizeOptions: string[] = [];

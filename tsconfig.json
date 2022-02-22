@@ -17,37 +17,25 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "carousel": [
-        "ts/components/carousel"
+      "@Components/*": [
+        "./components/*"
       ],
-      "element": [
-        "ts/components/elements"
+      "@Page-section/*": [
+        "./page-section/*"
       ],
-      "filter": [
-        "ts/components/filter"
+      "@Json/*": [
+        "./json/*"
       ],
-      "header": [
-        "ts/components/header"
+      "@Images/*": [
+        "../public/images/*"
       ],
-      "pagination": [
-        "ts/components/pagination"
+      "@Hooks/*": [
+        "./hooks/*"
       ],
-      "slider": [
-        "ts/components/slider"
-      ],
-      "Types": [
-        "ts/types"
-      ],
-      "hooks": [
-        "ts/hooks"
-      ],
-      "ts": [
-        "ts/ts"
-      ],
-      "json": [
-        "ts/json"
+      "@Types/*": [
+        "./types/*"
       ]
     }
   },

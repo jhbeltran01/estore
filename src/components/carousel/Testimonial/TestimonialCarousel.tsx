@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import TestimonialContent from './TestimonialContent';
-import { TestimonialType } from '../../../types/Testimonial/TestimonialType'
+import { TestimonialType } from '@Types/Testimonial/TestimonialType'
 
 
 type TestimonialCarouselProps = {

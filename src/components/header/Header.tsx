@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from '../../../../public/images/logo.png';
-import Search1 from '../elements/Search/Search1';
+import logo from '@Images/logo.png';
+import Search1 from '@Components/elements/Search/Search1';
 
 
 function Header() {

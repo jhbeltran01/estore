@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import HeroCarousel from "../components/carousel/Hero/HeroCarousel";
-import Header from "../components/header/Header";
-import ProductCategory from "../page-section/ProductCategory";
-import TestimonialCarousel from "../components/carousel/Testimonial/TestimonialCarousel";
-import carouselContent from '../json/carousel-content.json'
-import products from '../json/products.json';
-import testimonials from '../json/testimonials.json'
+import HeroCarousel from "@Components/carousel/Hero/HeroCarousel";
+import Header from "@Components/header/Header";
+import ProductCategory from "@Page-section/ProductCategory";
+import TestimonialCarousel from "@Components/carousel/Testimonial/TestimonialCarousel";
+import carouselContent from '@Json/carousel-content.json'
+import products from '@Json/products.json';
+import testimonials from '@Json/testimonials.json'
 
 export const ProductsJSON = React.createContext([{}]);
 

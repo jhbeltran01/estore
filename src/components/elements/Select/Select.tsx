@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Dropdown from "../dropdown/Dropdown";
+import Dropdown from "@Components/elements/dropdown/Dropdown";
 
 type ProductSortProps = {
   title: string,

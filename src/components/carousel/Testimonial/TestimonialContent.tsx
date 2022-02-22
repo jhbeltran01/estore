@@ -1,6 +1,6 @@
 import React from 'react';
-import useRating from '../../../hooks/useRating'
-import { TestimonialContentProps } from '../../../types/Testimonial/TestimonialContentProps';
+import useRating from '@Hooks/useRating'
+import { TestimonialContentProps } from '@Types/Testimonial/TestimonialContentProps';
 
 
 function TestimonialContent({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {

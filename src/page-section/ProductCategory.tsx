@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import ProductsSlider from '../components/slider/Products/ProductsSlider';
-import { ProductCategoryProps } from '../types/Products/ProductCategoryProps';
+import ProductsSlider from '@Components/slider/Products/ProductsSlider';
+import { ProductCategoryProps } from '@Types/Products/ProductCategoryProps';
 
 function ProductCategory({ productCategory, targetElement, products }: ProductCategoryProps) {
   return ReactDOM.createPortal(

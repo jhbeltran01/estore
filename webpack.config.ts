@@ -5,12 +5,13 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const entryPoints = {
-  home: "./src/ts/pages/Home.tsx",
+  home: "./src/pages/Home.tsx",
   main: "./src/styles.ts",
-  products: "./src/ts/pages/ProductsPage.tsx",
-  toggleMobileNavMenu: './src/ts/ts/toggleMobileNavMenu.ts'
+  products: "./src/pages/ProductsPage.tsx",
+  toggleMobileNavMenu: './src/utils/toggleMobileNavMenu.ts'
 }
 
 const htmlPageName = [
@@ -67,17 +68,9 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      carousel: path.resolve(__dirname, 'src/ts/components/carousel'),
-      element: path.resolve(__dirname, 'src/ts/components/elements'),
-      filter: path.resolve(__dirname, 'src/ts/components/filter'),
-      header: path.resolve(__dirname, 'src/ts/components/header'),
-      pagination: path.resolve(__dirname, 'src/ts/components/pagination'),
-      slider: path.resolve(__dirname, 'src/ts/components/slider'),
-      Types: path.resolve(__dirname, 'src/ts/types'),
-      hooks: path.resolve(__dirname, 'src/ts/hooks'),
-      ts: path.resolve(__dirname, 'src/ts/ts'),
-      json: path.resolve(__dirname, 'src/ts/json')
-    }
+      components: "./src/components"
+    },
+    plugins: [new TsconfigPathsPlugin(),]
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
