@@ -7,9 +7,7 @@ import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 import products from '@Json/products.json';
 import Tags from '@Components/tags/Tags';
 import "@Utils/toggleMobileNavMenu";
-
-const tags = ['Lorem ipsum', 'Vivamus', 'Phasellus', 'pulvinar', 'Curabitur', 'Fusce',
-  'Sem quis', 'Mollis metus', 'Sit amet', 'Vel posuere', 'orci luctus', 'Nam lorem']
+import tags from "@Json/tags.json";
 
 function App() {
   return (
