@@ -20,15 +20,25 @@ const App = (): JSX.Element => {
       <Header />
       <HeroCarousel data={carouselContent} />
 
-      <ProductCategory
-        productCategory='Featured Products'
-        products={featuredProducts}
-        targetElement='featured-products' />
+      {
+        ReactDOM.createPortal(
+          (
+            <ProductCategory
+              productCategory='Featured Products'
+              products={featuredProducts} />
+          ),
+          document.getElementById('featured-products')!
+        )
+      }
 
-      <ProductCategory
-        productCategory='Recent Products'
-        products={featuredProducts}
-        targetElement='recent-products' />
+      {
+        ReactDOM.createPortal(
+          <ProductCategory
+            productCategory='Recent Products'
+            products={featuredProducts} />,
+          document.getElementById('recent-products')!
+        )
+      }
 
       <TestimonialCarousel testimonials={testimonials} />
     </React.Fragment>
