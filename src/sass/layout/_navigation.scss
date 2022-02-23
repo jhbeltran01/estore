@@ -43,6 +43,14 @@
     }
 
 
+    &:is(.active) {
+      color: var.$white;
+
+      @include viewport.large {
+        color: var.$black;
+      }
+    }
+
     @include viewport.large {
       margin-bottom: unset;
       text-transform: uppercase;

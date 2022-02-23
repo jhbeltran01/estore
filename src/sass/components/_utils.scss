@@ -186,13 +186,6 @@
 
 
 // active 
-.active-page {
-  color: var.$white;
-
-  @include viewport.large {
-    color: var.$black;
-  }
-}
 .active-page-item {
   background-color: var.$black;
   color: var.$light-red ;
