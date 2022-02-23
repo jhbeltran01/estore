@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import products from "@Json/products.json";
 import CartSummary from '@Page-section/Cart/CartSummary';
+import "@Utils/toggleMobileNavMenu";
 
 const productsDataForCart = products.map(product => {
   return {
@@ -23,9 +24,13 @@ const Cart = (): JSX.Element => {
         )
       }
 
-      <div>
-        <CartTable products={productsDataForCart} />
-        <CartSummary subtotal={0} shippingCost={1} />
+      <div className='grid-2-column-responsive-5 pad-8'>
+        <div className='overflow-scroll mar pad-10 bg-white-2'>
+          <CartTable products={productsDataForCart} />
+        </div>
+        <div className='mar pad-2 bg-white-2 height-m-content'>
+          <CartSummary subtotal={0} shippingCost={1} />
+        </div>
       </div>
     </React.StrictMode>
   )

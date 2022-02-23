@@ -37,10 +37,10 @@ const ReviewsTab = ({ reviews }: ReviewsTabProps): JSX.Element => {
 
         <form action="GET">
           <div className='grid-2-column-responsive-4'>
-            <input className='input-field-3' type="text" name="name" id="name" placeholder='Name' />
-            <input className='input-field-3' type="email" name="email" id="email" placeholder='Email' />
+            <input className='input-field-3 mar-bot-2' type="text" name="name" id="name" placeholder='Name' />
+            <input className='input-field-3 mar-bot-2' type="email" name="email" id="email" placeholder='Email' />
           </div>
-          <textarea className='input-field-3' name="review" id="review" placeholder='Review'></textarea>
+          <textarea className='input-field-3 mar-bot-2' name="review" id="review" placeholder='Review'></textarea>
           <button className='btn-submit-2' type="submit">Submit</button>
         </form>
       </div>

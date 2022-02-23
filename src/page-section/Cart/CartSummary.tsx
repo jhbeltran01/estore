@@ -1,4 +1,6 @@
 import React from 'react'
+import Coupon from './Coupon'
+import Summary from './Summary'
 
 type CartSummaryProps = {
   subtotal: number,
@@ -8,29 +10,13 @@ type CartSummaryProps = {
 const CartSummary = ({ subtotal, shippingCost }: CartSummaryProps): JSX.Element => {
   return (
     <div>
-      <form action="GET">
-        <input type="text" name="coupon" id="coupon" placeholder='Coupon' />
-        <button type="submit">Apply Code</button>
-      </form>
+      <Coupon />
 
-      <div>
-        <h2>Cart Summary</h2>
+      <Summary subtotal={subtotal} shippingCost={shippingCost} />
 
-        <div>
-          <p>
-            <span>Subtotal</span>
-            <span>{subtotal}</span>
-          </p>
-          <p>Shipping Cost</p>
-          <p>{shippingCost}</p>
-
-          <hr />
-
-          <p>
-            <strong>Grand Total</strong>
-            <strong>{subtotal + shippingCost}</strong>
-          </p>
-        </div>
+      <div className='grid-2-column-2 mar-top-1'>
+        <button className='btn-primary'>Update Cart</button>
+        <button className='btn-secondary'>Checkout</button>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ type CartTableProps = {
 function CartTable({ products }: CartTableProps) {
 
   return (
-    <table>
+    <table className='table-1'>
       <TableHeader headers={headers} />
       <tbody>
         {

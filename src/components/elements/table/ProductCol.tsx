@@ -7,10 +7,10 @@ type ProductColType = {
 
 const ProductCol = ({ image, name }: ProductColType): JSX.Element => {
   return (
-    <React.Fragment>
+    <div className='flex-container-6'>
       <img src={image} alt="product image" />
       <p>{name}</p>
-    </React.Fragment>
+    </div>
   )
 }
 

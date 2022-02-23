@@ -303,3 +303,12 @@
     @extend %btn-active;
   }
 }
+
+
+.btn-delete {
+  @extend %btn-hover;
+  border: 1px solid var.$light-red;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+}

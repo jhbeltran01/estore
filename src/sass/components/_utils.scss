@@ -43,7 +43,9 @@
 .fs-18 {
   font-size: var.$fs-18;
 }
-
+.fs-20 {
+  font-size: var.$fs-20;
+}
 
 // font-weight 
 .fw-600 {
@@ -109,7 +111,9 @@
 .mar-bot-6 {
   margin-bottom: 0.5rem;
 }
-
+.mar-top-1 {
+  margin-top: 1rem;
+}
 
 // paddings
 .pad-1 {
@@ -145,6 +149,11 @@
 .pad-9 {
   padding: 0 1.5em 2em;
 }
+.pad-10 {
+  padding: 2em;
+}
+
+
 // hide element
 .hide-in-mobile {
   display: none;
@@ -158,7 +167,9 @@
 .overflow-hidden-2 {
   overflow: hidden;
 }
-
+.overflow-scroll {
+  overflow: scroll;
+}
 // stars
 .star {
   color: var.$light-red;
@@ -220,4 +231,10 @@
 .border-red {
   border: 1px solid var.$light-red;
   padding: 1px;
+}
+
+
+// heights
+.height-m-content {
+  height: max-content;
 }

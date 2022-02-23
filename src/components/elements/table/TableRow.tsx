@@ -8,15 +8,15 @@ function TableRow({ imgSrc, name, price }: CartType) {
 
   return (
     <tr>
-      <th>
+      <td className='table-1__data'>
         <ProductCol image={imgSrc} name={name} />
-      </th>
-      <th>{price}</th>
-      <th><CustomNumber /></th>
-      <th>{total}</th>
-      <th>
-        <button><i className="fa fa-trash"></i></button>
-      </th>
+      </td>
+      <td className='table-1__data'>${price}</td>
+      <td className='table-1__data'><CustomNumber /></td>
+      <td className='table-1__data'>${total}</td>
+      <td className='table-1__data'>
+        <button className='btn-delete'><i className="fa fa-trash"></i></button>
+      </td>
     </tr>
   )
 }
