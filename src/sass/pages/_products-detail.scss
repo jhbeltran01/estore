@@ -38,11 +38,26 @@
 
   &__stars {
     margin-bottom: 1rem;
+    width: max-content;
 
     i {
       font-size: 24px;
       color: var.$light-red;
       margin-right: 0.5rem;
-    }
-  } 
+      cursor: pointer;
+      transition: var.$transition-primary;
+
+      &:hover {
+        background-color: var.$light-red;
+        color: var.$white;
+        border-radius: 50%;
+      }
+
+      &:hover ~ i {
+           background-color: var.$light-red;
+          color: var.$white;
+          border-radius: 50%;
+        }
+    } 
+  }
 }
