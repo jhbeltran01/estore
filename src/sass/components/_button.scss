@@ -287,6 +287,13 @@
   color: var.$light-red;
   border: none;
   padding: 4px;
+  transition: var.$transition-primary;
+
+  &:hover {
+    background-color: var.$light-red;
+    color: var.$white;
+  }
+
 
   &:is(.active) {
     background-color: var.$light-red;

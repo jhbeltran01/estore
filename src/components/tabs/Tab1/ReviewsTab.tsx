@@ -35,7 +35,7 @@ const ReviewsTab = ({ reviews }: ReviewsTabProps): JSX.Element => {
         <div className='review__stars'>{stars}</div>
 
         <form action="GET">
-          <div>
+          <div className='grid-2-column-responsive-4'>
             <input className='input-field-3' type="text" name="name" id="name" placeholder='Name' />
             <input className='input-field-3' type="email" name="email" id="email" placeholder='Email' />
           </div>

@@ -138,12 +138,31 @@
   }
 }
 
+
+.carousel-product-view {
+  position: relative;
+  
+  img {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+
+    &:is(.active) {
+      position: unset;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+}
+
+
 .carousel-product-view-nav {
   border: 1px solid var.$light-red;
 
   img {
-    width: 41px;
-    height: 41px;
+   width: 15%;
+   height: inherit;
 
     &:not(:last-child) {
       border-right: 1px solid var.$light-red;

@@ -33,69 +33,78 @@
   }
 }
 
-
-.grid-2-column-responsive {
-  &-1 {
-    @include viewport.medium {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 0 20px;
-    }
-
-
-    @include viewport.xl {
-      grid-template-columns: 1fr 480px;
-    }
-  }
-
-  &-2 {
-    @include viewport.medium {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    @include viewport.large {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-    }
+// 2 COLUMN RESPONSIVE
+.grid-2-column-responsive-1 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 0 20px;
   }
 
 
-  &-3 {
-    @include viewport.large {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 20px;
-    }
+  @include viewport.xl {
+    grid-template-columns: 1fr 480px;
+  }
+}
 
-
-    @include viewport.xl {
-      display: grid;
-      grid-template-columns: 480px 1fr;
-      gap: 20px;
-    }
+.grid-2-column-responsive-2 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  &-4 {
-    @include viewport.medium {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-  }
-
-  &-5 {
-    @include viewport.large {
-      display: grid;
-      grid-template-columns: 2.5fr 1fr;
-      gap: 20px;
-    }
+  @include viewport.large {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
   }
 }
 
 
+.grid-2-column-responsive-3 {
+  @include viewport.large {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+  }
 
+
+  @include viewport.xl {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 20px;
+  }
+}
+
+
+.grid-2-column-responsive-4 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+.grid-2-column-responsive-5 {
+  @include viewport.large {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 20px;
+  }
+}
+
+.grid-2-column-responsive-6 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+  }
+}
+// END OF 2 COLUMN RESPONSIVE
+
+
+// 3 COLUMN RESPONSIVE
 .grid-3-column-responsive {
   @include viewport.medium {
     display: grid;
@@ -115,6 +124,7 @@
     gap: 20px;
   }
 }
+// END OF 3 COLUMN RESPONSIVE
 
 
 
