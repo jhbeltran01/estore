@@ -8,8 +8,9 @@ type ReviewsTabProps = {
 
 let stars: JSX.Element[] = [];
 
-for (let i = 0; i < 5; ++i) {
-  stars.push(<i key={i} className="far fa-star"></i>)
+for (let i = 5; i > 0; --i) {
+  console.log("test")
+  stars.push(<i key={i} className={`grid-align-column-${i} far fa-star`}></i>)
 }
 
 
@@ -32,7 +33,7 @@ const ReviewsTab = ({ reviews }: ReviewsTabProps): JSX.Element => {
 
       <div>
         <h3 className='review__title'>Give Your Review:</h3>
-        <div className='review__stars'>{stars}</div>
+        <div className='review__stars flex-row-reverse'>{stars}</div>
 
         <form action="GET">
           <div className='grid-2-column-responsive-4'>
