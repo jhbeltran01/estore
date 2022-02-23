@@ -26,8 +26,10 @@
 
 .grid-3-column {
   &-1 {
-    display: grid;
-    grid-template-columns:repeat(3, 1fr);
+    @include viewport.sm {
+      display: grid;
+      grid-template-columns:repeat(3, 1fr);
+    }
   }
 }
 
