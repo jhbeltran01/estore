@@ -9,6 +9,7 @@ import ProductCategory from '@Page-section/ProductCategory';
 import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 import Tags from '@Components/tags/Tags';
 import tags from "@Json/tags.json"; import useTabs from '@Hooks/useTabs';
+import Header from '@Components/header/Header';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')
@@ -18,6 +19,8 @@ function ProductsDetail() {
 
   return (
     <React.StrictMode>
+      <Header />
+
       <div className='product-detail mar grid'>
         <div>
           <div className='bg-white-2 grid-2-column-responsive-6'>
