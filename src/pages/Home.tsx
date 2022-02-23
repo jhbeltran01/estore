@@ -17,7 +17,12 @@ const recentProducts = products.filter(product => product.category === 'recent')
 const App = (): JSX.Element => {
   return (
     <React.Fragment>
-      <Header />
+      {
+        ReactDOM.createPortal(
+          <Header />,
+          document.getElementById('search-bar')!
+        )
+      }
       <HeroCarousel data={carouselContent} />
 
       {

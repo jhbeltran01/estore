@@ -12,7 +12,12 @@ import tags from "@Json/tags.json";
 function App() {
   return (
     <React.Fragment>
-      <Header />
+      {
+        ReactDOM.createPortal(
+          <Header />,
+          document.getElementById('search-bar')!
+        )
+      }
 
       <Filter />
 

@@ -19,7 +19,12 @@ function ProductsDetail() {
 
   return (
     <React.StrictMode>
-      <Header />
+      {
+        ReactDOM.createPortal(
+          <Header />,
+          document.getElementById('search-bar')!
+        )
+      }
 
       <div className='product-detail mar grid'>
         <div>
