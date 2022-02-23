@@ -295,13 +295,11 @@
   transition: var.$transition-primary;
 
   &:hover {
-    background-color: var.$light-red;
-    color: var.$white;
+   @extend %btn-active;
   }
 
 
   &:is(.active) {
-    background-color: var.$light-red;
-    color: var.$black;
+    @extend %btn-active;
   }
 }
