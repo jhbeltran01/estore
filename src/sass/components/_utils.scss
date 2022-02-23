@@ -185,14 +185,6 @@
 }
 
 
-// active 
-.active-page-item {
-  background-color: var.$black;
-  color: var.$light-red ;
-}
-
-
-
 // push element
 .push-right {
   @include viewport.large {

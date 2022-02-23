@@ -49,7 +49,7 @@ const Pagination = ({ numberOfPage, updateContentToBeDisplayed }: PaginationProp
       <button
         key={number}
         id={`${number}`}
-        className={pageNumber === number ? 'btn-pagination active-page-item' : 'btn-pagination'}
+        className={pageNumber === number ? 'btn-pagination active' : 'btn-pagination'}
         onClick={goToClickedPageNumber}
       >
         {number}

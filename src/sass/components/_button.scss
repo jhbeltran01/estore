@@ -201,6 +201,11 @@
   color: var.$black-2;
 
 
+  &:is(.active) {
+    background-color: var.$black;
+    color: var.$light-red ;
+  }
+
   &:first-of-type {
     border: 1px solid  var.$black-2;
     border-right: none;
