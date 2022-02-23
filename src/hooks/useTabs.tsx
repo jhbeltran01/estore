@@ -9,6 +9,7 @@ const useTabs = (products: any) => {
       tabName: "Description",
       tabContent:
         <DescriptionTab
+          key={0}
           title={products.description.title}
           description={products.description.description} />
     },
@@ -16,12 +17,13 @@ const useTabs = (products: any) => {
       tabName: 'Specification',
       tabContent:
         <SpecificationTab
+          key={1}
           title={products.specification.title}
           specifications={products.specification.specifications} />
     },
     {
       tabName: 'Reviews',
-      tabContent: <ReviewsTab reviews={products.reviews} />
+      tabContent: <ReviewsTab key={2} reviews={products.reviews} />
     }
   ]
 
