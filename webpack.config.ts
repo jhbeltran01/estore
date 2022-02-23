@@ -12,12 +12,14 @@ const entryPoints = {
   main: "./src/styles.ts",
   products: "./src/pages/Products.tsx",
   productsDetail: "./src/pages/ProductsDetail.tsx",
+  cart: "./src/pages/Cart.tsx"
 }
 
 const htmlPageName = [
   'index',
   'products',
-  'products-detail'
+  'products-detail',
+  "cart"
 ]
 
 const htmlTemplates = htmlPageName.map(name => (
