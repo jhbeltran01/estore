@@ -11,7 +11,6 @@ type TabsProps = {
 
 const Tabs = ({ productTabs }: TabsProps): JSX.Element => {
   const [activeTab, setActiveTab] = useState(productTabs[0].tabName)
-  const [activeContent, setActiveContent] = useState(productTabs[0].tabContent)
 
   return (
     <div>
@@ -19,8 +18,9 @@ const Tabs = ({ productTabs }: TabsProps): JSX.Element => {
         {
           productTabs.map((tab: TabType, index: number) => (
             <button
-              className={tab.tabName === activeTab ? 'btn-tab active' : 'btn-tab'}
               key={index}
+              onClick={event => setActiveTab(event.currentTarget.id)}
+              className={tab.tabName === activeTab ? 'btn-tab active' : 'btn-tab'}
               id={tab.tabName}
             >
               {tab.tabName}
@@ -31,7 +31,7 @@ const Tabs = ({ productTabs }: TabsProps): JSX.Element => {
       </div>
 
       <div className='bg-white-2 pad-2'>
-        {activeContent}
+        {productTabs.map((tab: TabType, index: number) => tab.tabName === activeTab && tab.tabContent)}
       </div>
     </div>
   )

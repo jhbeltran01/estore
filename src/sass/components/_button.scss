@@ -262,6 +262,13 @@
   font-size: var.$fs-14;
   padding: 4px 8px;
 
+
+  &:is(.active) {
+    background-color: var.$light-red;
+    color: var.$white;
+  }
+
+
   &:first-of-type {
     border-radius: 4px 0 0 4px;
   }
