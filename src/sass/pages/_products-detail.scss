@@ -1,0 +1,48 @@
+@use '../abstract/variables' as var;
+
+.product-detail {
+  .section {
+    margin: 2rem 0;
+  }
+
+  &__name {
+    font: {
+      size: var.$fs-25;
+      family: var.$source-code;
+      weight: 700;
+    }
+  }
+
+
+  &__label {
+    font-size: var.$fs-18;
+    font-weight: 700;
+    color: var.$black-2;
+  }
+
+
+  &__prize {
+    font-size: var.$fs-30;
+    font-weight: 700;
+    color: var.$light-red;
+  }
+}
+
+
+.review {
+  &__title {
+    font-size: var.$fs-24;
+    margin-bottom: 0.5rem;
+  }
+
+
+  &__stars {
+    margin-bottom: 1rem;
+
+    i {
+      font-size: 24px;
+      color: var.$light-red;
+      margin-right: 0.5rem;
+    }
+  } 
+}

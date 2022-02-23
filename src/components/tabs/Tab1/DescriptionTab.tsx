@@ -7,8 +7,8 @@ type DescriptionTab = {
 
 const DescriptionTab = ({ title, description }: DescriptionTab): JSX.Element => {
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className=''>
+      <h2 className='mar-bot-2'>{title}</h2>
       <p>{description}</p>
     </div>
   )

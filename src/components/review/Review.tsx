@@ -6,15 +6,14 @@ function Review({ name, date, rating, description }: ReviewType) {
   const stars = useRating(rating);
 
   return (
-    <div>
-      <div>
-        <p>{name} - <span>{date}</span></p>
-      </div>
+    <div className='mar-bot-3'>
+      <p className='mar-bot-6'>
+        <span className='fs-18 clr-light-red fw-600'>{name} - </span>
+        <span className='fs-14 clr-gray'>{date}</span>
+      </p>
 
-      <div>
-        {
-          stars.map((star: JSX.Element) => star)
-        }
+      <div className='mar-bot-6'>
+        {stars}
       </div>
 
       <p>{description}</p>

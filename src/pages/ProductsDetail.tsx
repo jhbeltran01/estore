@@ -17,38 +17,57 @@ function ProductsDetail() {
   const [tabs, setTabs] = useState(useTabs(products[0]));
 
   return (
-    <div className='product-detail'>
-      <div className='product-detail__content mar'>
+    <React.StrictMode>
+      <div className='product-detail mar'>
         <div>
-          <div>
-            <ImageCarousel images={images} />
-            <ImageSlider images={images} />
+          <div className='bg-white-2 pad-9'>
+            <div>
+              <div className='mar-bot-3'>
+                <ImageCarousel images={images} />
+              </div>
+              <div className='border-red mar-y'>
+                <ImageSlider images={images} />
+              </div>
+            </div>
+
+            <ProductContent
+              imgSrc={products[0].imgSrc}
+              name={products[0].name}
+              rating={products[0].rating}
+              prize={products[0].prize}
+              id={products[0].id}
+            />
           </div>
 
-          <ProductContent
-            imgSrc={products[0].imgSrc}
-            name={products[0].name}
-            rating={products[0].rating}
-            prize={products[0].prize}
-            id={products[0].id}
-          />
+          <div className='mar-y-2'>
+            <Tabs productTabs={tabs} />
+          </div>
         </div>
 
-        <Tabs productTabs={tabs} />
-        <div>tabs</div>
+        <ProductCategory productCategory='Recent Products' products={recentProducts} />
       </div>
-      <ProductCategory productCategory='Recent Products' products={recentProducts} />
 
       {
-        ReactDOM.createPortal(<ProductsSlider products={products} />, document.getElementById('products-slider')!)
+        ReactDOM.createPortal(
+          <ProductsSlider products={products} />,
+          document.getElementById('products-slider')!
+        )
       }
 
       {
-        ReactDOM.createPortal(<Tags tags={tags} />, document.getElementById('tags')!)
+        ReactDOM.createPortal(
+          <Tags tags={tags} />,
+          document.getElementById('tags')!
+        )
       }
-    </div>
+    </React.StrictMode>
   )
 }
 
 
-ReactDOM.render(<ProductsDetail />, document.getElementById('product-detail')!)
+ReactDOM.render(
+  <React.StrictMode>
+    <ProductsDetail />
+  </React.StrictMode>,
+  document.getElementById('product-detail')!
+)

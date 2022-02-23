@@ -9,7 +9,7 @@ type ReviewsTabProps = {
 let stars: JSX.Element[] = [];
 
 for (let i = 0; i < 5; ++i) {
-  stars.push(<i className="far fa-star"></i>)
+  stars.push(<i key={i} className="far fa-star"></i>)
 }
 
 
@@ -18,28 +18,29 @@ const ReviewsTab = ({ reviews }: ReviewsTabProps): JSX.Element => {
     <div>
       <div>
         {
-          reviews.map(({ name, date, rating, description }: ReviewType) => {
+          reviews.map(({ name, date, rating, description }: ReviewType, index: number) => (
             <Review
+              key={index}
               name={name}
               date={date}
               rating={rating}
               description={description}
             />
-          })
+          ))
         }
       </div>
 
       <div>
-        <h3>Give Your Review</h3>
-        <div>{stars}</div>
+        <h3 className='review__title'>Give Your Review:</h3>
+        <div className='review__stars'>{stars}</div>
 
         <form action="GET">
           <div>
-            <input type="text" name="name" id="name" placeholder='Name' />
-            <input type="email" name="email" id="email" placeholder='Email' />
+            <input className='input-field-3' type="text" name="name" id="name" placeholder='Name' />
+            <input className='input-field-3' type="email" name="email" id="email" placeholder='Email' />
           </div>
-          <textarea name="review" id="review" placeholder='Review'></textarea>
-          <button type="submit">Submit</button>
+          <textarea className='input-field-3' name="review" id="review" placeholder='Review'></textarea>
+          <button className='btn-submit-2' type="submit">Submit</button>
         </form>
       </div>
     </div >

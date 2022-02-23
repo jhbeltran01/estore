@@ -37,6 +37,19 @@
 .fs-15 {
   font-size: var.$fs-15;
 }
+.fs-16 {
+  font-size: 1rem;
+}
+.fs-18 {
+  font-size: var.$fs-18;
+}
+
+
+// font-weight 
+.fw-600 {
+  font-weight: 600;
+}
+
 
 // position items
 .pos-item {
@@ -78,11 +91,23 @@
 .mar-y {
   margin: 1rem 0
 }
+.mar-y-2 {
+  margin: 2rem 0;
+}
 .mar-bot {
   margin-bottom: 0.2rem;
 }
 .mar-bot-2 {
   margin-bottom: 1rem;
+}
+.mar-bot-3 {
+  margin-bottom: 2rem;
+}
+.mar-bot-5 {
+  margin-bottom: 0.9rem;
+}
+.mar-bot-6 {
+  margin-bottom: 0.5rem;
 }
 
 
@@ -116,6 +141,9 @@
   @include viewport.large {
     padding: 0 3em;
   }
+}
+.pad-9 {
+  padding: 0 1.5em 2em;
 }
 // hide element
 .hide-in-mobile {
@@ -190,9 +218,21 @@
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 }
-
+.arrow-2::before {
+  content: '\f061';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+}
 
 // list
 .style-type-none {
   list-style-type: none;
+}
+
+
+// borders
+.border-red {
+  border: 1px solid var.$light-red;
+  padding: 1px;
 }

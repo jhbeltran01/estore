@@ -11,11 +11,11 @@ type SpecificationTabProps = {
 const SpecificationTab = ({ title, specifications }: SpecificationTabProps): JSX.Element => {
   return (
     <div>
-      <h2>{title}</h2>
-      <ul>
+      <h2 className='mar-bot-2'>{title}</h2>
+      <ul className='style-type-none'>
         {
           specifications.map(specification => (
-            <li key={specification.id}>{specification.specification}</li>
+            <li className='arrow-2' key={specification.id}>{specification.specification}</li>
           ))
         }
       </ul>

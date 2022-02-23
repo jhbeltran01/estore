@@ -15,6 +15,23 @@
 }
 
 
+.grid-2-column {
+  &-1 {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+  }
+}
+
+
+.grid-3-column {
+  &-1 {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+
 .grid-2-column-responsive {
   &-1 {
     @include viewport.medium {

@@ -137,3 +137,16 @@
     padding: 1.5em;
   }
 }
+
+.carousel-product-view-nav {
+  border: 1px solid var.$light-red;
+
+  img {
+    width: 41px;
+    height: 41px;
+
+    &:not(:last-child) {
+      border-right: 1px solid var.$light-red;
+    }
+  }
+}

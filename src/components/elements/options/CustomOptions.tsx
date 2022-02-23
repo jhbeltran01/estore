@@ -8,8 +8,8 @@ const CustomOptions = ({ options }: CustomOptionsProps): JSX.Element => {
   return (
     <div>
       {
-        options.map(option => (
-          <button>{option}</button>
+        options.map((option: string, index: number) => (
+          <button className='btn-option' key={index}>{option}</button>
         ))
       }
     </div>

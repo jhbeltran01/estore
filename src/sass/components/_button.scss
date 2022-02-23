@@ -158,6 +158,23 @@
 }
 
 
+.btn-submit-2 {
+  border: 1px solid var.$light-red;
+  border-radius: 4px;
+  color: var.$light-red;
+  background: transparent;
+  width: 85px;
+  height: 35px;
+
+
+  &:hover {
+    background-color: var.$light-red;
+    color: var.$white;
+  }
+}
+
+
+
 .btn-social-media {
   width: 40px;
   height: 40px;
@@ -217,5 +234,55 @@
     background-color: var.$light-red;
     color: var.$white;
     border-color: var.$light-red;
+  }
+}
+
+
+.btn-operation {
+  width: 30px;
+  height: 30px;
+  background-color: var.$light-red;
+  border: 1px solid var.$light-red;
+
+  &:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+
+  &:last-of-type {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+
+.btn-option {
+  background-color: transparent;
+  color: var.$light-red;
+  border: 1px solid var.$light-red;
+  border-right: none;
+  font-size: var.$fs-14;
+  padding: 4px 8px;
+
+  &:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+
+
+  &:last-of-type {
+    border-right: 1px solid var.$light-red;
+    border-radius: 0 4px 4px 0;
+    
+  }
+}
+
+
+.btn-tab {
+  background-color: transparent;
+  color: var.$light-red;
+  border: none;
+  padding: 4px;
+
+  &:is(.active) {
+    background-color: var.$light-red;
+    color: var.$black;
   }
 }
