@@ -169,6 +169,10 @@
 }
 .overflow-scroll {
   overflow: scroll;
+
+  @include viewport.medium {
+    overflow: unset;
+  }
 }
 // stars
 .star {
@@ -237,4 +241,8 @@
 // heights
 .height-m-content {
   height: max-content;
+}
+
+.min-height-50 {
+  min-height: 50px;
 }

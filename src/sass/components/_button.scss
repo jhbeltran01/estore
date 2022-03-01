@@ -44,14 +44,22 @@
 
 .btn-secondary {
   color: var.$black;
-  padding: 0.4em 0.9em;
-  border: none;
-  background-color: var.$light-red;
-  border-radius: 4px;
-  transition: var.$transition-primary;
+  @extend %btn;
 
   i {
     margin-right: 0.3rem;
+  }
+}
+
+
+
+.btn-3 {
+  @extend %btn;
+ color: var.$white;
+
+  &:hover {
+    background-color: var.$black;
+    color: var.$light-red; 
   }
 }
 

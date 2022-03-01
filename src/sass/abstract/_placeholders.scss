@@ -19,6 +19,15 @@
   color: var.$black;
 }
 
+
+%btn {
+  padding: 0.4em 0.9em;
+  border: none;
+  background-color: var.$light-red;
+  border-radius: 4px;
+  transition: var.$transition-primary;
+}
+
 %flex-just-between {
   display: flex;
   justify-content: space-between;

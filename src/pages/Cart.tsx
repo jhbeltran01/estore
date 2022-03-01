@@ -1,20 +1,32 @@
 import Header from '@Components/header/Header'
 import CartTable from '@Page-section/Cart/CartTable'
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import products from "@Json/products.json";
 import CartSummary from '@Page-section/Cart/CartSummary';
 import "@Utils/toggleMobileNavMenu";
 
-const productsDataForCart = products.map(product => {
+const productsDataForCart = products.filter(product =>
+  product.category === 'featured'
+).map(product => {
   return {
+    id: product.id,
     imgSrc: product.imgSrc,
     name: product.name,
     price: product.prize
   }
 })
 
+export const UpdateSubTotalContext = React.createContext(((price: number, toSubtract: boolean) => { }));
+
 const Cart = (): JSX.Element => {
+  const [subTotal, setSubTotal] = useState(0);
+
+  const updateSubTotal = (price: number, toSubtract: boolean): void => {
+    toSubtract ? setSubTotal(subTotal - price) : setSubTotal(subTotal + price)
+  }
+
+
   return (
     <React.StrictMode>
       {
@@ -26,10 +38,12 @@ const Cart = (): JSX.Element => {
 
       <div className='grid-2-column-responsive-5 pad-8'>
         <div className='overflow-scroll mar pad-10 bg-white-2'>
-          <CartTable products={productsDataForCart} />
+          <UpdateSubTotalContext.Provider value={updateSubTotal}>
+            <CartTable products={productsDataForCart} />
+          </UpdateSubTotalContext.Provider>
         </div>
         <div className='mar pad-2 bg-white-2 height-m-content'>
-          <CartSummary subtotal={0} shippingCost={1} />
+          <CartSummary subtotal={subTotal} shippingCost={1} />
         </div>
       </div>
     </React.StrictMode>

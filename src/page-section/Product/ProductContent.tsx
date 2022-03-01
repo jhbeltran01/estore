@@ -27,7 +27,7 @@ const ProductContent = ({ imgSrc, name, rating, prize, id }: ProductType) => {
 
       <div className='grid-2-column-1 mar-bot-5'>
         <p className='product-detail__label'>Quantity:</p>
-        <CustomNumber />
+        <CustomNumber updateTotal={undefined} updatePrice={undefined} />
       </div>
 
       <div className='grid-2-column-1 mar-bot-5'>

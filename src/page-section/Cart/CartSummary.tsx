@@ -15,8 +15,8 @@ const CartSummary = ({ subtotal, shippingCost }: CartSummaryProps): JSX.Element 
       <Summary subtotal={subtotal} shippingCost={shippingCost} />
 
       <div className='grid-2-column-2 mar-top-1'>
-        <button className='btn-primary'>Update Cart</button>
-        <button className='btn-secondary'>Checkout</button>
+        <button className='btn-primary min-height-50'>Update Cart</button>
+        <button className='btn-3 min-height-50'>Checkout</button>
       </div>
     </div>
   )

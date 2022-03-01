@@ -1,19 +1,55 @@
 import React, { useState } from 'react'
 
-const CustomNumber = (): JSX.Element => {
+type CustomNumberType = {
+  updateTotal: Function | undefined,
+  updatePrice: Function | undefined
+}
+
+const CustomNumber = ({ updateTotal, updatePrice }: CustomNumberType): JSX.Element => {
   const [quantity, setQuantity] = useState(0)
+  const [toSubtract, setToSubtract] = useState(false)
+
+  const invokeUpdateTotal = (quantity: number): void => {
+    if (typeof updateTotal === 'undefined') return;
+    updateTotal(quantity);
+  }
 
 
   const updateQuantity = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const value = Number(event.target.value);
-    const isPositive = value >= 0;
-    isPositive && setQuantity(value);
+    const quantity = Number(event.target.value);
+
+    if (isNaN(quantity)) return;
+
+    const isNegative = quantity < 0;
+
+    if (isNegative) return;
+    console.log(quantity)
+
+    setQuantity(quantity)
+    invokeUpdateTotal(quantity)
   }
+
+
+  const decreaseQuantity = () => {
+    if (quantity - 1 === -1) return;
+
+    const value = quantity > 0 ? quantity - 1 : quantity;
+    setQuantity(value);
+    invokeUpdateTotal(value)
+  }
+
+
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+    invokeUpdateTotal(quantity + 1)
+  }
+
 
   return (
     <div>
       <button
-        onClick={() => quantity > 0 && setQuantity(quantity - 1)}
+        onClick={decreaseQuantity}
         className='btn-operation'
       >
         <i className="fa fa-minus"></i>
@@ -22,12 +58,12 @@ const CustomNumber = (): JSX.Element => {
       <input
         onChange={updateQuantity}
         className='input-field-2'
-        type="number"
+        type="text"
         value={quantity}
       />
 
       <button
-        onClick={() => setQuantity(quantity + 1)}
+        onClick={increaseQuantity}
         className='btn-operation'
       >
         <i className="fa fa-plus"></i>
