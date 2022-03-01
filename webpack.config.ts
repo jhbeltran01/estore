@@ -1,5 +1,5 @@
-import path from "path";
-import { Configuration } from "webpack";
+import path from 'path';
+import { Configuration } from 'webpack';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,18 +8,20 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const entryPoints = {
-  home: "./src/pages/Home.tsx",
-  main: "./src/styles.ts",
-  products: "./src/pages/Products.tsx",
-  productsDetail: "./src/pages/ProductsDetail.tsx",
-  cart: "./src/pages/Cart.tsx"
+  home: './src/pages/Home.tsx',
+  main: './src/styles.ts',
+  products: './src/pages/Products.tsx',
+  productsDetail: './src/pages/ProductsDetail.tsx',
+  cart: './src/pages/Cart.tsx',
+  checkout: './src/pages/Checkout.tsx'
 }
 
 const htmlPageName = [
   'index',
   'products',
   'products-detail',
-  "cart"
+  'cart',
+  'checkout'
 ]
 
 const htmlTemplates = htmlPageName.map(name => (
@@ -34,8 +36,8 @@ const htmlTemplates = htmlPageName.map(name => (
 const config: Configuration = {
   entry: entryPoints,
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -43,12 +45,12 @@ const config: Configuration = {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env",
-              "@babel/preset-react",
-              "@babel/preset-typescript",
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
             ],
           },
         },
@@ -68,9 +70,9 @@ const config: Configuration = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      components: "./src/components"
+      components: './src/components'
     },
     plugins: [new TsconfigPathsPlugin(),]
   },
