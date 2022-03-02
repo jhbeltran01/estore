@@ -322,8 +322,25 @@
   transition: var.$transition-primary;
 
   &:hover {
-    background-color: var.$black;
-    color: var.$light-red;
-    border-color: var.$black;
+    @extend %btn-hover-2
+  }
+}
+
+
+.btn-order {
+  width: 100%;
+  height: 50px;
+  background-color: var.$light-red;
+  border-radius: 5px;
+  border: 1px solid var.$light-red;
+  font: {
+    size: var.$fs-25;
+    family: var.$source-code;
+    weight: 700;
+  }
+  transition: var.$transition-primary;
+
+  &:hover {
+    @extend %btn-hover-2
   }
 }

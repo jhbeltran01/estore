@@ -8,27 +8,27 @@ type CheckoutSummaryProps = {
 
 const CheckoutSummary = ({ name, subtotal, shippingFee }: CheckoutSummaryProps): JSX.Element => {
   return (
-    <div>
-      <h2>Cart Total</h2>
+    <div className='checkout__content'>
+      <h2 className='checkout__title'>Cart Total</h2>
 
       <div>
-        <div>
+        <div className='checkout__item flex-container-2'>
           <p>Product Name</p>
           <p>{name}</p>
         </div>
 
-        <div>
-          <p>Sub Total</p>
-          <p>${subtotal}</p>
-        </div>
-
-        <div>
+        <div className='checkout__item flex-container-2'>
           <p>Shipping Cost</p>
           <p>${shippingFee}</p>
         </div>
 
-        <div>
-          <strong>
+        <div className='checkout__item flex-container-2'>
+          <p>Sub Total</p>
+          <p>${subtotal}</p>
+        </div>
+
+        <div className='checkout__total'>
+          <strong className='flex-container-2'>
             <p>Grand Total</p>
             <p>${subtotal + shippingFee}</p>
           </strong>

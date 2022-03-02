@@ -3,8 +3,8 @@ import React from 'react'
 
 const PaymentMethods = (): JSX.Element => {
   return (
-    <div>
-      <h2>Payment Methods</h2>
+    <div className='checkout__content mar-top-2'>
+      <h2 className='checkout__title'>Payment Methods</h2>
 
       <form action="" method="get">
         <Radio name="payment" value="paypal" label='Paypal' />

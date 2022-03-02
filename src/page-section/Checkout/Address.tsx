@@ -9,10 +9,10 @@ type AddressProps = {
 const Address = ({ title }: AddressProps): JSX.Element => {
   return (
     <div>
-      <h2>{title} Address</h2>
+      <h2 className='checkout__title'>{title} Address</h2>
 
-      <div>
-        <div>
+      <form method="post">
+        <div className='grid-2-column-responsive-7'>
           <TextInput label='First Name' />
           <TextInput label='Last Name' />
           <EmailInput label='Email' />
@@ -21,13 +21,13 @@ const Address = ({ title }: AddressProps): JSX.Element => {
 
         <TextInput label='Address' />
 
-        <div>
+        <div className='grid-2-column-responsive-7'>
           <TextInput label='Country' />
           <TextInput label='City' />
           <TextInput label='State' />
           <TextInput label='ZIP Code' />
         </div>
-      </div>
+      </form>
     </div>
   )
 }

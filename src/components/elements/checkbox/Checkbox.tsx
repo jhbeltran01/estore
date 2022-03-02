@@ -7,9 +7,9 @@ type CheckboxProps = {
 
 const Checkbox = ({ name, label }: CheckboxProps) => {
   return (
-    <div>
-      <input type="checkbox" name={name} id="" />
-      <label htmlFor={name}>{label}</label>
+    <div className=''>
+      <input className='checkbox' type="checkbox" name={name} id={name} />
+      <label className='checkbox-label' htmlFor={name}>{label}</label>
     </div>
   )
 }

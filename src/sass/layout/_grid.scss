@@ -107,6 +107,14 @@
     gap: 50px;
   }
 }
+
+.grid-2-column-responsive-7 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+  }
+}
 // END OF 2 COLUMN RESPONSIVE
 
 

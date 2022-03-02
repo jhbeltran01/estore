@@ -17,22 +17,24 @@ const Checkout = (): JSX.Element => {
         )
       }
 
-      <div>
-        <div>
+      <div className='grid-2-column-responsive-5'>
+        <div className='checkout'>
           <Address title='Billing' />
 
-          <Checkbox name='sign-in' label='Create an account' />
+          <div className='mar-bot-6'>
+            <Checkbox name='sign-in' label='Create an account' />
+          </div>
           <Checkbox name='shipping-address' label='Ship to different address' />
 
           {/* <Address title='Shipping' /> */}
         </div>
 
-        <div>
+        <div className='checkout'>
           <CheckoutSummary name='Product Name 1' subtotal={99} shippingFee={1} />
           <PaymentMethods />
-        </div>
 
-        <button>Place Order</button>
+          <button className='btn-order mar-top-2'>Place Order</button>
+        </div>
       </div>
     </React.Fragment>
   )
