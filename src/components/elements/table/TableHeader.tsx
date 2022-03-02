@@ -1,10 +1,11 @@
 import React from 'react'
 
 type TableHeaderProps = {
-  headers: string[]
+  headers: string[],
+  className: string
 }
 
-const TableHeader = ({ headers }: TableHeaderProps): JSX.Element => {
+const TableHeader = ({ headers, className }: TableHeaderProps): JSX.Element => {
   return (
     <thead>
       <tr>
@@ -12,7 +13,7 @@ const TableHeader = ({ headers }: TableHeaderProps): JSX.Element => {
           headers.map((header: string, index: number) =>
             <th
               key={index}
-              className={header === 'Quantity' ? 'table-1__header' : 'table-1__header'}
+              className={className}
             >
               {header}
             </th>

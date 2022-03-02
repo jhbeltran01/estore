@@ -1,5 +1,5 @@
 import TableHeader from '@Components/elements/table/TableHeader'
-import TableRow from '@Components/elements/table/TableRow'
+import TableRow from '@Components/elements/table/CartTableRow'
 import CartType from '@Types/Cart/CartType'
 import React, { useState } from 'react'
 
@@ -31,7 +31,7 @@ function CartTable({ products }: CartTableProps) {
 
   return (
     <table className='table-1'>
-      <TableHeader headers={headers} />
+      <TableHeader headers={headers} className='table-1__header' />
       <tbody>
         {tableRows}
       </tbody>

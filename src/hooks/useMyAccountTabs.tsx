@@ -2,12 +2,13 @@ import Address from '@Components/tabs/MyAccountTabs/Address'
 import Description from '@Components/tabs/MyAccountTabs/Description'
 import Details from '@Components/tabs/MyAccountTabs/Details'
 import Orders from '@Components/tabs/MyAccountTabs/Orders'
+import { OrdersType } from '@Types/MyAccount/OrdersType'
 import React from 'react'
 
 const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque.';
 
 
-function useMyAccountTabs() {
+function useMyAccountTabs(orders: OrdersType[]) {
   const tabs = [
     {
       name: 'Dashboard',
@@ -17,7 +18,7 @@ function useMyAccountTabs() {
     {
       name: 'Orders',
       icon: <i className="fa fa-shopping-bag"></i>,
-      content: <Orders key={1} />
+      content: <Orders key={1} orders={orders} />
     },
     {
       name: 'Payment Method',

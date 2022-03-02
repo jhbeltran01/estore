@@ -10,6 +10,8 @@ type NavigationProps = {
   updateActiveTab: (event: React.MouseEvent<HTMLLIElement>) => void
 }
 
+
+
 function Navigation({ tabs, activeTab, updateActiveTab }: NavigationProps) {
 
   return (

@@ -3,9 +3,11 @@ import Navigation from '@Components/tabs/MyAccountTabs/Navigation';
 import useMyAccountTabs from '@Hooks/useMyAccountTabs';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import orders from '@Json/orders.json';
+
 
 function MyAccount() {
-  const tabs = useMyAccountTabs();
+  const tabs = useMyAccountTabs(orders);
   const [activeTab, setActiveTab] = useState(tabs[0].name)
 
 
@@ -35,6 +37,8 @@ function MyAccount() {
     </React.Fragment>
   )
 }
+
+
 
 ReactDOM.render(
   <React.StrictMode>
