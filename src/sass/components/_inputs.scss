@@ -121,5 +121,10 @@ textarea[class="input-field-3"] {
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
+    transition: background-color 250ms ease-in-out;
   }
+}
+
+.radio-desc {
+  padding: 0 1em 1em;
 }

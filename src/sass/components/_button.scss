@@ -330,9 +330,7 @@
 .btn-order {
   width: 100%;
   height: 50px;
-  background-color: var.$light-red;
   border-radius: 5px;
-  border: 1px solid var.$light-red;
   font: {
     size: var.$fs-25;
     family: var.$source-code;
@@ -340,7 +338,20 @@
   }
   transition: var.$transition-primary;
 
-  &:hover {
-    @extend %btn-hover-2
+
+
+  &:not(:disabled) {
+    background-color: var.$light-red;
+    border: 1px solid var.$light-red;
+
+    &:hover {
+      @extend %btn-hover-2
+    }
   }
+
+  &:disabled {
+    background-color: var.$gray-4;
+    border: 1px solid var.$gray-4;
+  }
+
 }
