@@ -4,18 +4,19 @@ import ReactDOM from 'react-dom';
 import products from '@Json/products.json';
 import ImageSlider from '@Components/slider/ProductsDetail/ImageSlider';
 import ProductContent from '@Page-section/Product/ProductContent';
-import Tabs from '@Components/tabs/Tab1/Tabs';
+import Tabs from '@Components/tabs/ProductDetailsTab/Tabs';
 import ProductCategory from '@Page-section/Product/ProductCategory';
 import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 import Tags from '@Components/tags/Tags';
-import tags from "@Json/tags.json"; import useTabs from '@Hooks/useTabs';
+import tags from "@Json/tags.json";
+import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
 import Header from '@Components/header/Header';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')
 
 function ProductsDetail() {
-  const [tabs, setTabs] = useState(useTabs(products[0]));
+  const [tabs, setTabs] = useState(useProductDetailsTabs(products[0]));
 
   return (
     <React.StrictMode>

@@ -1,7 +1,7 @@
 import React from "react"
-import DescriptionTab from "@Components/tabs/Tab1/DescriptionTab"
-import SpecificationTab from "@Components/tabs/Tab1/SpecificationTab"
-import ReviewsTab from "@Components/tabs/Tab1/ReviewsTab"
+import DescriptionTab from "@Components/tabs/ProductDetailsTab/DescriptionTab"
+import SpecificationTab from "@Components/tabs/ProductDetailsTab/SpecificationTab"
+import ReviewsTab from "@Components/tabs/ProductDetailsTab/ReviewsTab"
 
 const useTabs = (products: any) => {
   const tabs = [
