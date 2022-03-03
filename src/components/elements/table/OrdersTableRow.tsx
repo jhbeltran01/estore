@@ -12,12 +12,12 @@ type OrdersTableRowProps = {
 function OrdersTableRow({ name, date, price, status, number }: OrdersTableRowProps) {
   return (
     <tr>
-      <td>{number}</td>
-      <td>{name}</td>
-      <td>{date}</td>
-      <td>${price}</td>
-      <td>{status}</td>
-      <td><button>View</button></td>
+      <td className='table-2__data'>{number + 1}</td>
+      <td className='table-2__data'>{name}</td>
+      <td className='table-2__data'>{date}</td>
+      <td className='table-2__data'>${price}</td>
+      <td className='table-2__data'>{status}</td>
+      <td className='table-2__data'><button className='btn-primary'>View</button></td>
     </tr>
   )
 }

@@ -17,13 +17,13 @@ const productsDataForCart = products.filter(product =>
   }
 })
 
-export const UpdateSubTotalContext = React.createContext(((price: number, toSubtract: boolean) => { }));
+export const UpdateSubTotalContext = React.createContext(((price: number) => { }));
 
 const Cart = (): JSX.Element => {
   const [subTotal, setSubTotal] = useState(0);
 
-  const updateSubTotal = (price: number, toSubtract: boolean): void => {
-    toSubtract ? setSubTotal(subTotal - price) : setSubTotal(subTotal + price)
+  const updateSubTotal = (price: number): void => {
+    setSubTotal(subTotal + price)
   }
 
 

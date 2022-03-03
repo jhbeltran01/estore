@@ -1,5 +1,5 @@
 import TableHeader from '@Components/elements/table/TableHeader'
-import TableRow from '@Components/elements/table/CartTableRow'
+import CartTableRow from '@Components/elements/table/CartTableRow'
 import CartType from '@Types/Cart/CartType'
 import React, { useState } from 'react'
 
@@ -17,23 +17,22 @@ function CartTable({ products }: CartTableProps) {
   }
 
 
-  const tableRows = productsToBeDisplayed.map((product: CartType) => (
-    <TableRow
-      key={product.id}
-      id={product.id}
-      imgSrc={product.imgSrc}
-      name={product.name}
-      price={product.price}
-      deleteProduct={deleteProduct}
-    />
-  ));
-
-
   return (
     <table className='table-1'>
       <TableHeader headers={headers} className='table-1__header' />
       <tbody>
-        {tableRows}
+        {
+          productsToBeDisplayed.map((product: CartType) => (
+            <CartTableRow
+              key={product.id}
+              id={product.id}
+              imgSrc={product.imgSrc}
+              name={product.name}
+              price={product.price}
+              deleteProduct={deleteProduct}
+            />
+          ))
+        }
       </tbody>
     </table>
   )

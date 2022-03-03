@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import CustomNumber from '../number/CustomNumber'
 import ProductCol from './ProductCol'
 
-type TableRowProps = {
+type CartTableRowProps = {
   id: string,
   imgSrc: string,
   name: string,
@@ -11,21 +11,20 @@ type TableRowProps = {
   deleteProduct: Function
 }
 
-function TableRow({ id, imgSrc, name, price, deleteProduct }: TableRowProps) {
+function CartTableRow({ id, imgSrc, name, price, deleteProduct }: CartTableRowProps) {
   const [total, setTotal] = useState(0);
   const updateSubTotal = useContext(UpdateSubTotalContext);
 
   const updateTotal = (quantity: number) => {
     const newTotal = quantity * price;
-    setTotal(newTotal);
 
-    const toSubtract = newTotal < total;
-    updateSubTotal(price, toSubtract)
+    updateSubTotal(newTotal - total)
+    setTotal(newTotal);
   }
 
   const deleteRow = (event: React.MouseEvent<HTMLButtonElement>) => {
     deleteProduct(event.currentTarget.id);
-    updateSubTotal(total, true);
+    updateSubTotal(-total);
   }
 
   return (
@@ -51,4 +50,4 @@ function TableRow({ id, imgSrc, name, price, deleteProduct }: TableRowProps) {
   )
 }
 
-export default TableRow
+export default CartTableRow

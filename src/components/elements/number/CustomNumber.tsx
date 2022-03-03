@@ -17,15 +17,16 @@ const CustomNumber = ({ updateTotal, updatePrice }: CustomNumberType): JSX.Eleme
 
   const updateQuantity = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const quantity = Number(event.target.value);
-
     if (isNaN(quantity)) return;
 
     const isNegative = quantity < 0;
 
     if (isNegative) return;
-    console.log(quantity)
 
     setQuantity(quantity)
+    const isZero = quantity === 0;
+
+    // if (isZero) return;
     invokeUpdateTotal(quantity)
   }
 
