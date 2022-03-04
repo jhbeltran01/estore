@@ -26,6 +26,9 @@
 .clr-black {
   color: var.$black;
 }
+.clr-black-2{
+  color: var.$black-3;
+}
 .clr-gray {
   color: var.$gray-3;
 }
@@ -51,7 +54,9 @@
 .fw-600 {
   font-weight: 600;
 }
-
+.fw-400 {
+  font-weight: 400;
+}
 
 // position items
 .pos-item {
@@ -75,6 +80,13 @@
 .mar {
   margin: 2rem 1rem;
 }
+.mar-res {
+  margin:  0 1rem;
+
+  @include viewport.medium {
+    margin: 2rem 0 0;
+  }
+}
 .mar-right {
   margin-right: 1rem;
 }
@@ -90,6 +102,10 @@
 .mar-x-auto {
   margin: 0 auto;
 }
+.mar-x-2 {
+  margin: 0 1rem
+}
+
 .mar-y {
   margin: 1rem 0
 }
@@ -117,6 +133,7 @@
 .mar-top-2 {
   margin-top: 2rem;
 }
+
 // paddings
 .pad-1 {
   padding: 1em;
@@ -238,7 +255,9 @@
   border: 1px solid var.$light-red;
   padding: 1px;
 }
-
+.border-bottom:not(:last-child) {
+  border-bottom: 1px solid var.$gray-4;
+}
 
 // heights
 .height-m-content {
@@ -252,7 +271,12 @@
 
 
 // transition
-
 .transition-1 {
   transition: 250ms ease-in-out;
+}
+
+
+// capitalize
+.capitalize {
+  text-transform: capitalize;
 }

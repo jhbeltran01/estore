@@ -53,10 +53,12 @@
 
 .input-field-4 {
   @extend %input-field;
-
+  transition: var.$transition-primary;
+  border: 1.5px solid var.$gray-4;
+  outline: none;
 
   &:focus {
-    outline-color: var.$light-red;
+    border-color: var.$light-red;
   }
 }
 
@@ -85,6 +87,8 @@ textarea[class="input-field-3"] {
 
 
 .checkbox-label {
+  cursor: pointer;
+
   &:before {
     content: '';
     background-color: var.$gray-4;
@@ -111,6 +115,8 @@ textarea[class="input-field-3"] {
 
 
 .radio-label {
+  cursor: pointer;
+
   &::before {
     content: '';
     background-color: var.$gray-4;
@@ -126,5 +132,5 @@ textarea[class="input-field-3"] {
 }
 
 .radio-desc {
-  padding: 0 1em 1em;
+  padding: 0 1.5em 1em;
 }

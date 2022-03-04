@@ -8,7 +8,7 @@ type DescriptionProps = {
 function Description({ title, description }: DescriptionProps) {
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className='mar-bot-6'>{title}</h2>
       <p>{description}</p>
     </div>
   )

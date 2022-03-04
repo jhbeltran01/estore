@@ -4,7 +4,7 @@ import useMyAccountTabs from '@Hooks/useMyAccountTabs';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import orders from '@Json/orders.json';
-
+import '@Utils/toggleMobileNavMenu';
 
 function MyAccount() {
   const tabs = useMyAccountTabs(orders);
@@ -21,14 +21,14 @@ function MyAccount() {
         )
       }
 
-      <div>
+      <div className='grid-2-column-responsive-8 pad-3'>
         <Navigation
           tabs={tabs}
           activeTab={activeTab}
           updateActiveTab={(event) => setActiveTab(event.currentTarget.id)}
         />
 
-        <div>
+        <div className='pad-2 bg-white-2 mar-res height-m-content'>
           {
             tabs.map(tab => tab.name === activeTab && tab.content)
           }

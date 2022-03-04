@@ -7,7 +7,7 @@ type NavigationProps = {
     content: JSX.Element
   }[],
   activeTab: string,
-  updateActiveTab: (event: React.MouseEvent<HTMLLIElement>) => void
+  updateActiveTab: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 
@@ -15,17 +15,26 @@ type NavigationProps = {
 function Navigation({ tabs, activeTab, updateActiveTab }: NavigationProps) {
 
   return (
-    <ul>
+    <ul className='nav-3'>
       {
         tabs.map((tab, index) => (
-          <li onClick={updateActiveTab} key={index} id={tab.name}>
-            <a href="#">
-              {tab.icon}
-              {tab.name}
-            </a>
+          <li className='border-bottom' key={index} >
+            <button
+              className={activeTab == tab.name ? 'btn-nav active' : 'btn-nav'}
+              onClick={updateActiveTab}
+              id={tab.name}
+            >
+              {tab.icon} {tab.name}
+            </button>
           </li>
         ))
       }
+      <li>
+        <a className='btn-nav' href="index.html">
+          <i className="fa fa-sign-out-alt"></i>
+          Logout
+        </a>
+      </li>
     </ul>
   )
 }

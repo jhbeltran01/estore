@@ -115,6 +115,22 @@
     gap: 0 20px;
   }
 }
+
+.grid-2-column-responsive-8 {
+  @include viewport.medium {
+    display: grid;
+    grid-template-columns: 0.9fr 2fr;
+    gap: 0 30px;
+  }
+}
+
+.grid-2-column-responsive-9 {
+   @include viewport.large {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 0 20px;
+   }
+}
 // END OF 2 COLUMN RESPONSIVE
 
 

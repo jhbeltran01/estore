@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "type": "payment",
+    "address": "123 Payment Street, Los Angeles, CA",
+    "mobileNumber": "012-345-6789"
+  },
+  {
+    "id": 1,
+    "type": "shipping",
+    "address": "123 Shipping Street, Los Angeles, CA",
+    "mobileNumber": "012-345-6789"
+  }
+]

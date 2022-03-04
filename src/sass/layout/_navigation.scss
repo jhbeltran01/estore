@@ -1,6 +1,6 @@
 @use '../abstract/variables' as var;
 @use '../abstract/breakpoints' as viewport;
-
+@use '../abstract/placeholders' as *;
 
 .nav {
   background-color: var.$black;
@@ -63,4 +63,21 @@
 .nav-secondary {
   background-color: var.$black;
   padding: 4px 0;
+}
+
+.nav-3 {
+  list-style-type: none;
+  background-color: var.$white;
+  border: {
+    top: 5px solid var.$black;
+    bottom: 5px solid var.$black;
+  }
+  margin: 2rem 1rem 0;
+  height: max-content;
+
+
+  @include viewport.large {
+    margin: 2rem 0 0;
+    border: none;
+  }
 }

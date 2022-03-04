@@ -41,7 +41,7 @@ const ReviewsTab = ({ reviews }: ReviewsTabProps): JSX.Element => {
             <input className='input-field-3 mar-bot-2' type="email" name="email" id="email" placeholder='Email' />
           </div>
           <textarea className='input-field-3 mar-bot-2' name="review" id="review" placeholder='Review'></textarea>
-          <button className='btn-submit-2' type="submit">Submit</button>
+          <button className='btn-primary' type="submit">Submit</button>
         </form>
       </div>
     </div >

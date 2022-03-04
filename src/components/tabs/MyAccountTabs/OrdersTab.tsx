@@ -9,11 +9,10 @@ type OrdersProps = {
 
 const headers = ['No.', 'Product', 'Date', 'Price', 'Status', 'Action']
 
-function Orders({ orders }: OrdersProps) {
-  console.log(orders)
+function OrdersTab({ orders }: OrdersProps) {
   return (
-    <div>
-      <table>
+    <div className='overflow-scroll'>
+      <table className='table-2'>
         <TableHeader headers={headers} className='table-2__header' />
         <tbody>
           {
@@ -34,4 +33,4 @@ function Orders({ orders }: OrdersProps) {
   )
 }
 
-export default Orders
+export default OrdersTab
