@@ -11,22 +11,22 @@
   &:hover &__content {
     padding: 0.5em 0;
   }
-
   &:hover &__content--height-on-hover-1 {
     height: 136px;
   }
-
-
   &:hover &__content--height-on-hover-2 {
     height: 96px;
   }
-
   &:hover &__title {
     color: var.$white;
   }
 
+
   &__title {
     cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
 
     &::after {
       display: inline-block;
@@ -39,6 +39,7 @@
       border-left: 0.3em solid transparent;
     }
   }
+
 
   &__content {
     background-color: var.$light-red;
@@ -63,6 +64,10 @@
 
 
     &:hover {
+      background-color: var.$white;
+    }
+
+    &:is(.active) {
       background-color: var.$white;
     }
   }

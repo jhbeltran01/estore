@@ -133,6 +133,11 @@
 .mar-top-2 {
   margin-top: 2rem;
 }
+.mar-top-res {
+  @include viewport.large {
+    margin-top: 2rem;
+  }
+}
 
 // paddings
 .pad-1 {
