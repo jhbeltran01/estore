@@ -16,7 +16,7 @@ const entryPoints = {
   checkout: './src/pages/Checkout.tsx',
   myAccount: './src/pages/MyAccount.tsx',
   wishlist: './src/pages/Wishlist.tsx',
-  signin: './src/pages/Wishlist.tsx'
+  signin: './src/pages/SignIn.tsx'
 }
 
 const htmlPageName = [
