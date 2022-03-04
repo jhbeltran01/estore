@@ -33,7 +33,8 @@
 
   &-4 {
     display: flex;
-    gap: 0 10px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   &-5 {

@@ -16,7 +16,8 @@ const entryPoints = {
   checkout: './src/pages/Checkout.tsx',
   myAccount: './src/pages/MyAccount.tsx',
   wishlist: './src/pages/Wishlist.tsx',
-  signin: './src/pages/SignIn.tsx'
+  signin: './src/pages/SignIn.tsx',
+  contact: './src/pages/Contact.tsx'
 }
 
 const htmlPageName = [
@@ -27,7 +28,8 @@ const htmlPageName = [
   'checkout',
   'account',
   'wishlist',
-  'signin'
+  'signin',
+  'contact'
 ]
 
 const htmlTemplates = htmlPageName.map(name => (

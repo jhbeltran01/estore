@@ -49,13 +49,19 @@
 .fs-20 {
   font-size: var.$fs-20;
 }
-
+.fs-25 {
+  font-size: var.$fs-25;
+}
 // font-weight 
 .fw-600 {
   font-weight: 600;
 }
 .fw-400 {
   font-weight: 400;
+}
+
+.ff-source-code {
+  font-family: 'Source Code Pro', monospace;
 }
 
 // position items
@@ -87,8 +93,18 @@
     margin: 2rem 0 0;
   }
 }
+.mar-res {
+  margin: 2rem 1rem;
+
+  @include viewport.large {
+    margin: 2rem 0 0;
+  }
+}
 .mar-right {
   margin-right: 1rem;
+}
+.mar-right-2 {
+  margin-right: 0.5rem;
 }
 .mar-x {
   margin: 0 1rem;
@@ -248,7 +264,7 @@
   font-weight: 900;
   padding-right: 5px;
 }
-
+ 
 // list
 .style-type-none {
   list-style-type: none;

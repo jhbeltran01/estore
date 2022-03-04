@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>E-Store - Product Detail</title>
+</head>
+
+<body class="bg-white">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="bg-black pad-3">
+      <div class="header__info flex-container-responsive-1">
+        <div>
+          <i class="clr-light-red fs-14 fa fa-envelope"></i>
+          <span class="clr-light-red fs-14">support@email.com</span>
+        </div>
+
+        <div>
+          <i class="clr-light-red fs-14 fa fa-phone-alt"></i>
+          <span class="clr-light-red fs-14">+012-345-6789</span>
+        </div>
+      </div>
+
+      <div class="header__mobile-menu flex-container-2">
+        <h6 class="header__title">MENU</h6>
+
+        <button class="btn-burger flex-container-1">
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav pad-3">
+      <ul class="nav__list flex-container-responsive">
+        <li><a class="nav__link" href="./index.html">Home</a></li>
+        <li><a class="nav__link" href="./products.html">Products</a></li>
+        <li><a class="nav__link" href="./products-detail.html">Product Detail</a></li>
+        <li><a class="nav__link" href="./cart.html">Cart</a></li>
+        <li><a class="nav__link" href="./checkout.html">Checkout</a></li>
+        <li><a class="nav__link" href="./account.html">My Account</a></li>
+        <li class="dropdown">
+          <button class="nav__link dropdown__title">More Pages</button>
+          <ul class="dropdown__content dropdown__content--height-on-hover-1">
+            <li><a class="dropdown__link clr-black" href="./wishlist.html">Wishlist</a></li>
+            <li><a class="dropdown__link clr-black" href="./signin.html">Login & Register</a></li>
+            <li><a class="dropdown__link clr-black active" href="./contact.html">Contact Us</a></li>
+          </ul>
+        </li>
+        <li class="dropdown push-right">
+          <button class="nav__link dropdown__title">User Account</button>
+          <ul class="dropdown__content dropdown__content--height-on-hover-2">
+            <li><a class="dropdown__link clr-black" href="#">Login</a></li>
+            <li><a class="dropdown__link clr-black" href="#">Register</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="search-bar"></div>
+  </header>
+  <!-- END OF HEADER -->
+
+
+
+  <!-- MAIN -->
+  <main id="root"></main>
+  <!-- END OF MAIN -->
+
+
+
+  <!-- FOOTER  -->
+  <footer class="footer">
+    <div class="footer__content grid-2-column-responsive-2">
+      <div>
+        <h4 class="footer__title">Get in Touch</h4>
+        <ul class="footer__list">
+          <li class="footer__item"><i class="fa fa-map-marker"></i> <span>123 E Store, Los Angeles, USA</span></li>
+          <li class="footer__item"><i class="fa fa-envelope"></i> <span>email@example.com</span></li>
+          <li class="footer__item"><i class="fa fa-phone"></i> <span>+123-456-7890</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__title">Follow Us</h4>
+        <ul class="footer__list flex-container-4">
+          <li class="footer__item"><button class="btn-social-media"><i class="fab fa-twitter"></i></button></li>
+          <li class="footer__item"><button class="btn-social-media"><i class="fab fa-facebook-f"></i></button></li>
+          <li class="footer__item"><button class="btn-social-media"><i class="fab fa-linkedin-in"></i></button></li>
+          <li class="footer__item"><button class="btn-social-media"><i class="fab fa-instagram"></i></button></li>
+          <li class="footer__item"><button class="btn-social-media"><i class="fab fa-youtube"></i></button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__title">Company Info</h4>
+
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#">About Us</a></li>
+          <li><a class="footer__link" href="#">Privacy Policy</a></li>
+          <li><a class="footer__link" href="#">Terms & Condition</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__title">Purchase Info</h4>
+
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#">Payment Policy</a></li>
+          <li><a class="footer__link" href="#">Shipping Policy</a></li>
+          <li><a class="footer__link" href="#">Return Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__payment flex-container-responsive-1">
+      <div class="mar-bot-2">
+        <div>
+          <h5 class="footer__payment-title">We Accept:</h5>
+          <img class="footer__payment-img" src="images/payment-method.png" alt="">
+        </div>
+      </div>
+
+      <div>
+        <h5 class="footer__payment-title">Secured By:</h5>
+        <div class="flex-container-5">
+          <img class="footer__payment-security" src="images/godaddy.svg" alt="GoDaddy Payment Security">
+          <img class="footer__payment-security" src="images/norton.svg" alt="Norton Payment Security">
+          <img class="footer__payment-security" src="images/ssl.svg" alt="SSL Payment Security">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright grid-2-column-responsive-4">
+      <p>Copyright © <strong class="clr-light-red">HTML Codex</strong>. All Rights Reserved</p>
+      <p>Template By <strong class="clr-light-red">HTML Codex</strong></p>
+    </div>
+  </footer>
+  <!-- END OF FOOTER  -->
+
+  <script defer="defer" src="https://kit.fontawesome.com/64e6b9188a.js" crossorigin="anonymous"></script>
+  <script defer="defer" src="contact.js"></script>
+</body>
+
+</html>

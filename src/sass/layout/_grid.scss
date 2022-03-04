@@ -154,6 +154,14 @@
     gap: 20px;
   }
 }
+
+.grid-3-column-responsive-3 {
+  @include viewport.large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
 // END OF 3 COLUMN RESPONSIVE
 
 
