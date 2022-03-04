@@ -13,8 +13,12 @@ function Header() {
         <Search1 />
 
         <div>
-          <button className='btn-primary mar-right'><i className="fa fa-heart"></i>(0)</button>
-          <button className='btn-primary'><i className="fa fa-shopping-cart"></i>(0)</button>
+          <a href="wishlist.html">
+            <button className='btn-primary mar-right'><i className="fa fa-heart"></i>(0)</button>
+          </a>
+          <a href="cart.html">
+            <button className='btn-primary'><i className="fa fa-shopping-cart"></i>(0)</button>
+          </a>
         </div>
       </div>
     </div>
