@@ -46,3 +46,13 @@
   border: 1px solid var.$gray-4;
   border-radius: 4px;
 }
+
+%icon {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 30px;
+  color: var.$white;
+  padding: 0;
+  line-height: 1;
+  transition: var.$transition-primary;
+}

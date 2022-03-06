@@ -109,27 +109,33 @@
 
   &:hover {
     background-color: var.$black-3;
+  }
+  &:hover .left::before,
+  &:hover .right::before {
     color: var.$light-red;
   }
 
+  &:is(.left) {
+    transform: translateX(40px);
+  }
 
-  &--left {
-    transform: translateX(20px);
+  &:is(.right) {
+    transform: translateX(-40px);
+  }
 
+  .left-arrow {
     &::before {
-      content: "\f105";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      font-size: 30px;
-      color: var.$white;
-      padding: 0;
-      line-height: 1;
+      content: "\f104";
+      @extend %icon;
     }
   }
 
 
-  &--right {
-    transform: translateX(-20px);
+  .right-arrow {
+    &::before {
+      content: "\f105";
+      @extend %icon;
+    }
   }
 }
 

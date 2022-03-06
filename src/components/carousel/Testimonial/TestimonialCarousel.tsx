@@ -24,8 +24,12 @@ function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
     (
       <div className='carousel-testimonial mar-x-2'>
         <div className='carousel-testimonial__overlay flex-container-3'>
-          <button className='btn-next-2 btn-next-2--left'></button>
-          <button className='btn-next-2 btn-next-2--right'></button>
+          <button className='btn-next-2  left'>
+            <span className='left-arrow'></span>
+          </button>
+          <button className='btn-next-2 right'>
+            <span className='right-arrow'></span>
+          </button>
         </div>
 
         <div className='carousel-testimonial__slider flex'>
