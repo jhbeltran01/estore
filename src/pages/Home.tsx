@@ -24,7 +24,7 @@ const App = (): JSX.Element => {
         )
       }
 
-      {/* <HeroCarousel data={carouselContent} /> */}
+      <HeroCarousel data={carouselContent} />
 
       {
         ReactDOM.createPortal(
@@ -39,7 +39,7 @@ const App = (): JSX.Element => {
         )
       }
 
-      {/* {
+      {
         ReactDOM.createPortal(
           <ProductCategory
             productCategory='Recent Products'
@@ -47,7 +47,7 @@ const App = (): JSX.Element => {
             name='recent' />,
           document.getElementById('recent-products')!
         )
-      } */}
+      }
 
       <TestimonialCarousel testimonials={testimonials} />
     </React.Fragment>
