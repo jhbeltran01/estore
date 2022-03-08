@@ -1,4 +1,4 @@
-export type UseSliderTransitionProps = {
+export type UseCarouselTransitionProps = {
   carouselName: string,
   sliderName: string,
   contentLength: number,

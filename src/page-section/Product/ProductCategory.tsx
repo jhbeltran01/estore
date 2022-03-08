@@ -4,10 +4,11 @@ import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 
 export type ProductCategoryProps = {
   productCategory: string,
-  products: any
+  products: any,
+  name: string
 }
 
-function ProductCategory({ productCategory, products }: ProductCategoryProps): JSX.Element {
+function ProductCategory({ productCategory, products, name }: ProductCategoryProps): JSX.Element {
   return (
     <div className='section'>
       <div className='section__header'>
@@ -20,7 +21,7 @@ function ProductCategory({ productCategory, products }: ProductCategoryProps): J
         </div>
       </div>
 
-      <ProductsSlider products={products} />
+      <ProductsSlider products={products} name={name} />
     </div>
   )
 }

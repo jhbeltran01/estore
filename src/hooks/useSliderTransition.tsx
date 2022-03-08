@@ -1,30 +1,33 @@
-import { UseSliderTransitionProps } from "../types/Slider/UseSliderTransitionProps";
+import React from 'react'
 
-const useSliderTransition = ({ carouselName, sliderName, contentLength, intervalTime }: UseSliderTransitionProps) => {
+type useSliderTransitionProps = {
+  carouselName: string,
+  sliderName: string,
+  contentLength: number,
+  intervalTime: number,
+  products: {}[]
+}
+
+const useSliderTransition = ({ carouselName, sliderName, contentLength, intervalTime, products }: useSliderTransitionProps) => {
   const carousel = document.querySelector(carouselName) as HTMLDivElement;
   const slider = carousel.querySelector(sliderName) as HTMLDivElement;
+  const contentWidth = carousel.querySelector('.js-carousel-content')!.clientWidth;
+
+  let tempDataWithClones: {}[] = [];
   let displayedContent = 1;
 
-  slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
+  slider.style.transform = `translateX(-${contentWidth * 1}px)`;
 
-  const sliderTransition = setInterval(() => {
-    if (displayedContent < contentLength - 1) {
-      ++displayedContent;
-      slider.style.transition = '500ms ease-in-out';
-      slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
-    }
+  const sliderInterval = setInterval(() => {
+    ++displayedContent;
+    slider.style.transition = '250ms ease-in-out'
+    slider.style.transform = `translateX(-${contentWidth * displayedContent}px)`;
+
+    // if (displayedContent)  
   }, intervalTime)
 
 
-  slider.addEventListener('transitionend', () => {
-    if (displayedContent === contentLength - 1) {
-      slider.style.transition = 'unset';
-      slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
-      displayedContent = 1;
-    }
-  })
-
-  return sliderTransition;
+  return { sliderInterval, tempDataWithClones }
 }
 
-export default useSliderTransition;
+export default useSliderTransition

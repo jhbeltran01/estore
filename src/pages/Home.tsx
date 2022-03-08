@@ -23,27 +23,31 @@ const App = (): JSX.Element => {
           document.getElementById('search-bar')!
         )
       }
-      <HeroCarousel data={carouselContent} />
+
+      {/* <HeroCarousel data={carouselContent} /> */}
 
       {
         ReactDOM.createPortal(
           (
             <ProductCategory
               productCategory='Featured Products'
-              products={featuredProducts} />
+              products={featuredProducts}
+              name='featured'
+            />
           ),
           document.getElementById('featured-products')!
         )
       }
 
-      {
+      {/* {
         ReactDOM.createPortal(
           <ProductCategory
             productCategory='Recent Products'
-            products={featuredProducts} />,
+            products={featuredProducts}
+            name='recent' />,
           document.getElementById('recent-products')!
         )
-      }
+      } */}
 
       <TestimonialCarousel testimonials={testimonials} />
     </React.Fragment>

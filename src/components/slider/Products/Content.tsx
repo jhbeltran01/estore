@@ -4,11 +4,11 @@ import ProductsContentProps from '@Types/Products/ProductContentProps';
 
 
 
-function Content({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
+function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
   const stars: JSX.Element[] = useRating(rating);
 
   return (
-    <div className='wrapper-2' style={isForCarousel ? { minWidth: cardWidth } : {}}>
+    <div className='wrapper-2 js-carousel-content' style={isForCarousel ? { minWidth: cardWidth } : {}}>
       <div className='card'>
         <div className='card__content'>
           <h2 className='card__title'>{name}</h2>
@@ -42,4 +42,4 @@ function Content({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: Prod
   );
 }
 
-export default Content;
+export default ProductsContent;

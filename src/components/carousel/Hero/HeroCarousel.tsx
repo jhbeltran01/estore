@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
-import useSliderTransition from '@Hooks/useSliderTransition';
+import useSliderTransition from '@Hooks/useCarouselTransition';
 import { HeroContentType } from '@Types/Hero/HeroContentType';
 import HeroContent from './Content';
 
