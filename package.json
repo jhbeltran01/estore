@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://github.com/jhbeltran01/estore.git",
   "scripts": {
     "start": "webpack --config webpack.config.ts --mode development --watch",
     "build": "webpack --config webpack.config.ts --mode production",
-    "watch": "lite-server"
+    "watch": "lite-server",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",

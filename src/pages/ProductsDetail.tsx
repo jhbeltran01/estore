@@ -56,13 +56,13 @@ function ProductsDetail() {
         </div>
 
         <div className='overflow-hidden'>
-          <ProductCategory productCategory='Recent Products' products={recentProducts} />
+          <ProductCategory productCategory='Recent Products' products={recentProducts} name="recent" />
         </div>
       </div>
 
       {
         ReactDOM.createPortal(
-          <ProductsSlider products={products} />,
+          <ProductsSlider products={products} name="side-bar" />,
           document.getElementById('products-slider')!
         )
       }

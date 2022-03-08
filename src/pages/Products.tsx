@@ -24,7 +24,7 @@ function App() {
       <ProductsPagination numberOfItemPerPage={9} products={products} />
 
       {
-        ReactDOM.createPortal(<ProductsSlider products={products} />, document.getElementById('products-slider')!)
+        ReactDOM.createPortal(<ProductsSlider products={products} name="featured" />, document.getElementById('products-slider')!)
       }
 
       {
