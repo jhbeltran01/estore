@@ -43,7 +43,7 @@ const App = (): JSX.Element => {
         ReactDOM.createPortal(
           <ProductCategory
             productCategory='Recent Products'
-            products={featuredProducts}
+            products={recentProducts}
             name='recent' />,
           document.getElementById('recent-products')!
         )
