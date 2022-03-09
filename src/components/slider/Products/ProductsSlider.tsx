@@ -26,28 +26,29 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
       carouselName: `.js-${name}-carousel`,
       sliderName: `.js-${name}-carousel__slider`,
       contentLength: dataWithClones.length,
-      intervalTime: 2000
+      intervalTime: 5000,
+      width: 0
     }
 
     const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
 
     let carouselInterval: NodeJS.Timer;
-    const isForCarousel = carousel.clientWidth < 736;
-    if (isForCarousel) {
-      carouselInterval = useCarouselTransition(carouselProps)
+    const isForLargeViewport = carousel.clientWidth >= 992;
+    const isForMediumViewport = carousel.clientWidth >= 736;
+
+    if (isForLargeViewport) {
+      setDataWithClones([products[products.length - 3], products[products.length - 2], products[products.length - 1], ...products, products[0]])
+      carouselProps.width = 992;
+      carouselInterval = useSliderTransition(carouselProps);
+    } else if (isForMediumViewport) {
+      setDataWithClones([products[products.length - 2], products[products.length - 1], ...products, products[0]])
+      carouselInterval = useSliderTransition(carouselProps);
     } else {
-      const sliderProps = {
-        ...carouselProps,
-        products: products
-      }
-      var { sliderInterval, tempDataWithClones } = useSliderTransition(sliderProps);
-      setDataWithClones(tempDataWithClones)
+      carouselInterval = useCarouselTransition(carouselProps)
     }
 
     return () => {
       clearInterval(carouselInterval);
-      if (isForCarousel) return;
-      clearInterval(sliderInterval)
     }
   }, [carouselWidth])
 
@@ -63,12 +64,12 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
 
-  const isMediumViewport: boolean = carouselWidth >= 736;
-  const isLargeViewport: boolean = carouselWidth >= 992;
+  const isForMediumViewport = carouselWidth >= 736;
+  const isForLargeViewport = carouselWidth >= 992;
 
-  if (isLargeViewport) {
+  if (isForLargeViewport) {
     setCarouselWidth(carouselWidth / 4);
-  } else if (isMediumViewport) {
+  } else if (isForMediumViewport) {
     setCarouselWidth(carouselWidth / 3)
   } else {
     // do nothing
