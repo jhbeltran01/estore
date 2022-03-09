@@ -11,21 +11,24 @@ type useSliderTransitionProps = {
 const useSliderTransition = ({ carouselName, sliderName, contentLength, intervalTime, products }: useSliderTransitionProps) => {
   const carousel = document.querySelector(carouselName) as HTMLDivElement;
   const slider = carousel.querySelector(sliderName) as HTMLDivElement;
-  const contentWidth = carousel.querySelector('.js-carousel-content')!.clientWidth;
+  const content = carousel.querySelector('.js-carousel-content') as HTMLDivElement;
+  const contentWidth = content.clientWidth;
+
+  console.log(content)
 
   let tempDataWithClones: {}[] = [];
   let displayedContent = 1;
 
-  slider.style.transform = `translateX(-${contentWidth * 1}px)`;
-
   const sliderInterval = setInterval(() => {
-    ++displayedContent;
     slider.style.transition = '250ms ease-in-out'
     slider.style.transform = `translateX(-${contentWidth * displayedContent}px)`;
 
+    ++displayedContent;
     // if (displayedContent)  
+    console.log(displayedContent)
   }, intervalTime)
 
+  tempDataWithClones = products;
 
   return { sliderInterval, tempDataWithClones }
 }
