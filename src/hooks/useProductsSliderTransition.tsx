@@ -8,16 +8,15 @@ const useProductsSliderTransition = ({ name, contentLength, intervalTime }: useP
   const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
   const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
   const content = carousel.querySelector('.js-carousel-content') as HTMLDivElement;
-  const contentWidth = content.clientWidth;
 
   let displayedContent = carousel.clientWidth >= 992 ? 3 : 2;
 
-  slider.style.transform = `translateX(-${contentWidth * displayedContent}px)`;
+  slider.style.transform = `translateX(-${content.clientWidth * displayedContent}px)`;
 
   const sliderInterval = setInterval(() => {
     ++displayedContent;
     slider.style.transition = '500ms ease-in-out'
-    slider.style.transform = `translateX(-${contentWidth * displayedContent}px)`;
+    slider.style.transform = `translateX(-${content.clientWidth * displayedContent}px)`;
   }, intervalTime)
 
   const numberOfClones = carousel.clientWidth >= 992 ? 4 : 3
