@@ -29,25 +29,18 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
 
   useEffect(() => {
     const sliderProps = {
-      carouselName: '.carousel-hero',
-      sliderName: '.carousel-hero__slider',
+      name: 'hero',
       contentLength: dataWithClones.length,
       intervalTime: 5000
     }
-
-    // useSliderTransition returns a reference to a setInterval function
-    const sliderTransition = useSliderTransition(sliderProps);
-
-    return () => {
-      clearInterval(sliderTransition);
-    }
-  }, [carouselWidth])
+    useSliderTransition(sliderProps);
+  }, [])
 
 
 
   return ReactDOM.createPortal(
     (
-      <div className='carousel-hero' >
+      <div className='carousel-hero js-hero-carousel' >
         <div className='hide-in-mobile'>
           <button><i className="fas fa-chevron-right"></i></button>
         </div>
@@ -55,7 +48,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
         <div className='hide-in-mobile'>
           <button><i className="fas fa-chevron-left"></i></button>
         </div>
-        <div className='carousel-hero__slider flex'>
+        <div className='carousel-hero__slider flex js-hero-carousel-slider'>
           {
             dataWithClones.map((datum: any, index: number) => (
               <HeroContent

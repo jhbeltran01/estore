@@ -1,13 +1,17 @@
-import { UseCarouselTransitionProps } from "../types/Slider/UseCarouselTransitionProps";
+export type UseCarouselTransitionProps = {
+  name: string,
+  contentLength: number,
+  intervalTime: number
+}
 
-const useCarouselTransition = ({ carouselName, sliderName, contentLength, intervalTime }: UseCarouselTransitionProps) => {
-  const carousel = document.querySelector(carouselName) as HTMLDivElement;
-  const slider = carousel.querySelector(sliderName) as HTMLDivElement;
+const useCarouselTransition = ({ name, contentLength, intervalTime }: UseCarouselTransitionProps) => {
+  const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
+  const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
   let displayedContent = 1;
 
-  slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
+  slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
 
-  const sliderTransition = setInterval(() => {
+  const sliderInterval = setInterval(() => {
     if (displayedContent < contentLength - 1) {
       ++displayedContent;
       slider.style.transition = '500ms ease-in-out';
@@ -16,15 +20,17 @@ const useCarouselTransition = ({ carouselName, sliderName, contentLength, interv
   }, intervalTime)
 
 
-  slider.addEventListener('transitionend', () => {
+  const transitionEndHandler = (): void => {
     if (displayedContent === contentLength - 1) {
       slider.style.transition = 'unset';
       slider.style.transform = `translateX(-${carousel.clientWidth * 1}px)`;
       displayedContent = 1;
     }
-  })
+  }
 
-  return sliderTransition;
+  slider.addEventListener('transitionend', transitionEndHandler)
+
+  return { slider, sliderInterval, transitionEndHandler }
 }
 
 export default useCarouselTransition;

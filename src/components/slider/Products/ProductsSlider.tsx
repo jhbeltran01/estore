@@ -8,69 +8,126 @@ type ProductsSliderProps = {
   name: string
 }
 
+type TransitionHookType = {
+  slider: HTMLDivElement,
+  sliderInterval: NodeJS.Timer,
+  transitionEndHandler: () => void
+}
+
 const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element => {
-  const [carouselWidth, setCarouselWidth] = useState(0);
-  const [dataWithClones, setDataWithClones] = useState([products[products.length - 1], ...products, products[0]])
+  const [contentWidth, setContentWidth] = useState(0);
+  const [productsWithClones, setProductsWithClones] = useState([products[products.length - 1], ...products, products[0]])
 
 
-  const determineCarouselWidth = (): void => {
+  const determineContentWidth = (): void => {
     const carousel = document.querySelector(`.js-${name}-carousel`);
-    setCarouselWidth(carousel ? carousel.clientWidth : 0)
+    setContentWidth(carousel ? carousel.clientWidth : 0)
   }
 
-  useEffect(determineCarouselWidth, [])
+  useEffect(determineContentWidth, [])
+
+
+
+  const clonesForLargeViewport = () => {
+    const tempClones = [
+      products[products.length - 3],
+      products[products.length - 2],
+      products[products.length - 1],
+      ...products, products[0]
+    ]
+    setProductsWithClones(tempClones)
+
+    return tempClones;
+  }
+
+
+
+  const clonesForMediumViewport = () => {
+    const tempClones = [
+      products[products.length - 2],
+      products[products.length - 1],
+      ...products, products[0]
+    ]
+    setProductsWithClones(tempClones)
+    return tempClones;
+  }
+
+
+
+  const clonesForSmallViewport = () => {
+    const tempClones = [
+      products[products.length - 1],
+      ...products, products[0]
+    ]
+    setProductsWithClones(tempClones)
+    return tempClones;
+  }
+
+
+
+  const getContentLength = () => {
+    const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
+    const isForLargeViewport = carousel.clientWidth >= 992;
+    const isForMediumViewport = carousel.clientWidth >= 736;
+
+    let length: number;
+    let isForLargeOrMediumViewport = isForLargeViewport || isForMediumViewport;
+
+    if (isForLargeViewport) {
+      length = clonesForLargeViewport().length;
+    } else if (isForMediumViewport) {
+      length = clonesForMediumViewport().length;
+    } else {
+      length = clonesForSmallViewport().length;
+    }
+
+    return { length, isForLargeOrMediumViewport }
+  }
+
 
 
   useEffect(() => {
     const carouselProps = {
-      carouselName: `.js-${name}-carousel`,
-      sliderName: `.js-${name}-carousel__slider`,
-      contentLength: dataWithClones.length,
+      name: name,
+      contentLength: productsWithClones.length,
       intervalTime: 5000,
-      width: 0
     }
 
-    const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
+    const { length, isForLargeOrMediumViewport } = getContentLength();
 
-    let carouselInterval: NodeJS.Timer;
-    const isForLargeViewport = carousel.clientWidth >= 992;
-    const isForMediumViewport = carousel.clientWidth >= 736;
+    carouselProps.contentLength = length;
 
-    if (isForLargeViewport) {
-      setDataWithClones([products[products.length - 3], products[products.length - 2], products[products.length - 1], ...products, products[0]])
-      carouselProps.width = 992;
-      carouselInterval = useSliderTransition(carouselProps);
-    } else if (isForMediumViewport) {
-      setDataWithClones([products[products.length - 2], products[products.length - 1], ...products, products[0]])
-      carouselInterval = useSliderTransition(carouselProps);
-    } else {
-      carouselInterval = useCarouselTransition(carouselProps)
-    }
+    let transitionHook: TransitionHookType = isForLargeOrMediumViewport ?
+      useSliderTransition(carouselProps) : useCarouselTransition(carouselProps)
+
+    const { slider, sliderInterval, transitionEndHandler } = transitionHook;
 
     return () => {
-      clearInterval(carouselInterval);
+      clearInterval(sliderInterval);
+      slider.removeEventListener('transitionend', transitionEndHandler);
     }
-  }, [carouselWidth])
+  }, [contentWidth])
 
 
-  const updateCarouselWidth = (): void => {
+
+  const updateContentWidth = (): void => {
     const carousel = document.querySelector(`.js-${name}-carousel`)
     window.addEventListener('resize', () => {
-      setCarouselWidth(carousel ? carousel.clientWidth : 0)
+      setContentWidth(carousel ? carousel.clientWidth : 0)
     })
   }
 
-  useEffect(updateCarouselWidth, [])
+  useEffect(updateContentWidth, [])
 
 
 
-  const isForMediumViewport = carouselWidth >= 736;
-  const isForLargeViewport = carouselWidth >= 992;
+  const isForMediumViewport = contentWidth >= 736;
+  const isForLargeViewport = contentWidth >= 992;
 
   if (isForLargeViewport) {
-    setCarouselWidth(carouselWidth / 4);
+    setContentWidth(contentWidth / 4);
   } else if (isForMediumViewport) {
-    setCarouselWidth(carouselWidth / 3)
+    setContentWidth(contentWidth / 3)
   } else {
     // do nothing
   }
@@ -78,16 +135,16 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
   return (
     <div className={`carousel-products js-${name}-carousel`}>
-      <div className={`carousel-products__slider  js-${name}-carousel__slider flex`}>
+      <div className={`carousel-products__slider  js-${name}-carousel-slider flex`}>
         {
-          dataWithClones.map((datum: any, index: number) =>
+          productsWithClones.map((datum: any, index: number) =>
             <ProductsContent
               key={index}
               imgSrc={datum.imgSrc}
               name={datum.name}
               rating={datum.rating}
               prize={datum.prize}
-              cardWidth={carouselWidth}
+              cardWidth={contentWidth}
               isForCarousel={true} />
           )
         }
