@@ -8,11 +8,7 @@ type ProductsSliderProps = {
   name: string
 }
 
-type TransitionHookType = {
-  slider: HTMLDivElement,
-  sliderInterval: NodeJS.Timer,
-  transitionEndHandler: () => void
-}
+
 
 const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
@@ -71,7 +67,7 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
     const isForMediumViewport = carousel.clientWidth >= 736;
 
     let length: number;
-    let isForLargeOrMediumViewport = isForLargeViewport || isForMediumViewport;
+    let isForSmallViewport = !isForLargeViewport && !isForMediumViewport;
 
     if (isForLargeViewport) {
       length = clonesForLargeViewport().length;
@@ -81,7 +77,7 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
       length = clonesForSmallViewport().length;
     }
 
-    return { length, isForLargeOrMediumViewport }
+    return { length, isForSmallViewport }
   }
 
 
@@ -93,13 +89,11 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
       intervalTime: 5000,
     }
 
-    const { length, isForLargeOrMediumViewport } = getContentLength();
+    const { length, isForSmallViewport } = getContentLength();
 
     carouselProps.contentLength = length;
 
-    let transitionHook: TransitionHookType = isForLargeOrMediumViewport ?
-      useSliderTransition(carouselProps) : useCarouselTransition(carouselProps)
-
+    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useSliderTransition(carouselProps);
     const { slider, sliderInterval, transitionEndHandler } = transitionHook;
 
     return () => {
