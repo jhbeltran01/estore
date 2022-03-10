@@ -1,4 +1,4 @@
-import React, { MouseEvent, MouseEventHandler, useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 
 type PaginationProps = {
   numberOfPage: number,
@@ -28,14 +28,14 @@ const Pagination = ({ numberOfPage, updateContentToBeDisplayed }: PaginationProp
 
 
 
-  const goToClickedPageNumber = (event: MouseEvent): void => {
+  const goToClickedPageNumber = (event: MouseEvent<HTMLButtonElement>): void => {
     const buttonId = Number(event.currentTarget.id);
 
     if (pageNumber === buttonId) return;
 
     const isToGoToPreviousPage: boolean = pageNumber > Number(event.currentTarget.id);
-    isToGoToPreviousPage ? updateContentToBeDisplayed(buttonId, true) :
-      updateContentToBeDisplayed(buttonId, false);
+
+    updateContentToBeDisplayed(buttonId, isToGoToPreviousPage);
 
     setPageNumber(buttonId);
   }
