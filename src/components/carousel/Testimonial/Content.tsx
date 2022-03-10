@@ -1,7 +1,15 @@
 import React from 'react';
 import useRating from '@Hooks/useRating'
-import { TestimonialContentProps } from '@Types/Testimonial/TestimonialContentProps';
 
+type TestimonialContentProps = {
+  imgSrc: string,
+  imgDesc: string,
+  name: string,
+  profession: string
+  testimonial: string
+  rating: number,
+  wrapperWidth: number
+}
 
 function Content({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {
   const ratingElement = useRating(rating);

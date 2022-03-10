@@ -1,8 +1,15 @@
 import CustomNumber from '@Components/elements/number/CustomNumber';
 import CustomOptions from '@Components/elements/options/CustomOptions';
 import useRating from '@Hooks/useRating'
-import ProductType from '@Types/Products/ProductType'
 import React from 'react'
+
+type ProductType = {
+  imgSrc: string,
+  name: string,
+  rating: number,
+  prize: number,
+  id: string
+}
 
 const sizeOptions = ['S', 'M', 'L', 'XL']
 const colorOptions = ['White', 'Black', 'Blue']

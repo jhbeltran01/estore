@@ -1,6 +1,12 @@
 import Review from '@Components/review/Review'
-import ReviewType from '@Types/Review/ReviewType'
 import React from 'react'
+
+type ReviewType = {
+  name: string,
+  date: string,
+  rating: number,
+  description: string
+}
 
 type ReviewsTabProps = {
   reviews: ReviewType[]

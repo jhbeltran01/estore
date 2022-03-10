@@ -1,11 +1,11 @@
 import React from 'react'
 
-type ProductColType = {
+type ProductColProps = {
   image: string,
   name: string
 }
 
-const ProductCol = ({ image, name }: ProductColType): JSX.Element => {
+const ProductCol = ({ image, name }: ProductColProps): JSX.Element => {
   return (
     <div className='flex-container-6'>
       <img src={image} alt="product image" />

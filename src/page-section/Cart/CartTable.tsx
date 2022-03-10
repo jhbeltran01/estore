@@ -1,7 +1,14 @@
 import TableHeader from '@Components/elements/table/TableHeader'
 import CartTableRow from '@Components/elements/table/CartTableRow'
-import CartType from '@Types/Cart/CartType'
 import React, { useState } from 'react'
+
+type CartType = {
+  id: string,
+  imgSrc: string,
+  name: string,
+  price: number
+}
+
 
 const headers = ['Product', 'Prize', 'Quantity', 'Total', 'Remove']
 

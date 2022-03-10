@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import TestimonialContent from './Content';
-import { TestimonialType } from '@Types/Testimonial/TestimonialType'
 
+export type TestimonialType = {
+  name: string,
+  imgSrc: string,
+  imgDesc: string,
+  profession: string,
+  rating: number,
+  testimonial: string
+}
 
 type TestimonialCarouselProps = {
   testimonials: TestimonialType[]

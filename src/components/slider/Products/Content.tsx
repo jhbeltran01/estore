@@ -1,7 +1,14 @@
 import React from 'react';
 import useRating from '@Hooks/useRating';
-import ProductsContentProps from '@Types/Products/ProductContentProps';
 
+type ProductsContentProps = {
+  imgSrc: string,
+  name: string,
+  rating: number,
+  prize: number,
+  cardWidth: number,
+  isForCarousel: boolean
+}
 
 
 function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {

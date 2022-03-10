@@ -1,6 +1,13 @@
 import useRating from '@Hooks/useRating'
-import ReviewType from '@Types/Review/ReviewType'
 import React from 'react'
+
+type ReviewType = {
+  name: string,
+  date: string,
+  rating: number,
+  description: string
+}
+
 
 function Review({ name, date, rating, description }: ReviewType) {
   const stars = useRating(rating);

@@ -1,4 +1,3 @@
-import { OrdersType } from '@Types/MyAccount/OrdersType'
 import React from 'react'
 
 type OrdersTableRowProps = {

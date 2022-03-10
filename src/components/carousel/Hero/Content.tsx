@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-import { HeroContentProps } from '@Types/Hero/HeroContentProps';
+
+export type HeroContentProps = {
+  imgSrc: string,
+  desc: string,
+  imgWidth: number
+}
 
 const Content = ({ imgSrc, desc, imgWidth }: HeroContentProps): JSX.Element => {
   return (

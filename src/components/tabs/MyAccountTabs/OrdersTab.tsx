@@ -1,7 +1,14 @@
 import OrdersTableRow from '@Components/elements/table/OrdersTableRow'
 import TableHeader from '@Components/elements/table/TableHeader'
-import { OrdersType } from '@Types/MyAccount/OrdersType'
 import React from 'react'
+
+type OrdersType = {
+  id: number,
+  name: string,
+  date: string,
+  price: number,
+  status: string
+}
 
 type OrdersProps = {
   orders: OrdersType[]

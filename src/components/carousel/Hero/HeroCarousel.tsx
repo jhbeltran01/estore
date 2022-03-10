@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
 import useSliderTransition from '@Hooks/useCarouselTransition';
-import { HeroContentType } from '@Types/Hero/HeroContentType';
 import HeroContent from './Content';
 
 type HeroCarouselProps = {
-  data: HeroContentType[]
+  data: {
+    imgSrc: string,
+    desc: string
+  }[]
 }
 
 const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
