@@ -2,10 +2,10 @@
 
 .wrapper {
   padding: 0 1.5em;
+}
 
-  &-2 {
-    @include viewport.medium {
-      padding: 0 1em;
-    }
+.wrapper-2 {
+  @include viewport.medium {
+    padding: 0 1em;
   }
 }
