@@ -83,13 +83,13 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
   useEffect(() => {
+    const { length, isForSmallViewport } = getContentLength();
+
     const carouselProps = {
       name: name,
-      contentLength: productsWithClones.length,
+      contentLength: length,
       intervalTime: 5000,
     }
-
-    const { length, isForSmallViewport } = getContentLength();
 
     let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useProductsSliderTransition(carouselProps);
 
