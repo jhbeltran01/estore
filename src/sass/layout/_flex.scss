@@ -15,70 +15,71 @@
   justify-content: flex-start;
 }
 
-.flex-container {
-  &-1 {
-    @extend %flex-just-between;
-    flex-direction: column;
-  }
-
-
-  &-2 {
-    @extend %flex-just-between;
-  }
-
-  &-3 {
-    @extend %flex-just-between;
-    align-items: center;
-  }
-
-  &-4 {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  &-5 {
-    display: flex;
-    gap: 0 10px;
-    justify-content: center;
-  }
-
-  &-6 {
-    display: flex;
-    align-items: center;
-  }
+// flex containers
+.flex-container-1 {
+  @extend %flex-just-between;
+  flex-direction: column;
 }
 
 
+.flex-container-2 {
+  @extend %flex-just-between;
+}
+
+.flex-container-3 {
+  @extend %flex-just-between;
+  align-items: center;
+}
+
+.flex-container-4 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flex-container-5 {
+  display: flex;
+  gap: 0 10px;
+  justify-content: center;
+}
+
+.flex-container-6 {
+  display: flex;
+  align-items: center;
+}
+// end of flex containers
+
+// responsive flex-container
 .flex-container-responsive {
   @include viewport.large {
     display: flex;
     gap: 0 20px;
   }
+}
 
-  &-1 {
-    @include viewport.medium {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-
-  &-2 {
-    @include viewport.medium {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0 10px;
-    }
-  }
-
-
-  &-3 {
-    @include viewport.large {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.flex-container-responsive-1 {
+  @include viewport.medium {
+    display: flex;
+    justify-content: space-between;
   }
 }
+
+
+.flex-container-responsive-2 {
+  @include viewport.medium {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+  }
+}
+
+
+.flex-container-responsive-3 {
+  @include viewport.large {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+// end of responsive flex containers
