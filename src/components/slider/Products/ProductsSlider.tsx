@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductsContent from './Content';
 import useCarouselTransition from '@Hooks/useCarouselTransition';
-import useSliderTransition from '@Hooks/useSliderTransition';
+import useProductsSliderTransition from '@Hooks/useProductsSliderTransition';
 
 type ProductsSliderProps = {
   products: {}[],
@@ -91,9 +91,8 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
     const { length, isForSmallViewport } = getContentLength();
 
-    carouselProps.contentLength = length;
+    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useProductsSliderTransition(carouselProps);
 
-    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useSliderTransition(carouselProps);
     const { slider, sliderInterval, transitionEndHandler } = transitionHook;
 
     return () => {

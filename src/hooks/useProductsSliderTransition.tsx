@@ -1,10 +1,10 @@
-type useSliderTransitionProps = {
+type useProductsSliderTransitionProps = {
   name: string,
   contentLength: number,
   intervalTime: number,
 }
 
-const useSliderTransition = ({ name, contentLength, intervalTime }: useSliderTransitionProps) => {
+const useProductsSliderTransition = ({ name, contentLength, intervalTime }: useProductsSliderTransitionProps) => {
   const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
   const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
   const content = carousel.querySelector('.js-carousel-content') as HTMLDivElement;
@@ -35,4 +35,4 @@ const useSliderTransition = ({ name, contentLength, intervalTime }: useSliderTra
   return { slider, sliderInterval, transitionEndHandler }
 }
 
-export default useSliderTransition
+export default useProductsSliderTransition
