@@ -8,6 +8,7 @@ import carouselContent from '@Json/carousel-content.json'
 import products from '@Json/products.json';
 import testimonials from '@Json/testimonials.json'
 import "@Utils/toggleMobileNavMenu";
+import ProductsSlider from "@Components/slider/Products/ProductsSlider";
 
 export const ProductsJSON = React.createContext([{}]);
 
@@ -29,11 +30,9 @@ const App = (): JSX.Element => {
       {
         ReactDOM.createPortal(
           (
-            <ProductCategory
-              productCategory='Featured Products'
-              products={featuredProducts}
-              name='featured'
-            />
+            <ProductCategory productCategory='Featured Products'>
+              <ProductsSlider products={featuredProducts} name='featured' />
+            </ProductCategory>
           ),
           document.getElementById('featured-products')!
         )
@@ -41,10 +40,11 @@ const App = (): JSX.Element => {
 
       {
         ReactDOM.createPortal(
-          <ProductCategory
-            productCategory='Recent Products'
-            products={recentProducts}
-            name='recent' />,
+          (
+            <ProductCategory productCategory='Recent Products'>
+              <ProductsSlider products={recentProducts} name='recent' />
+            </ProductCategory>
+          ),
           document.getElementById('recent-products')!
         )
       }
