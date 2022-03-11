@@ -19,9 +19,7 @@ function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel
       <div className='card'>
         <div className='card__content'>
           <h2 className='card__title'>{name}</h2>
-          {
-            stars.map((star: JSX.Element) => star)
-          }
+          {stars}
         </div>
 
         <div className='pos-relative'>
