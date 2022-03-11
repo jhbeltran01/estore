@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
-import useSliderTransition from '@Hooks/useCarouselTransition';
+import useCarouselTransition from '@Hooks/useCarouselTransition';
 import HeroContent from './Content';
 
 type HeroCarouselProps = {
@@ -12,15 +12,11 @@ type HeroCarouselProps = {
 
 const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
-  const dataWithClones = [
-    data[data.length - 1],
-    ...data,
-    data[0]
-  ]
+  const dataWithClones = [data[data.length - 1], ...data, data[0]]
 
 
   useEffect(() => {
-    const carousel = document.querySelector('.js-hero-carousel') as HTMLDivElement;
+    const carousel = document.getElementById('js-hero-carousel') as HTMLDivElement;
     setContentWidth(carousel.clientWidth)
 
     window.addEventListener('resize', () => {
@@ -35,14 +31,14 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
       contentLength: dataWithClones.length,
       intervalTime: 5000
     }
-    useSliderTransition(sliderProps);
+    useCarouselTransition(sliderProps);
   }, [])
 
 
 
   return ReactDOM.createPortal(
     (
-      <div className='carousel-hero js-hero-carousel' >
+      <div className='carousel-hero' id="js-hero-carousel">
         <div className='carousel-hero__overlay flex-container-3'>
           <button className='btn-next-2 left'>
             <i className='left-arrow'></i>
@@ -51,7 +47,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
             <i className='right-arrow'></i>
           </button>
         </div>
-        <div className='carousel-hero__slider flex js-hero-carousel-slider'>
+        <div className='carousel-hero__slider flex' id="js-hero-slider">
           {
             dataWithClones.map((datum: any, index: number) => (
               <HeroContent

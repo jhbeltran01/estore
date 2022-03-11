@@ -5,8 +5,8 @@ export type UseCarouselTransitionProps = {
 }
 
 const useCarouselTransition = ({ name, contentLength, intervalTime }: UseCarouselTransitionProps) => {
-  const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
-  const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
+  const carousel = document.getElementById(`js-${name}-carousel`) as HTMLDivElement;
+  const slider = carousel.querySelector(`#js-${name}-slider`) as HTMLDivElement;
   let displayedContent = 1;
 
   slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
