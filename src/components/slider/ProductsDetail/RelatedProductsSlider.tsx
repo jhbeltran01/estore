@@ -16,6 +16,20 @@ function RelatedProductsSlider({ products, name }: RelatedProductsSliderProps) {
   const [productsWithClones, setProductsWithClone] = useState([{}])
 
 
+
+  useEffect((): void => {
+    const carousel = document.getElementById(`js-${name}-carousel`) as HTMLDivElement
+    setContentWidth(carousel.clientWidth);
+    setViewportWidth(window.innerWidth)
+
+    window.addEventListener('resize', () => {
+      setContentWidth(carousel.clientWidth)
+      setViewportWidth(window.innerWidth)
+    })
+  }, [])
+
+
+
   useEffect(() => {
     const isForSmallViewport = viewportWidth < 768;
     const numberOfClones = isForSmallViewport ? 2 : 3;
@@ -39,25 +53,12 @@ function RelatedProductsSlider({ products, name }: RelatedProductsSliderProps) {
   }, [viewportWidth])
 
 
-  useEffect((): void => {
-    const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement
-    setContentWidth(carousel.clientWidth);
-    setViewportWidth(window.innerWidth)
-
-    window.addEventListener('resize', () => {
-      setContentWidth(carousel.clientWidth)
-      setViewportWidth(window.innerWidth)
-    })
-  }, [])
-
-
 
   const responsiveWidth = viewportWidth >= 768 ? contentWidth / 3 : contentWidth;
-  // console.log(contentWidth)
 
   return (
-    <div className={`carousel-products js-${name}-carousel`}>
-      <div className={`carousel-products__slider  js-${name}-carousel-slider flex`}>
+    <div className={`carousel-products`} id={`js-${name}-carousel`}>
+      <div className={`carousel-products__slider flex`} id={`js-${name}-slider`}>
         {
           productsWithClones.map((datum: any, index: number) =>
             <ProductsContent
