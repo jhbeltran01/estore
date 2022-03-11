@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import HeroCarousel from "@Components/carousel/Hero/HeroCarousel";
 import Header from "@Components/header/Header";
 import ProductCategory from "@Page-section/Product/ProductCategory";
-import TestimonialCarousel from "@Components/carousel/Testimonial/TestimonialCarousel";
+import TestimonialSlider from "@Components/slider/Testimonial/TestimonialSlider";
 import carouselContent from '@Json/carousel-content.json'
 import products from '@Json/products.json';
 import testimonials from '@Json/testimonials.json'
@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
         )
       }
 
-      <TestimonialCarousel testimonials={testimonials} />
+      <TestimonialSlider testimonials={testimonials} />
     </React.Fragment>
   )
 }
