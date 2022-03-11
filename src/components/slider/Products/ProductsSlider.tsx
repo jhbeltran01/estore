@@ -1,7 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductsContent from './Content';
 import useCarouselTransition from '@Hooks/useCarouselTransition';
 import useSliderTransition from '@Hooks/useSliderTransition';
+import useGetClones from '@Hooks/useGetClones';
 
 type ProductsSliderProps = {
   products: {}[],
@@ -12,113 +13,60 @@ type ProductsSliderProps = {
 
 const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
-  const [productsWithClones, setProductsWithClones] = useState([products[products.length - 1], ...products, products[0]])
-
-
-  const determineContentWidth = (): void => {
-    const carousel = document.querySelector(`.js-${name}-carousel`);
-    setContentWidth(carousel ? carousel.clientWidth : 0)
-  }
-
-  useEffect(determineContentWidth, [])
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const [productsWithClones, setProductsWithClones] = useState([{}]);
 
 
 
-  const clonesForLargeViewport = () => {
-    const tempClones = [
-      products[products.length - 3],
-      products[products.length - 2],
-      products[products.length - 1],
-      ...products,
-      products[0]
-    ]
-    setProductsWithClones(tempClones)
-
-    return tempClones;
-  }
-
-
-
-  const clonesForMediumViewport = () => {
-    const tempClones = [
-      products[products.length - 2],
-      products[products.length - 1],
-      ...products,
-      products[0]
-    ]
-    setProductsWithClones(tempClones)
-    return tempClones;
-  }
-
-
-
-  const clonesForSmallViewport = () => {
-    const tempClones = [
-      products[products.length - 1],
-      ...products,
-      products[0]
-    ]
-    setProductsWithClones(tempClones)
-    return tempClones;
-  }
-
-
-
-  const getContentLength = () => {
+  useEffect((): void => {
     const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
-    const isForLargeViewport = carousel.clientWidth >= 992;
-    const isForMediumViewport = carousel.clientWidth >= 736;
+    setContentWidth(carousel.clientWidth);
+    setViewportWidth(window.innerWidth);
 
-    let length: number;
-    let isForSmallViewport = !isForLargeViewport && !isForMediumViewport;
-    let numberOfClones = 0;
+    window.addEventListener('resize', () => {
+      setContentWidth(carousel.clientWidth);
+      setViewportWidth(window.innerWidth);
+    })
+  }, [])
+
+
+
+  const getNumberOfClones = (): number => {
+    const isForLargeViewport = viewportWidth >= 992;
+    const isForMediumViewport = viewportWidth >= 736;
 
     if (isForLargeViewport) {
-      length = clonesForLargeViewport().length;
-      numberOfClones = 4
+      return 4
     } else if (isForMediumViewport) {
-      length = clonesForMediumViewport().length;
-      numberOfClones = 3;
+      return 3;
     } else {
-      length = clonesForSmallViewport().length;
-      numberOfClones = 2;
+      return 2;
     }
-
-    return { length, isForSmallViewport, numberOfClones }
   }
 
 
 
   useEffect(() => {
-    const { length, isForSmallViewport, numberOfClones } = getContentLength();
+    const numberOfClones = getNumberOfClones()
 
-    const carouselProps = {
+    const tempClones = useGetClones(numberOfClones, products);
+    setProductsWithClones(tempClones)
+
+    const props = {
       name: name,
-      contentLength: length,
+      contentLength: tempClones.length,
       intervalTime: 5000,
-      numberOfClones: numberOfClones,
+      numberOfClones: numberOfClones
     }
 
-    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useSliderTransition(carouselProps);
-
-    const { slider, sliderInterval, transitionEndHandler } = transitionHook;
+    const isForSmallViewport = viewportWidth < 736;
+    const { slider, sliderInterval, transitionEndHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
 
     return () => {
       clearInterval(sliderInterval);
       slider.removeEventListener('transitionend', transitionEndHandler);
     }
   }, [contentWidth])
-
-
-
-  const updateContentWidth = (): void => {
-    const carousel = document.querySelector(`.js-${name}-carousel`)
-    window.addEventListener('resize', () => {
-      setContentWidth(carousel ? carousel.clientWidth : 0)
-    })
-  }
-
-  useEffect(updateContentWidth, [])
 
 
 
