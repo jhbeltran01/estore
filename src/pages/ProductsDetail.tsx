@@ -1,17 +1,17 @@
-import ImageCarousel from '@Components/carousel/ProductsDetail/ImageCarousel'
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import products from '@Json/products.json';
+import ImageCarousel from '@Components/carousel/ProductsDetail/ImageCarousel'
 import ImageSlider from '@Components/slider/ProductsDetail/ImageSlider';
-import ProductContent from '@Page-section/Product/ProductContent';
 import Tabs from '@Components/tabs/ProductDetailsTab/Tabs';
-import ProductCategory from '@Page-section/Product/ProductCategory';
-import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 import Tags from '@Components/tags/Tags';
-import tags from "@Json/tags.json";
-import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
 import Header from '@Components/header/Header';
 import RelatedProductsSlider from '@Components/slider/ProductsDetail/RelatedProductsSlider';
+import ProductsCarousel from '@Components/carousel/Products/ProductsCarousel';
+import products from '@Json/products.json';
+import tags from "@Json/tags.json";
+import ProductContent from '@Page-section/Product/ProductContent';
+import ProductCategory from '@Page-section/Product/ProductCategory';
+import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')
@@ -65,7 +65,7 @@ function ProductsDetail() {
 
       {
         ReactDOM.createPortal(
-          <ProductsSlider products={products} name="side-bar" />,
+          <ProductsCarousel products={products} />,
           document.getElementById('products-slider')!
         )
       }
