@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom'
 import useSliderTransition from '@Hooks/useCarouselTransition';
 import HeroContent from './Content';
 
@@ -12,11 +11,7 @@ type HeroCarouselProps = {
 
 const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
-  const dataWithClones = [
-    data[data.length - 1],
-    ...data,
-    data[0]
-  ]
+  const dataWithClones = [data[data.length - 1], ...data, data[0]]
 
 
   useEffect(() => {
