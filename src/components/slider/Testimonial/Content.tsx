@@ -13,11 +13,8 @@ type TestimonialContentProps = {
 
 function Content({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {
   const ratingElement = useRating(rating);
-
-  const responsiveWidth = wrapperWidth > 768 ? wrapperWidth / 2 : wrapperWidth;
-
   return (
-    <div className='wrapper' style={{ minWidth: responsiveWidth }}>
+    <div className='wrapper js-carousel-content' style={{ minWidth: wrapperWidth }}>
       <div className='bg-white-2 flex-container-responsive-2'>
         <img className='carousel-testimonial__img' src={imgSrc} alt={imgDesc} />
 
