@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductsContent from './Content';
 import useCarouselTransition from '@Hooks/useCarouselTransition';
-import useProductsSliderTransition from '@Hooks/useProductsSliderTransition';
+import useSliderTransition from '@Hooks/useSliderTransition';
 
 type ProductsSliderProps = {
   products: {}[],
@@ -29,7 +29,8 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
       products[products.length - 3],
       products[products.length - 2],
       products[products.length - 1],
-      ...products, products[0]
+      ...products,
+      products[0]
     ]
     setProductsWithClones(tempClones)
 
@@ -42,7 +43,8 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
     const tempClones = [
       products[products.length - 2],
       products[products.length - 1],
-      ...products, products[0]
+      ...products,
+      products[0]
     ]
     setProductsWithClones(tempClones)
     return tempClones;
@@ -53,7 +55,8 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
   const clonesForSmallViewport = () => {
     const tempClones = [
       products[products.length - 1],
-      ...products, products[0]
+      ...products,
+      products[0]
     ]
     setProductsWithClones(tempClones)
     return tempClones;
@@ -68,30 +71,35 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
     let length: number;
     let isForSmallViewport = !isForLargeViewport && !isForMediumViewport;
+    let numberOfClones = 0;
 
     if (isForLargeViewport) {
       length = clonesForLargeViewport().length;
+      numberOfClones = 4
     } else if (isForMediumViewport) {
       length = clonesForMediumViewport().length;
+      numberOfClones = 3;
     } else {
       length = clonesForSmallViewport().length;
+      numberOfClones = 2;
     }
 
-    return { length, isForSmallViewport }
+    return { length, isForSmallViewport, numberOfClones }
   }
 
 
 
   useEffect(() => {
-    const { length, isForSmallViewport } = getContentLength();
+    const { length, isForSmallViewport, numberOfClones } = getContentLength();
 
     const carouselProps = {
       name: name,
       contentLength: length,
       intervalTime: 5000,
+      numberOfClones: numberOfClones,
     }
 
-    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useProductsSliderTransition(carouselProps);
+    let transitionHook = isForSmallViewport ? useCarouselTransition(carouselProps) : useSliderTransition(carouselProps);
 
     const { slider, sliderInterval, transitionEndHandler } = transitionHook;
 
