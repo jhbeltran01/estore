@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Filter from '@Components/filter/Filter';
 import Header from '@Components/header/Header'
 import ProductsPagination from '@Page-section/Product/ProductsPagination';
-import ProductsSlider from '@Components/slider/Products/ProductsSlider';
 import products from '@Json/products.json';
 import Tags from '@Components/tags/Tags';
 import "@Utils/toggleMobileNavMenu";
