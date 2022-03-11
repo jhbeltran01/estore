@@ -25,7 +25,12 @@ const App = (): JSX.Element => {
         )
       }
 
-      <HeroCarousel data={carouselContent} />
+      {
+        ReactDOM.createPortal(
+          <HeroCarousel data={carouselContent} />,
+          document.getElementById('hero-carousel')!
+        )
+      }
 
       {
         ReactDOM.createPortal(
