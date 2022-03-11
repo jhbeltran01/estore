@@ -35,8 +35,8 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps): JSX.Element => {
 
 
   return (
-    <div className='carousel-hero' id='js-products-carousel'>
-      <div className='carousel-hero__overlay flex-container-3'>
+    <div className='carousel-products' id='js-products-carousel'>
+      <div className='carousel-products__overlay flex-container-3'>
         <button className='btn-next-2 left'>
           <span className='left-arrow'></span>
         </button>
@@ -44,7 +44,7 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps): JSX.Element => {
           <span className='right-arrow'></span>
         </button>
       </div>
-      <div className='carousel-hero__slider flex' id='js-products-slider'>
+      <div className='carousel-products__slider flex' id='js-products-slider'>
         {
           productsWithClones.map((datum: any, index: number) =>
             <ProductsContent

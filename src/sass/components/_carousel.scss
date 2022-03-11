@@ -104,6 +104,23 @@
 
 .carousel-products {
   overflow-x: hidden;
+  position: relative;
+
+  &:hover .btn-next-2{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0 0 0 0;
+    padding: 1.5em;
+
+
+    .btn-next-2 {
+      z-index: 100;
+    }
+  }
 }
 
 
