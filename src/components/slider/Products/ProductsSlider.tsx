@@ -70,15 +70,17 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
 
-  const isForMediumViewport = contentWidth >= 736;
-  const isForLargeViewport = contentWidth >= 992;
+  const isForMediumViewport = viewportWidth >= 736;
+  const isForLargeViewport = viewportWidth >= 992;
+
+  let responsiveWidth = 0
 
   if (isForLargeViewport) {
-    setContentWidth(contentWidth / 4);
+    responsiveWidth = contentWidth / 4;
   } else if (isForMediumViewport) {
-    setContentWidth(contentWidth / 3)
+    responsiveWidth = contentWidth / 3;
   } else {
-    // do nothing
+    responsiveWidth = contentWidth;
   }
 
 
@@ -93,7 +95,7 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
               name={datum.name}
               rating={datum.rating}
               prize={datum.prize}
-              cardWidth={contentWidth}
+              cardWidth={responsiveWidth}
               isForCarousel={true} />
           )
         }
