@@ -44,10 +44,10 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
     <div className='carousel-hero' id='js-hero-carousel'>
       <div className='carousel-hero__overlay flex-container-3'>
         <button className='btn-next-2 left'>
-          <i className='left-arrow'></i>
+          <span className='left-arrow'></span>
         </button>
         <button className='btn-next-2 right'>
-          <i className='right-arrow'></i>
+          <span className='right-arrow'></span>
         </button>
       </div>
       <div className='carousel-hero__slider flex' id='js-hero-slider'>
