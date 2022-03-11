@@ -49,7 +49,12 @@ const App = (): JSX.Element => {
         )
       }
 
-      <TestimonialSlider testimonials={testimonials} />
+      {
+        ReactDOM.createPortal(
+          <TestimonialSlider testimonials={testimonials} />,
+          document.getElementById('testimonials')!
+        )
+      }
     </React.Fragment>
   )
 }

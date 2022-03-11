@@ -55,37 +55,34 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
 
   const responsiveWidth = contentWidth >= 768 ? contentWidth / 2 : contentWidth
 
-  return ReactDOM.createPortal(
-    (
-      <div className='carousel-testimonial mar-x-2 js-testimonial-carousel'>
-        <div className='carousel-testimonial__overlay flex-container-3'>
-          <button className='btn-next-2  left'>
-            <span className='left-arrow'></span>
-          </button>
-          <button className='btn-next-2 right'>
-            <span className='right-arrow'></span>
-          </button>
-        </div>
-
-        <div className='carousel-testimonial__slider flex js-testimonial-carousel-slider'>
-          {
-            testimonialWithClones.map((testimonial: TestimonialType, index: number) =>
-              <TestimonialContent
-                key={index}
-                imgSrc={testimonial.imgSrc}
-                imgDesc={testimonial.imgDesc}
-                name={testimonial.name}
-                rating={testimonial.rating}
-                testimonial={testimonial.testimonial}
-                profession={testimonial.profession}
-                wrapperWidth={responsiveWidth}
-              />)
-          }
-        </div>
+  return (
+    <div className='carousel-testimonial mar-x-2 js-testimonial-carousel'>
+      <div className='carousel-testimonial__overlay flex-container-3'>
+        <button className='btn-next-2  left'>
+          <span className='left-arrow'></span>
+        </button>
+        <button className='btn-next-2 right'>
+          <span className='right-arrow'></span>
+        </button>
       </div>
-    ),
-    document.getElementById('testimonials')!
-  );
+
+      <div className='carousel-testimonial__slider flex js-testimonial-carousel-slider'>
+        {
+          testimonialWithClones.map((testimonial: TestimonialType, index: number) =>
+            <TestimonialContent
+              key={index}
+              imgSrc={testimonial.imgSrc}
+              imgDesc={testimonial.imgDesc}
+              name={testimonial.name}
+              rating={testimonial.rating}
+              testimonial={testimonial.testimonial}
+              profession={testimonial.profession}
+              wrapperWidth={responsiveWidth}
+            />)
+        }
+      </div>
+    </div>
+  )
 }
 
 export default TestimonialSlider;
