@@ -11,7 +11,7 @@ type HeroCarouselProps = {
 }
 
 const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
-  const [carouselWidth, setCarouselWidth] = useState(0);
+  const [contentWidth, setContentWidth] = useState(0);
   const dataWithClones = [
     data[data.length - 1],
     ...data,
@@ -20,11 +20,11 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
 
 
   useEffect(() => {
-    const carousel = document.querySelector('.carousel-hero');
-    setCarouselWidth(carousel ? carousel.clientWidth : 0)
+    const carousel = document.querySelector('.js-hero-carousel') as HTMLDivElement;
+    setContentWidth(carousel.clientWidth)
 
     window.addEventListener('resize', () => {
-      setCarouselWidth(carousel ? carousel.clientWidth : 0)
+      setContentWidth(carousel.clientWidth)
     })
   }, [])
 
@@ -43,12 +43,13 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
   return ReactDOM.createPortal(
     (
       <div className='carousel-hero js-hero-carousel' >
-        <div className='hide-in-mobile'>
-          <button><i className="fas fa-chevron-right"></i></button>
-        </div>
-
-        <div className='hide-in-mobile'>
-          <button><i className="fas fa-chevron-left"></i></button>
+        <div className='carousel-hero__overlay flex-container-3'>
+          <button className='btn-next-2 left'>
+            <i className='left-arrow'></i>
+          </button>
+          <button className='btn-next-2 right'>
+            <i className='right-arrow'></i>
+          </button>
         </div>
         <div className='carousel-hero__slider flex js-hero-carousel-slider'>
           {
@@ -57,7 +58,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
                 key={index}
                 imgSrc={datum.imgSrc}
                 desc={datum.desc}
-                imgWidth={carouselWidth} />
+                imgWidth={contentWidth} />
             ))
           }
         </div>

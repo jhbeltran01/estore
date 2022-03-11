@@ -6,11 +6,27 @@
 .carousel-hero {  
   margin: 2rem 0;
   overflow: hidden;
+  position: relative;
+
+
+  &:hover .btn-next-2 {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
 
   @include viewport.medium {
     margin: 0;
   }
+
+
+  &__overlay {
+    @extend %overlay;
+    padding: 0 1em;
+    z-index: 10;
+    opacity: 1;
+  }
+
 
   &__content {
     position: relative;
@@ -29,9 +45,11 @@
     }
   }
 
+
   &__caption {
     inset: 0 0 0 0;
     position: absolute;
+
 
     &-content {
       background-color: var.$dark-red;
@@ -40,8 +58,9 @@
       padding: 1em;
       text-align: center;
 
+
       @include viewport.xl {
-        width: 80%;
+        width: 60%;
       }
     }
   }
@@ -67,6 +86,7 @@
   @include viewport.large {
     padding: 2em 4em;
   }
+
 
   &__img {
     @include viewport.large {
@@ -142,11 +162,13 @@
 .carousel-product-view {
   position: relative;
   
+
   img {
     position: absolute;
     opacity: 0;
     left: 0;
     right: 0;
+
 
     &:is(.active) {
       position: unset;
@@ -160,9 +182,11 @@
 .carousel-product-view-nav {
   border: 1px solid var.$light-red;
 
+
   img {
    width: 15%;
    height: inherit;
+
 
     &:not(:last-child) {
       border-right: 1px solid var.$light-red;
