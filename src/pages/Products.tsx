@@ -8,6 +8,7 @@ import products from '@Json/products.json';
 import Tags from '@Components/tags/Tags';
 import "@Utils/toggleMobileNavMenu";
 import tags from "@Json/tags.json";
+import ProductsCarousel from '@Components/carousel/Products/ProductsCarousel';
 
 function App() {
   return (
@@ -24,7 +25,10 @@ function App() {
       <ProductsPagination numberOfItemPerPage={9} products={products} />
 
       {
-        ReactDOM.createPortal(<ProductsSlider products={products} name="featured" />, document.getElementById('products-slider')!)
+        ReactDOM.createPortal(
+          <ProductsCarousel products={products} />,
+          document.getElementById('products-slider')!
+        )
       }
 
       {
