@@ -20,7 +20,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
 
 
   useEffect(() => {
-    const carousel = document.querySelector('.js-hero-carousel') as HTMLDivElement;
+    const carousel = document.getElementById('js-hero-carousel') as HTMLDivElement;
     setContentWidth(carousel.clientWidth)
 
     window.addEventListener('resize', () => {
@@ -42,7 +42,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
 
   return ReactDOM.createPortal(
     (
-      <div className='carousel-hero js-hero-carousel' >
+      <div className='carousel-hero' id='js-hero-carousel'>
         <div className='carousel-hero__overlay flex-container-3'>
           <button className='btn-next-2 left'>
             <i className='left-arrow'></i>
@@ -51,7 +51,7 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
             <i className='right-arrow'></i>
           </button>
         </div>
-        <div className='carousel-hero__slider flex js-hero-carousel-slider'>
+        <div className='carousel-hero__slider flex' id='js-hero-slider'>
           {
             dataWithClones.map((datum: any, index: number) => (
               <HeroContent
