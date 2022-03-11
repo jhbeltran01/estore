@@ -12,7 +12,7 @@ type TestimonialContentProps = {
 }
 
 function Content({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapperWidth }: TestimonialContentProps) {
-  const ratingElement = useRating(rating);
+  const ratingElements = useRating(rating);
   return (
     <div className='wrapper' style={{ minWidth: wrapperWidth }} id='js-content'>
       <div className='bg-white-2 flex-container-responsive-2'>
@@ -22,9 +22,7 @@ function Content({ imgSrc, imgDesc, name, profession, testimonial, rating, wrapp
           <h5 className='carousel-testimonial__name'>{name}</h5>
           <p className='carousel-testimonial__profession'>{profession}</p>
           <div className='mar-bot'>
-            {
-              ratingElement.map((rating: JSX.Element) => rating)
-            }
+            {ratingElements}
           </div>
           <p className='carousel-testimonial__desc'>{testimonial}</p>
         </div>
