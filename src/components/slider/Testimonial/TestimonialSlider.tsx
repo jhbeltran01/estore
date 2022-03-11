@@ -22,6 +22,18 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const [testimonialWithClones, setTestimonialWithClones] = useState([testimonials[testimonials.length - 1], ...testimonials, testimonials[0]]);
 
 
+
+  useEffect(() => {
+    const carousel = document.querySelector('.carousel-testimonial') as HTMLDivElement;
+    setContentWidth(carousel.clientWidth);
+
+    window.addEventListener('resize', () => {
+      setContentWidth(carousel.clientWidth);
+    })
+  }, [])
+
+
+
   useEffect(() => {
     const props = {
       name: 'testimonial',
@@ -42,21 +54,10 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
 
 
 
-  useEffect(() => {
-    const carousel = document.querySelector('.carousel-testimonial') as HTMLDivElement;
-    setContentWidth(carousel.clientWidth);
-
-    window.addEventListener('resize', () => {
-      setContentWidth(carousel.clientWidth);
-    })
-  }, [])
-
-
-
   const responsiveWidth = contentWidth >= 768 ? contentWidth / 2 : contentWidth
 
   return (
-    <div className='carousel-testimonial mar-x-2 js-testimonial-carousel'>
+    <div className='carousel-testimonial mar-x-2' id='js-testimonial-carousel'>
       <div className='carousel-testimonial__overlay flex-container-3'>
         <button className='btn-next-2  left'>
           <span className='left-arrow'></span>
@@ -66,7 +67,7 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
         </button>
       </div>
 
-      <div className='carousel-testimonial__slider flex js-testimonial-carousel-slider'>
+      <div className='carousel-testimonial__slider flex' id='js-testimonial-slider'>
         {
           testimonialWithClones.map((testimonial: TestimonialType, index: number) =>
             <TestimonialContent
