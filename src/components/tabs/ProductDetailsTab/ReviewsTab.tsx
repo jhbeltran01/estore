@@ -15,7 +15,6 @@ type ReviewsTabProps = {
 let stars: JSX.Element[] = [];
 
 for (let i = 5; i > 0; --i) {
-  console.log("test")
   stars.push(<i key={i} className={`grid-align-column-${i} far fa-star`}></i>)
 }
 
