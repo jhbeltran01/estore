@@ -43,8 +43,7 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
     }
 
     const isForSmallViewport = contentWidth < 768;
-    const transitionHook = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
-    const { slider, sliderInterval, transitionEndHandler } = transitionHook;;
+    const { slider, sliderInterval, transitionEndHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
 
     return () => {
       clearInterval(sliderInterval);
