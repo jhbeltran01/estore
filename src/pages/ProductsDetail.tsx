@@ -11,6 +11,7 @@ import Tags from '@Components/tags/Tags';
 import tags from "@Json/tags.json";
 import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
 import Header from '@Components/header/Header';
+import RelatedProductsSlider from '@Components/slider/ProductsDetail/RelatedProductsSlider';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')
@@ -56,7 +57,9 @@ function ProductsDetail() {
         </div>
 
         <div className='overflow-hidden'>
-          <ProductCategory productCategory='Recent Products' products={recentProducts} name="recent" />
+          <ProductCategory productCategory='Related Products'>
+            <RelatedProductsSlider products={products} name="related" />
+          </ProductCategory>
         </div>
       </div>
 
