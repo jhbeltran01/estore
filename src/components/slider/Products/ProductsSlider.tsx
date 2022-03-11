@@ -19,7 +19,7 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
   useEffect((): void => {
-    const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
+    const carousel = document.getElementById(`js-${name}-carousel`) as HTMLDivElement;
     setContentWidth(carousel.clientWidth);
     setViewportWidth(window.innerWidth);
 
@@ -83,8 +83,8 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
   return (
-    <div className={`carousel-products js-${name}-carousel`}>
-      <div className={`carousel-products__slider  js-${name}-carousel-slider flex`}>
+    <div className='carousel-products' id={`js-${name}-carousel`}>
+      <div className='carousel-products__slider flex' id={`js-${name}-slider`}>
         {
           productsWithClones.map((datum: any, index: number) =>
             <ProductsContent

@@ -6,9 +6,9 @@ type UseSliderTransitionProps = {
 }
 
 const useSliderTransition = ({ name, contentLength, intervalTime, numberOfClones }: UseSliderTransitionProps) => {
-  const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
-  const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
-  const content = carousel.querySelector('.js-carousel-content') as HTMLDivElement;
+  const carousel = document.getElementById(`js-${name}-carousel`) as HTMLDivElement;
+  const slider = carousel.querySelector(`#js-${name}-slider`) as HTMLDivElement;
+  const content = carousel.querySelector('#js-content') as HTMLDivElement;
 
   let displayedContent = numberOfClones - 1;
 

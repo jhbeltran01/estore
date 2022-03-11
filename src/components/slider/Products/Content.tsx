@@ -15,7 +15,7 @@ function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel
   const stars: JSX.Element[] = useRating(rating);
 
   return (
-    <div className='wrapper-2 js-carousel-content' style={isForCarousel ? { minWidth: cardWidth } : {}}>
+    <div className='wrapper-2' id='js-content' style={isForCarousel ? { minWidth: cardWidth } : {}}>
       <div className='card'>
         <div className='card__content'>
           <h2 className='card__title'>{name}</h2>
