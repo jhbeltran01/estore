@@ -28,7 +28,7 @@ const Cart = (): JSX.Element => {
 
 
   return (
-    <React.StrictMode>
+    <React.Fragment>
       {
         ReactDOM.createPortal(
           <Header />,
@@ -46,7 +46,7 @@ const Cart = (): JSX.Element => {
           <CartSummary subtotal={subTotal} shippingCost={1} />
         </div>
       </div>
-    </React.StrictMode>
+    </React.Fragment>
   )
 }
 

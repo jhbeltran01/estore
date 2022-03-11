@@ -19,7 +19,7 @@ function ProductsDetail() {
   const [tabs, setTabs] = useState(useProductDetailsTabs(products[0]));
 
   return (
-    <React.StrictMode>
+    <React.Fragment>
       {
         ReactDOM.createPortal(
           <Header />,
@@ -73,7 +73,7 @@ function ProductsDetail() {
           document.getElementById('tags')!
         )
       }
-    </React.StrictMode>
+    </React.Fragment>
   )
 }
 
