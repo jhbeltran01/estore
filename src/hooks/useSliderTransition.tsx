@@ -1,17 +1,19 @@
-type useProductsSliderTransitionProps = {
+type UseSliderTransitionProps = {
   name: string,
   contentLength: number,
   intervalTime: number,
+  numberOfClones: number
 }
 
-const useProductsSliderTransition = ({ name, contentLength, intervalTime }: useProductsSliderTransitionProps) => {
+const useSliderTransition = ({ name, contentLength, intervalTime, numberOfClones }: UseSliderTransitionProps) => {
   const carousel = document.querySelector(`.js-${name}-carousel`) as HTMLDivElement;
   const slider = carousel.querySelector(`.js-${name}-carousel-slider`) as HTMLDivElement;
   const content = carousel.querySelector('.js-carousel-content') as HTMLDivElement;
 
-  let displayedContent = carousel.clientWidth >= 992 ? 3 : 2;
+  let displayedContent = numberOfClones - 1;
 
   slider.style.transform = `translateX(-${content.clientWidth * displayedContent}px)`;
+
 
   const sliderInterval = setInterval(() => {
     ++displayedContent;
@@ -19,7 +21,6 @@ const useProductsSliderTransition = ({ name, contentLength, intervalTime }: useP
     slider.style.transform = `translateX(-${content.clientWidth * displayedContent}px)`;
   }, intervalTime)
 
-  const numberOfClones = carousel.clientWidth >= 992 ? 4 : 3
 
   const transitionEndHandler = (): void => {
     if (displayedContent === contentLength - numberOfClones) {
@@ -34,4 +35,4 @@ const useProductsSliderTransition = ({ name, contentLength, intervalTime }: useP
   return { slider, sliderInterval, transitionEndHandler }
 }
 
-export default useProductsSliderTransition
+export default useSliderTransition
