@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductsContent from '@Components/slider/Products/Content'
 
-function useHeroContents(productsWithClones: {}[], contentWidth: number) {
+function useProductsContents(productsWithClones: {}[], contentWidth: number) {
   return (
     productsWithClones.map((datum: any, index: number) =>
       <ProductsContent
@@ -16,4 +16,4 @@ function useHeroContents(productsWithClones: {}[], contentWidth: number) {
   )
 }
 
-export default useHeroContents
+export default useProductsContents

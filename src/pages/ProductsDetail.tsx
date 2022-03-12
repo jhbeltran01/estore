@@ -6,12 +6,13 @@ import Tabs from '@Components/tabs/ProductDetailsTab/Tabs';
 import Tags from '@Components/tags/Tags';
 import Header from '@Components/header/Header';
 import RelatedProductsSlider from '@Components/slider/ProductsDetail/RelatedProductsSlider';
-import ProductsCarousel from '@Components/carousel/Products/ProductsCarousel';
 import products from '@Json/products.json';
 import tags from "@Json/tags.json";
 import ProductContent from '@Page-section/Product/ProductContent';
 import ProductCategory from '@Page-section/Product/ProductCategory';
 import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
+import Carousel from '@Components/carousel/Carousel';
+import useProductsContents from '@Hooks/useProductsContents';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')
@@ -65,7 +66,13 @@ function ProductsDetail() {
 
       {
         ReactDOM.createPortal(
-          <ProductsCarousel products={products} />,
+          (
+            <Carousel
+              name='products'
+              data={products}
+              contentsHook={useProductsContents}
+            />
+          ),
           document.getElementById('products-slider')!
         )
       }
