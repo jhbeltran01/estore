@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductsContent from './Content';
-import useCarouselTransition from '@Hooks/useCarouselTransition';
-import useSliderTransition from '@Hooks/useSliderTransition';
+import useCarouselTransition from '@Hooks/transitions/useCarouselTransition';
+import useSliderTransition from '@Hooks/transitions/useSliderTransition';
 import useGetClones from '@Hooks/useGetClones';
 
 type ProductsSliderProps = {

@@ -1,6 +1,6 @@
-import useCarouselTransition from '@Hooks/useCarouselTransition';
+import useCarouselTransition from '@Hooks/transitions/useCarouselTransition';
 import useGetClones from '@Hooks/useGetClones';
-import useSliderTransition from '@Hooks/useSliderTransition';
+import useSliderTransition from '@Hooks/transitions/useSliderTransition';
 import React, { useEffect, useState } from 'react'
 import ProductsContent from '../Products/Content'
 

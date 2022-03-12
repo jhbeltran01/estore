@@ -1,5 +1,5 @@
-import useCarouselTransition from '@Hooks/useCarouselTransition';
-import useSliderTransition from '@Hooks/useSliderTransition';
+import useCarouselTransition from '@Hooks/transitions/useCarouselTransition';
+import useSliderTransition from '@Hooks/transitions/useSliderTransition';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import TestimonialContent from './Content';

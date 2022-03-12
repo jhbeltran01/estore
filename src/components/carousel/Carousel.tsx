@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useSliderTransition from '@Hooks/useCarouselTransition';
+import useSliderTransition from '@Hooks/transitions/useCarouselTransition';
 
 type CarouselProps = {
   data: {}[],
