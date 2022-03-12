@@ -68,7 +68,7 @@ function RelatedProductsSlider({ products, name }: RelatedProductsSliderProps) {
               rating={datum.rating}
               prize={datum.prize}
               cardWidth={responsiveWidth}
-              isForCarousel={true} />
+            />
           )
         }
       </div>

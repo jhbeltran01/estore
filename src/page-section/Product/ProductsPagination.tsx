@@ -27,17 +27,16 @@ function ProductsPagination({ numberOfItemPerPage, products }: ProductsPaginatio
       <div className='product-view'>
         <div className='product-view__content grid-3-column-responsive'>
           {
-            productsToBeDisplayed.map((product) => {
-              return <ProductsContent
+            productsToBeDisplayed.map((product) => (
+              <ProductsContent
                 key={product.id}
                 imgSrc={product.imgSrc}
                 name={product.name}
                 prize={product.prize}
                 rating={product.rating}
                 cardWidth={0}
-                isForCarousel={true}
               />
-            })
+            ))
           }
         </div>
 
