@@ -3,7 +3,7 @@ import React from 'react'
 function useHeroContents(dataWithClones: {}[], contentWidth: number) {
   return (
     dataWithClones.map((datum: any, index: number) => (
-      <div style={{ minWidth: contentWidth }} className='carousel-hero__content'>
+      <div key={index} style={{ minWidth: contentWidth }} className='carousel-hero__content'>
         <img className='carousel-hero__img' src={datum.imgSrc} alt="" />
         <div className='carousel-hero__caption grid-center'>
           <div className='carousel-hero__caption-content'>
