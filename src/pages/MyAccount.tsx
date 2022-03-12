@@ -1,6 +1,6 @@
 import Header from '@Components/header/Header';
 import Navigation from '@Components/tabs/MyAccountTabs/Navigation';
-import useMyAccountTabs from '@Hooks/useMyAccountTabs';
+import useMyAccountTabs from '@Hooks/tabs/useMyAccountTabs';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import orders from '@Json/orders.json';

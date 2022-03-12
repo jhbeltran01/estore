@@ -10,7 +10,7 @@ import products from '@Json/products.json';
 import tags from "@Json/tags.json";
 import ProductContent from '@Page-section/Product/ProductContent';
 import ProductCategory from '@Page-section/Product/ProductCategory';
-import useProductDetailsTabs from '@Hooks/useProductDetailsTabs';
+import useProductDetailsTabs from '@Hooks/tabs/useProductDetailsTabs';
 import Carousel from '@Components/carousel/Carousel';
 import useProductsContents from '@Hooks/useProductsContents';
 
