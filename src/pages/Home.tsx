@@ -9,7 +9,7 @@ import products from '@Json/products.json';
 import testimonials from '@Json/testimonials.json'
 import "@Utils/toggleMobileNavMenu";
 import ProductsSlider from "@Components/slider/Products/ProductsSlider";
-import useHeroContents from "@Hooks/useHeroContents";
+import useHeroContents from "@Hooks/contents/useHeroContents";
 
 export const ProductsJSON = React.createContext([{}]);
 
