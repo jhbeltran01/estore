@@ -12,7 +12,7 @@ import ProductContent from '@Page-section/Product/ProductContent';
 import ProductCategory from '@Page-section/Product/ProductCategory';
 import useProductDetailsTabs from '@Hooks/tabs/useProductDetailsTabs';
 import Carousel from '@Components/carousel/Carousel';
-import useProductsContents from '@Hooks/useProductsContents';
+import useProductsContents from '@Hooks/contents/useProductsContents';
 
 const images = products.map(product => product.imgSrc);
 const recentProducts = products.filter(product => product.category === 'recent')

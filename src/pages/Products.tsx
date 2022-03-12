@@ -8,7 +8,7 @@ import Tags from '@Components/tags/Tags';
 import "@Utils/toggleMobileNavMenu";
 import tags from "@Json/tags.json";
 import Carousel from '@Components/carousel/Carousel';
-import useProductsContents from '@Hooks/useProductsContents';
+import useProductsContents from '@Hooks/contents/useProductsContents';
 
 function App() {
   return (
