@@ -96,7 +96,7 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
               rating={datum.rating}
               prize={datum.prize}
               cardWidth={responsiveWidth}
-              isForCarousel={true} />
+            />
           )
         }
       </div>
