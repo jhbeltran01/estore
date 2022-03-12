@@ -7,7 +7,8 @@ import products from '@Json/products.json';
 import Tags from '@Components/tags/Tags';
 import "@Utils/toggleMobileNavMenu";
 import tags from "@Json/tags.json";
-import ProductsCarousel from '@Components/carousel/Products/ProductsCarousel';
+import Carousel from '@Components/carousel/Carousel';
+import useProductsContents from '@Hooks/useProductsContents';
 
 function App() {
   return (
@@ -25,7 +26,12 @@ function App() {
 
       {
         ReactDOM.createPortal(
-          <ProductsCarousel products={products} />,
+          (
+            <Carousel
+              name='products'
+              data={products}
+              contentsHook={useProductsContents} />
+          ),
           document.getElementById('products-slider')!
         )
       }

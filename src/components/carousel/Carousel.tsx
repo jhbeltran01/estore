@@ -7,7 +7,7 @@ type CarouselProps = {
   contentsHook: (dataWithClones: {}[], contentWidth: number) => JSX.Element[]
 }
 
-const HeroCarousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
+const Carousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
   const dataWithClones = [data[data.length - 1], ...data, data[0]]
 
@@ -55,4 +55,4 @@ const HeroCarousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element 
   )
 }
 
-export default HeroCarousel;
+export default Carousel;

@@ -6,16 +6,15 @@ type ProductsContentProps = {
   name: string,
   rating: number,
   prize: number,
-  cardWidth: number,
-  isForCarousel: boolean
+  cardWidth: number
 }
 
 
-function ProductsContent({ imgSrc, name, rating, prize, cardWidth, isForCarousel }: ProductsContentProps) {
+function ProductsContent({ imgSrc, name, rating, prize, cardWidth }: ProductsContentProps) {
   const stars: JSX.Element[] = useRating(rating);
 
   return (
-    <div className='wrapper-2' id='js-content' style={isForCarousel ? { minWidth: cardWidth } : {}}>
+    <div className='wrapper-2' id='js-content' style={{ minWidth: cardWidth }}>
       <div className='card'>
         <div className='card__content'>
           <h2 className='card__title'>{name}</h2>
