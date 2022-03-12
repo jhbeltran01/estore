@@ -1,8 +1,9 @@
+import ReactDOM from 'react-dom'
+import '@Utils/toggleMobileNavMenu'
 import Header from '@Components/header/Header'
 import LogInSection from '@Page-section/Signin/LogInSection'
 import SignInSection from '@Page-section/Signin/SignInSection'
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 function SignIn() {
   return (
