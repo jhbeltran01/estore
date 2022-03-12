@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useSliderTransition from '@Hooks/useCarouselTransition';
-import HeroContent from './Content';
 
-type HeroCarouselProps = {
-  data: {
-    imgSrc: string,
-    desc: string
-  }[]
+type CarouselProps = {
+  data: {}[],
+  name: string,
+  contentsHook: (dataWithClones: {}[], contentWidth: number) => JSX.Element[]
 }
 
-const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
+const HeroCarousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
   const [contentWidth, setContentWidth] = useState(0);
   const dataWithClones = [data[data.length - 1], ...data, data[0]]
 
 
+
   useEffect(() => {
-    const carousel = document.getElementById('js-hero-carousel') as HTMLDivElement;
+    const carousel = document.getElementById(`js-${name}-carousel`) as HTMLDivElement;
     setContentWidth(carousel.clientWidth)
 
     window.addEventListener('resize', () => {
@@ -24,9 +23,10 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
   }, [])
 
 
+
   useEffect(() => {
     const sliderProps = {
-      name: 'hero',
+      name: name,
       contentLength: dataWithClones.length,
       intervalTime: 5000
     }
@@ -35,9 +35,12 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
 
 
 
+
+  const contents = contentsHook(dataWithClones, contentWidth)
+
   return (
-    <div className='carousel-hero' id='js-hero-carousel'>
-      <div className='carousel-hero__overlay flex-container-3'>
+    <div className={`carousel-${name}`} id={`js-${name}-carousel`}>
+      <div className={`carousel-${name}__overlay flex-container-3`}>
         <button className='btn-next-2 left'>
           <span className='left-arrow'></span>
         </button>
@@ -45,18 +48,10 @@ const HeroCarousel = ({ data }: HeroCarouselProps): JSX.Element => {
           <span className='right-arrow'></span>
         </button>
       </div>
-      <div className='carousel-hero__slider flex' id='js-hero-slider'>
-        {
-          dataWithClones.map((datum: any, index: number) => (
-            <HeroContent
-              key={index}
-              imgSrc={datum.imgSrc}
-              desc={datum.desc}
-              imgWidth={contentWidth} />
-          ))
-        }
+      <div className={`carousel-${name}__slider flex`} id={`js-${name}-slider`}>
+        {contents}
       </div>
-    </div >
+    </div>
   )
 }
 

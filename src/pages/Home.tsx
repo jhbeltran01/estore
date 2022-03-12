@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import HeroCarousel from "@Components/carousel/Hero/HeroCarousel";
+import Carousel from "@Components/carousel/Carousel";
 import Header from "@Components/header/Header";
 import ProductCategory from "@Page-section/Product/ProductCategory";
 import TestimonialSlider from "@Components/slider/Testimonial/TestimonialSlider";
@@ -9,6 +9,7 @@ import products from '@Json/products.json';
 import testimonials from '@Json/testimonials.json'
 import "@Utils/toggleMobileNavMenu";
 import ProductsSlider from "@Components/slider/Products/ProductsSlider";
+import useHeroContents from "@Hooks/useHeroContents";
 
 export const ProductsJSON = React.createContext([{}]);
 
@@ -27,7 +28,12 @@ const App = (): JSX.Element => {
 
       {
         ReactDOM.createPortal(
-          <HeroCarousel data={carouselContent} />,
+          (
+            <Carousel
+              name='hero'
+              data={carouselContent}
+              contentsHook={useHeroContents} />
+          ),
           document.getElementById('hero-carousel')!
         )
       }
