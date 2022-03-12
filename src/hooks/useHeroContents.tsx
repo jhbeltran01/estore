@@ -1,14 +1,17 @@
 import React from 'react'
-import HeroContent from '@Components/carousel/Hero/Content'
 
 function useHeroContents(dataWithClones: {}[], contentWidth: number) {
   return (
     dataWithClones.map((datum: any, index: number) => (
-      <HeroContent
-        key={index}
-        imgSrc={datum.imgSrc}
-        desc={datum.desc}
-        imgWidth={contentWidth} />
+      <div style={{ minWidth: contentWidth }} className='carousel-hero__content'>
+        <img className='carousel-hero__img' src={datum.imgSrc} alt="" />
+        <div className='carousel-hero__caption grid-center'>
+          <div className='carousel-hero__caption-content'>
+            <p className='carousel-hero__desc'>{datum.desc}</p>
+            <button className='btn-hero'><i className="fa fa-shopping-cart"></i> Shop Now</button>
+          </div>
+        </div>
+      </div>
     ))
   )
 }
