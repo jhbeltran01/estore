@@ -1,8 +1,9 @@
+import ReactDOM from 'react-dom'
+import '@Utils/toggleMobileNavMenu'
 import Header from '@Components/header/Header'
 import ContactUsAddressData from '@Page-section/ContactUs/ContactUsAddressData'
 import ContactUsForm from '@Page-section/ContactUs/ContactUsForm'
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 function Contact() {
   return (
