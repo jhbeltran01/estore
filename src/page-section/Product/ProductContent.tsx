@@ -42,7 +42,7 @@ const ProductContent = ({ imgSrc, name, rating, prize, id }: ProductType) => {
         <CustomOptions options={sizeOptions} />
       </div>
 
-      <div className='mar-bot-5'>
+      <div className='mar-bot-5 grid-2-column-1'>
         <p className='product-detail__label'>Color:</p>
         <CustomOptions options={colorOptions} />
       </div>
