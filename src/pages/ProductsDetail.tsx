@@ -39,7 +39,7 @@ function ProductsDetail() {
         </div>
 
         <div className='overflow-hidden'>
-          <ProductCategory productCategory='Related Products'>
+          <ProductCategory productCategory='Related Products' name='related'>
             <RelatedProductsSlider products={products} name="related" />
           </ProductCategory>
         </div>
