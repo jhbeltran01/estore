@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useSliderTransition from '@Hooks/transitions/useCarouselTransition';
+import CarouselOverlay from './CarouselOverlay';
 
 type CarouselProps = {
   data: {}[],
@@ -39,15 +40,8 @@ const Carousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
   const contents = contentsHook(dataWithClones, contentWidth)
 
   return (
-    <div className={`carousel-${name}`} id={`js-${name}-carousel`}>
-      <div className={`carousel-${name}__overlay flex-container-3`}>
-        <button className='btn-next-2 left'>
-          <span className='left-arrow'></span>
-        </button>
-        <button className='btn-next-2 right'>
-          <span className='right-arrow'></span>
-        </button>
-      </div>
+    <div className={`carousel carousel-${name}`} id={`js-${name}-carousel`}>
+      <CarouselOverlay />
       <div className={`carousel-${name}__slider flex`} id={`js-${name}-slider`}>
         {contents}
       </div>
