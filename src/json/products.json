@@ -2,9 +2,9 @@
   {
     "id": "1",
     "imgSrc": "images/product-1.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 1",
+    "rating": 3,
+    "prize": 192,
     "category": "featured",
     "description": {
       "title": "Product Description",
@@ -48,14 +48,24 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Almond",
+      "Amaranth red",
+      "Amethyst"
     ]
   },
   {
     "id": "2",
     "imgSrc": "images/product-2.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 2",
+    "rating": 2,
+    "prize": 829,
     "category": "featured",
     "description": {
       "title": "Product Description",
@@ -99,14 +109,25 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Ash gray",
+      "Avocado",
+      "Baby pink"
     ]
   },
   {
     "id": "3",
     "imgSrc": "images/product-3.jpg",
-    "name": "Product Name",
+    "name": "Product Name 3",
     "rating": 5,
-    "prize": 99,
+    "prize": 924,
     "category": "featured",
     "description": {
       "title": "Product Description",
@@ -150,14 +171,22 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "S",
+      "L"
+    ],
+    "colors": [
+      "Barbie Pink",
+      "Bisque"
     ]
   },
   {
     "id": "4",
     "imgSrc": "images/product-4.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 6",
+    "rating": 4,
+    "prize": 987,
     "category": "featured",
     "description": {
       "title": "Product Description",
@@ -201,14 +230,22 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Blood red",
+      "Blue-gray"
     ]
   },
   {
     "id": "5",
     "imgSrc": "images/product-5.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 5",
+    "rating": 3,
+    "prize": 324,
     "category": "featured",
     "description": {
       "title": "Product Description",
@@ -252,14 +289,24 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Brown",
+      "Bud green",
+      "Byzantium"
     ]
   },
   {
     "id": "6",
     "imgSrc": "images/product-6.jpg",
-    "name": "Product Name",
+    "name": "Product Name 6",
     "rating": 5,
-    "prize": 99,
+    "prize": 435,
     "category": "recent",
     "description": {
       "title": "Product Description",
@@ -303,14 +350,23 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "M",
+      "XL"
+    ],
+    "colors": [
+      "Camel",
+      "Canary",
+      "Cardinal"
     ]
   },
   {
     "id": "7",
     "imgSrc": "images/product-7.jpg",
-    "name": "Product Name",
+    "name": "Product Name 7",
     "rating": 5,
-    "prize": 99,
+    "prize": 786,
     "category": "recent",
     "description": {
       "title": "Product Description",
@@ -354,14 +410,25 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Catawba",
+      "Carnelian",
+      "Celadon"
     ]
   },
   {
     "id": "8",
     "imgSrc": "images/product-8.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 8",
+    "rating": 2,
+    "prize": 111,
     "category": "recent",
     "description": {
       "title": "Product Description",
@@ -405,14 +472,24 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "XL"
+    ],
+    "colors": [
+      "Cerulean blue",
+      "Charcoal",
+      "Charm pink"
     ]
   },
   {
     "id": "9",
     "imgSrc": "images/product-9.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 9",
+    "rating": 1,
+    "prize": 90,
     "category": "recent",
     "description": {
       "title": "Product Description",
@@ -456,14 +533,23 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "XL"
+    ],
+    "colors": [
+      "Chinese violet",
+      "Chinese yellow"
     ]
   },
   {
     "id": "10",
     "imgSrc": "images/product-10.jpg",
-    "name": "Product Name",
-    "rating": 5,
-    "prize": 99,
+    "name": "Product Name 10",
+    "rating": 3,
+    "prize": 1000,
     "category": "recent",
     "description": {
       "title": "Product Description",
@@ -507,6 +593,15 @@
         "rating": 5,
         "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       }
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "XL"
+    ],
+    "colors": [
+      "Cinnabar",
+      "Citron"
     ]
   }
 ]
