@@ -4,17 +4,17 @@ import useRating from '@Hooks/useRating'
 import React from 'react'
 
 type ProductType = {
-  imgSrc: string,
   name: string,
   rating: number,
   prize: number,
-  id: string
+  sizes: string[],
+  colors: string[]
 }
 
 const sizeOptions = ['S', 'M', 'L', 'XL']
 const colorOptions = ['White', 'Black', 'Blue']
 
-const ProductContent = ({ imgSrc, name, rating, prize, id }: ProductType) => {
+const ProductContent = ({ name, rating, prize, sizes, colors }: ProductType) => {
   const stars = useRating(rating);
 
   return (
@@ -39,12 +39,12 @@ const ProductContent = ({ imgSrc, name, rating, prize, id }: ProductType) => {
 
       <div className='grid-2-column-1 mar-bot-5'>
         <p className='product-detail__label'>Size</p>
-        <CustomOptions options={sizeOptions} />
+        <CustomOptions options={sizes} />
       </div>
 
       <div className='mar-bot-5 grid-2-column-1'>
         <p className='product-detail__label'>Color:</p>
-        <CustomOptions options={colorOptions} />
+        <CustomOptions options={colors} />
       </div>
 
       <div>

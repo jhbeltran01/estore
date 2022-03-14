@@ -14,7 +14,9 @@ type Product = {
   name: string,
   rating: number,
   prize: number,
-  id: string
+  id: string,
+  sizes: string[],
+  colors: string[]
 }
 
 type CarouselWithNavProps = {
@@ -96,11 +98,11 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
       <div className='grid grid-align-center pad-2'>
         <ProductContent
-          imgSrc={productDetails.imgSrc}
           name={productDetails.name}
           rating={productDetails.rating}
           prize={productDetails.prize}
-          id={productDetails.id}
+          sizes={productDetails.sizes}
+          colors={productDetails.colors}
         />
       </div>
     </React.Fragment>
