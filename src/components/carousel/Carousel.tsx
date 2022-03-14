@@ -40,10 +40,12 @@ const Carousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
   const contents = contentsHook(dataWithClones, contentWidth)
 
   return (
-    <div className={`carousel carousel-${name}`} id={`js-${name}-carousel`}>
-      <CarouselOverlay />
-      <div className={`carousel-${name}__slider flex`} id={`js-${name}-slider`}>
-        {contents}
+    <div id={`js-${name}-container`}>
+      <div className={`carousel carousel-${name}`} id={`js-${name}-carousel`}>
+        <CarouselOverlay />
+        <div className={`carousel-${name}__slider flex`} id={`js-${name}-slider`}>
+          {contents}
+        </div>
       </div>
     </div>
   )
