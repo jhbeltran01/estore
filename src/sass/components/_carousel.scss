@@ -186,7 +186,7 @@
     opacity: 0;
     left: 0;
     right: 0;
-
+    transition: opacity var.$transition-secondary;
 
     &:is(.active) {
       position: unset;
@@ -199,12 +199,23 @@
 
 .carousel-product-view-nav {
   border: 1px solid var.$light-red;
+  overflow: hidden;
+  position: relative;
 
 
-  img {
-   width: 15%;
-   height: inherit;
+  img { 
+    width: 20%;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform var.$transition-primary, border-right 0ms;
 
+    &:hover {
+      transform: scale(1.3);
+      z-index: 10;
+    }
+    &:hover + img {
+      border-left: 1px solid var.$light-red;
+    }
 
     &:not(:last-child) {
       border-right: 1px solid var.$light-red;

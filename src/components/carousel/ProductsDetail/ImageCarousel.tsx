@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "@Utils/toggleMobileNavMenu";
 
 type ImageCarouselProps = {
-  images: string[]
+  images: {
+    id: string,
+    imgSrc: string,
+    isClone: boolean
+  }[],
+  activeImgId: string
 }
 
-const ImageCarousel = ({ images }: ImageCarouselProps): JSX.Element => {
-  const [activeImage, setActiveImage] = useState(0)
-
+const ImageCarousel = ({ images, activeImgId }: ImageCarouselProps): JSX.Element => {
   return (
     <div className='carousel-product-view overflow-hidden'>
       <div className='carousel-product__slider flex'>
         {
-          images.map((image: string, index: number) => (
+          images.map((image, index) => (
             <img
               key={index}
-              src={image}
-              className={activeImage === index ? 'active' : ''}
+              src={image.imgSrc}
+              className={activeImgId === image.id ? 'active' : ''}
               alt="product image" />
           ))
         }

@@ -13,9 +13,7 @@ import ProductCategory from '@Page-section/Product/ProductCategory';
 import useProductDetailsTabs from '@Hooks/tabs/useProductDetailsTabs';
 import Carousel from '@Components/carousel/Carousel';
 import useProductsContents from '@Hooks/contents/useProductsContents';
-
-const images = products.map(product => product.imgSrc);
-const recentProducts = products.filter(product => product.category === 'recent')
+import CarouselWithNavAndDetails from '@Components/carousel/CarouselWithNavAndDetails';
 
 function ProductsDetail() {
   const [tabs, setTabs] = useState(useProductDetailsTabs(products[0]));
@@ -32,24 +30,7 @@ function ProductsDetail() {
       <div className='product-detail mar grid'>
         <div>
           <div className='bg-white-2 grid-2-column-responsive-6'>
-            <div>
-              <div className='mar-bot-3'>
-                <ImageCarousel images={images} />
-              </div>
-              <div className='border-red mar overflow-hidden'>
-                <ImageSlider images={images} />
-              </div>
-            </div>
-
-            <div className='grid grid-align-center pad-2'>
-              <ProductContent
-                imgSrc={products[0].imgSrc}
-                name={products[0].name}
-                rating={products[0].rating}
-                prize={products[0].prize}
-                id={products[0].id}
-              />
-            </div>
+            <CarouselWithNavAndDetails products={products} />
           </div>
 
           <div className='mar-y-2'>
