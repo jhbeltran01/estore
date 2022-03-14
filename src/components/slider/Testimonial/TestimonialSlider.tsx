@@ -20,7 +20,7 @@ type TestimonialSliderProps = {
 
 function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const [contentWidth, setContentWidth] = useState(0);
-  const [testimonialWithClones, setTestimonialWithClones] = useState([testimonials[testimonials.length - 1], ...testimonials, testimonials[0]]);
+  const [testimonialWithClones] = useState([testimonials[testimonials.length - 1], ...testimonials, testimonials[0]]);
 
 
 
@@ -40,15 +40,18 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
       name: 'testimonial',
       contentLength: testimonialWithClones.length,
       intervalTime: 5000,
-      numberOfClones: 2
+      numberOfClones: 2,
+      hasSlider: true
     }
 
     const isForSmallViewport = contentWidth < 768;
-    const { slider, sliderInterval, transitionEndHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
+    const { slider, sliderInterval, transitionEndHandler, leftArrow, leftArrowClickHandler, rightArrow, rightArrowClickHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
 
     return () => {
       clearInterval(sliderInterval);
       slider.removeEventListener('transitionend', transitionEndHandler);
+      leftArrow.removeEventListener('click', leftArrowClickHandler)
+      rightArrow.removeEventListener('click', rightArrowClickHandler)
     }
   }, [contentWidth])
 
@@ -57,7 +60,7 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const responsiveWidth = contentWidth >= 768 ? contentWidth / 2 : contentWidth
 
   return (
-    <div className='pad-4'>
+    <div className='pad-4' id='js-testimonial-container'>
       <div className='carousel carousel-testimonial' id='js-testimonial-carousel'>
         <CarouselOverlay />
 
