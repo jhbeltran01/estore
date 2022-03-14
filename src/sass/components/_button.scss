@@ -263,11 +263,15 @@
   border-right: none;
   font-size: var.$fs-14;
   padding: 4px 8px;
+  transition: var.$transition-primary;
+
+  &:hover {
+    @extend %btn-hover;
+  }
 
 
   &:is(.active) {
-    background-color: var.$light-red;
-    color: var.$white;
+    @extend %btn-hover;
   }
 
 
