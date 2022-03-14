@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
       {
         ReactDOM.createPortal(
           (
-            <ProductCategory productCategory='Featured Products'>
+            <ProductCategory productCategory='Featured Products' name='featured'>
               <ProductsSlider products={featuredProducts} name='featured' />
             </ProductCategory>
           ),
@@ -52,7 +52,7 @@ const App = (): JSX.Element => {
       {
         ReactDOM.createPortal(
           (
-            <ProductCategory productCategory='Recent Products'>
+            <ProductCategory productCategory='Recent Products' name='recent'>
               <ProductsSlider products={recentProducts} name='recent' />
             </ProductCategory>
           ),
