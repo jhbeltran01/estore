@@ -12,7 +12,10 @@
   &:hover &__content {
     background-color: var.$light-red;
   }
-  &:hover .star {
+  &:hover .active-star {
+    color: var.$black;
+  }
+  &:hover .disabled-star {
     color: var.$white;
   }
   &:hover .btn-secondary {
