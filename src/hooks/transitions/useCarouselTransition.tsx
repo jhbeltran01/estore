@@ -1,10 +1,11 @@
 export type UseCarouselTransitionProps = {
   name: string,
   contentLength: number,
-  intervalTime: number
+  intervalTime: number,
+  hasSlider: boolean
 }
 
-const useCarouselTransition = ({ name, contentLength, intervalTime }: UseCarouselTransitionProps) => {
+const useCarouselTransition = ({ name, contentLength, intervalTime, hasSlider }: UseCarouselTransitionProps) => {
   const carouselContainer = document.getElementById(`js-${name}-container`) as HTMLDivElement;
   const carousel = carouselContainer.querySelector(`#js-${name}-carousel`) as HTMLDivElement;
   const slider = carouselContainer.querySelector(`#js-${name}-slider`) as HTMLDivElement;
@@ -12,57 +13,43 @@ const useCarouselTransition = ({ name, contentLength, intervalTime }: UseCarouse
   const rightArrow = carouselContainer.querySelector('#js-arrow-right') as HTMLDivElement;
 
   let displayedContent = 1;
-  let sliderInterval: NodeJS.Timer;
+  var sliderInterval: NodeJS.Timer;
 
-
-  const slide = () => {
-    slider.style.transition = '500ms ease-in-out';
-    slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
-  }
-
-  const changeSliderInterval = (sliderDirection: Function) => {
-    clearInterval(sliderInterval);
-    sliderDirection()
-    slide()
-
-    sliderInterval = setInterval(() => {
-      sliderDirection()
-      slide()
-    }, intervalTime)
-  }
-
-  const slideRight = () => {
-    if (displayedContent <= 0) { return };
-    --displayedContent;
-  }
+  slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`
 
   const slideLeft = () => {
     if (displayedContent >= contentLength - 1) { return };
+
     ++displayedContent;
+    slider.style.transition = '500ms ease-in-out'
+    slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`
+  }
+
+  sliderInterval = setInterval(slideLeft, intervalTime)
+
+  const slideRight = () => {
+    if (displayedContent <= 0) { return };
+
+    --displayedContent;
+    slider.style.transition = '500ms ease-in-out'
+    slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`
+  }
+
+  const changeSlideDirection = (direction: () => void) => {
+    clearInterval(sliderInterval);
+
+    direction()
+
+    sliderInterval = setInterval(direction, intervalTime)
   }
 
 
+  const leftArrowClickHandler = () => changeSlideDirection(slideRight)
+  const rightArrowClickHandler = () => changeSlideDirection(slideLeft)
 
-  const leftArrowClickHandler = () => changeSliderInterval(slideRight)
-  const rightArrowClickHandler = () => changeSliderInterval(slideLeft)
-
-  if (displayedContent === 1) {
-    leftArrow.removeEventListener('click', leftArrowClickHandler);
-    rightArrow.removeEventListener('click', rightArrowClickHandler);
-  }
 
   leftArrow.addEventListener('click', leftArrowClickHandler)
   rightArrow.addEventListener('click', rightArrowClickHandler)
-
-
-
-
-  slider.style.transform = `translateX(-${carousel.clientWidth * displayedContent}px)`;
-
-  sliderInterval = setInterval(() => {
-    changeSliderInterval(slideLeft)
-  }, intervalTime)
-
 
 
   const transitionEndHandler = (): void => {
@@ -82,9 +69,16 @@ const useCarouselTransition = ({ name, contentLength, intervalTime }: UseCarouse
     }
   }
 
+  if (hasSlider) {
+    const removeInterval = () => clearInterval(sliderInterval)
+
+    window.removeEventListener('resize', removeInterval)
+    window.addEventListener('resize', removeInterval)
+  }
+
   slider.addEventListener('transitionend', transitionEndHandler)
 
-  return { slider, sliderInterval, transitionEndHandler }
+  return { slider, sliderInterval, transitionEndHandler, leftArrow, leftArrowClickHandler, rightArrow, rightArrowClickHandler }
 }
 
 export default useCarouselTransition;

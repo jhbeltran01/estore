@@ -56,17 +56,20 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
       name: name,
       contentLength: tempClones.length,
       intervalTime: 5000,
-      numberOfClones: numberOfClones
+      numberOfClones: numberOfClones,
+      hasSlider: true
     }
 
-    const isForSmallViewport = viewportWidth < 736;
-    const { slider, sliderInterval, transitionEndHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
+    const isForSmallViewport = viewportWidth < 768;
+    const { slider, sliderInterval, transitionEndHandler, leftArrow, leftArrowClickHandler, rightArrow, rightArrowClickHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props);
 
     return () => {
       clearInterval(sliderInterval);
       slider.removeEventListener('transitionend', transitionEndHandler);
+      leftArrow.removeEventListener('click', leftArrowClickHandler)
+      rightArrow.removeEventListener('click', rightArrowClickHandler)
     }
-  }, [contentWidth])
+  }, [contentWidth, viewportWidth])
 
 
 
