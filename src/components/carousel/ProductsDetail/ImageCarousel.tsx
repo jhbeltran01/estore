@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "@Utils/toggleMobileNavMenu";
+import CarouselOverlay from '../CarouselOverlay';
 
 type ImageCarouselProps = {
   images: {
@@ -12,7 +13,8 @@ type ImageCarouselProps = {
 
 const ImageCarousel = ({ images, activeImgId }: ImageCarouselProps): JSX.Element => {
   return (
-    <div className='carousel-product-view overflow-hidden'>
+    <div className='carousel carousel-product-view overflow-hidden'>
+      <CarouselOverlay name='product-view' />
       <div className='carousel-product__slider flex'>
         {
           images.map((image, index) => (

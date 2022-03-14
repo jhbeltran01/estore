@@ -2,6 +2,22 @@
 @use '../abstract/placeholders' as *;
 @use '../abstract/breakpoints' as viewport;
 
+.carousel {
+ &:hover .btn-next-2{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0 0 0 0;
+  padding: 1.5em;
+
+  .btn-next-2 {
+    z-index: 100;
+  }
+}
 
 .carousel-hero {  
   margin: 2rem 0;
@@ -110,17 +126,6 @@
     opacity: 1;
     transform: translateX(0);
   }
-
-  &__overlay {
-    position: absolute;
-    inset: 0 0 0 0;
-    padding: 1.5em;
-
-
-    .btn-next-2 {
-      z-index: 100;
-    }
-  }
 }
 
 
@@ -179,7 +184,7 @@
 
 .carousel-product-view {
   position: relative;
-  
+
 
   img {
     position: absolute;
@@ -201,7 +206,7 @@
   border: 1px solid var.$light-red;
   overflow: hidden;
   position: relative;
-
+  
 
   img { 
     width: 20%;
