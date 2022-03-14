@@ -14,7 +14,7 @@ type ImageCarouselProps = {
 const ImageCarousel = ({ images, activeImgId }: ImageCarouselProps): JSX.Element => {
   return (
     <div className='carousel carousel-product-view overflow-hidden'>
-      <CarouselOverlay name='product-view' />
+      <CarouselOverlay />
       <div className='carousel-product__slider flex'>
         {
           images.map((image, index) => (

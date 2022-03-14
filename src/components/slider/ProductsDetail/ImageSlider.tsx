@@ -55,7 +55,7 @@ const ImageSlider = ({ images, activeImgId }: ImageSliderProps): JSX.Element => 
 
   return (
     <div className='carousel carousel-product-view-nav overflow-hidden' id='js-product-view-nav'>
-      <CarouselOverlay name='' />
+      <CarouselOverlay />
       <div className='carousel-product-view-nav__slider flex' id='js-product-view-slider'>
         {
           images.map((image, index: number) => (
