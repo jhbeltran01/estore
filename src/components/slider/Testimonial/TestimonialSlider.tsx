@@ -1,3 +1,4 @@
+import CarouselOverlay from '@Components/carousel/CarouselOverlay';
 import useCarouselTransition from '@Hooks/transitions/useCarouselTransition';
 import useSliderTransition from '@Hooks/transitions/useSliderTransition';
 import React, { useEffect, useState } from 'react';
@@ -56,30 +57,25 @@ function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const responsiveWidth = contentWidth >= 768 ? contentWidth / 2 : contentWidth
 
   return (
-    <div className='carousel-testimonial mar-x-2' id='js-testimonial-carousel'>
-      <div className='carousel-testimonial__overlay flex-container-3'>
-        <button className='btn-next-2  left'>
-          <span className='left-arrow'></span>
-        </button>
-        <button className='btn-next-2 right'>
-          <span className='right-arrow'></span>
-        </button>
-      </div>
+    <div className='pad-4'>
+      <div className='carousel carousel-testimonial' id='js-testimonial-carousel'>
+        <CarouselOverlay />
 
-      <div className='carousel-testimonial__slider flex' id='js-testimonial-slider'>
-        {
-          testimonialWithClones.map((testimonial: TestimonialType, index: number) =>
-            <TestimonialContent
-              key={index}
-              imgSrc={testimonial.imgSrc}
-              imgDesc={testimonial.imgDesc}
-              name={testimonial.name}
-              rating={testimonial.rating}
-              testimonial={testimonial.testimonial}
-              profession={testimonial.profession}
-              wrapperWidth={responsiveWidth}
-            />)
-        }
+        <div className='carousel-testimonial__slider flex' id='js-testimonial-slider'>
+          {
+            testimonialWithClones.map((testimonial: TestimonialType, index: number) =>
+              <TestimonialContent
+                key={index}
+                imgSrc={testimonial.imgSrc}
+                imgDesc={testimonial.imgDesc}
+                name={testimonial.name}
+                rating={testimonial.rating}
+                testimonial={testimonial.testimonial}
+                profession={testimonial.profession}
+                wrapperWidth={responsiveWidth}
+              />)
+          }
+        </div>
       </div>
     </div>
   )

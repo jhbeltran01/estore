@@ -3,7 +3,10 @@
 @use '../abstract/breakpoints' as viewport;
 
 .carousel {
- &:hover .btn-next-2{
+  overflow: hidden;
+  position: relative; 
+
+  &:hover .btn-next-2{
     transform: translateX(0);
     opacity: 1;
   }
@@ -21,15 +24,6 @@
 
 .carousel-hero {  
   margin: 2rem 0;
-  overflow: hidden;
-  position: relative;
-
-
-  &:hover .btn-next-2 {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
 
   @include viewport.medium {
     margin: 0;
@@ -118,28 +112,9 @@
 }
 
 
-.carousel-products {
-  overflow-x: hidden;
-  position: relative;
-
-  &:hover .btn-next-2{
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
 .carousel-testimonial {
   margin: 2rem 0;
-  overflow-x: hidden;
-  position: relative; 
   
-
-  &:hover .btn-next-2 {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
 
   &__name {
     font: {
@@ -183,9 +158,6 @@
 
 
 .carousel-product-view {
-  position: relative;
-
-
   img {
     position: absolute;
     opacity: 0;
@@ -204,8 +176,6 @@
 
 .carousel-product-view-nav {
   border: 1px solid var.$light-red;
-  overflow: hidden;
-  position: relative;
   
 
   img { 

@@ -85,20 +85,22 @@ const ProductsSlider = ({ products, name }: ProductsSliderProps): JSX.Element =>
 
 
   return (
-    <div className='carousel-products' id={`js-${name}-carousel`}>
-      <div className='carousel-products__slider flex' id={`js-${name}-slider`}>
-        {
-          productsWithClones.map((datum: any, index: number) =>
-            <ProductsContent
-              key={index}
-              imgSrc={datum.imgSrc}
-              name={datum.name}
-              rating={datum.rating}
-              prize={datum.prize}
-              cardWidth={responsiveWidth}
-            />
-          )
-        }
+    <div className='pad-4'>
+      <div className='carousel-products' id={`js-${name}-carousel`}>
+        <div className='carousel-products__slider flex' id={`js-${name}-slider`}>
+          {
+            productsWithClones.map((datum: any, index: number) =>
+              <ProductsContent
+                key={index}
+                imgSrc={datum.imgSrc}
+                name={datum.name}
+                rating={datum.rating}
+                prize={datum.prize}
+                cardWidth={responsiveWidth}
+              />
+            )
+          }
+        </div>
       </div>
     </div>
   );
