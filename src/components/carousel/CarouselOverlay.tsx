@@ -1,12 +1,8 @@
 import React from 'react'
 
-type CarouselOverlayProps = {
-  name: string
-}
-
-function CarouselOverlay({ name }: CarouselOverlayProps) {
+function CarouselOverlay() {
   return (
-    <div className='overlay flex-container-3'>
+    <div className='carousel-overlay flex-container-3'>
       <button className='btn-next-2 left'>
         <span className='left-arrow'></span>
       </button>
