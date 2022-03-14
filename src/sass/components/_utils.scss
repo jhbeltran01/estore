@@ -131,8 +131,13 @@
   }
 }
 // stars
-.star {
+.active-star {
   color: var.$light-red;
+  margin: 0 0.1rem;
+  transition: var.$transition-primary;
+}
+.disabled-star {
+  color: var.$gray-4;
   margin: 0 0.1rem;
   transition: var.$transition-primary;
 }
