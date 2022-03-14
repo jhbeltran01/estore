@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useSliderTransition from '@Hooks/transitions/useCarouselTransition';
+import useCarouselTransition from '@Hooks/transitions/useCarouselTransition';
 import CarouselOverlay from './CarouselOverlay';
 
 type CarouselProps = {
@@ -31,7 +31,7 @@ const Carousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
       contentLength: dataWithClones.length,
       intervalTime: 5000
     }
-    useSliderTransition(sliderProps);
+    useCarouselTransition(sliderProps);
   }, [])
 
 
