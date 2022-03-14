@@ -29,7 +29,8 @@ const Carousel = ({ data, name, contentsHook }: CarouselProps): JSX.Element => {
     const sliderProps = {
       name: name,
       contentLength: dataWithClones.length,
-      intervalTime: 5000
+      intervalTime: 5000,
+      hasSlider: false
     }
     useCarouselTransition(sliderProps);
   }, [])
