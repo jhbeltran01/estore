@@ -1,3 +1,5 @@
+import Carousel from '@Components/carousel/Carousel'
+import CarouselOverlay from '@Components/carousel/CarouselOverlay'
 import React, { useEffect, useState } from 'react'
 
 type ImageSliderProps = {
@@ -52,7 +54,8 @@ const ImageSlider = ({ images, activeImgId }: ImageSliderProps): JSX.Element => 
 
 
   return (
-    <div className='carousel-product-view-nav overflow-hidden' id='js-product-view-nav'>
+    <div className='carousel carousel-product-view-nav overflow-hidden' id='js-product-view-nav'>
+      <CarouselOverlay name='' />
       <div className='carousel-product-view-nav__slider flex' id='js-product-view-slider'>
         {
           images.map((image, index: number) => (
