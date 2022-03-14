@@ -56,9 +56,10 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
     setInterval(() => {
       setActiveImgId(images[index].id)
-      index = index === images.length - 1 ? 0 : index + 1;
       setProductDetails(products[index])
-    }, 5000)
+
+      index = index === images.length - 1 ? 0 : index + 1;
+    }, 10000)
   }
 
 
