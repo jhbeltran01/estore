@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import ImageCarousel from '@Components/carousel/ProductsDetail/ImageCarousel'
-import ImageSlider from '@Components/slider/ProductsDetail/ImageSlider';
 import Tabs from '@Components/tabs/ProductDetailsTab/Tabs';
 import Tags from '@Components/tags/Tags';
 import Header from '@Components/header/Header';
 import RelatedProductsSlider from '@Components/slider/ProductsDetail/RelatedProductsSlider';
 import products from '@Json/products.json';
 import tags from "@Json/tags.json";
-import ProductContent from '@Page-section/Product/ProductContent';
 import ProductCategory from '@Page-section/Product/ProductCategory';
 import useProductDetailsTabs from '@Hooks/tabs/useProductDetailsTabs';
 import Carousel from '@Components/carousel/Carousel';
 import useProductsContents from '@Hooks/contents/useProductsContents';
 import CarouselWithNavAndDetails from '@Components/carousel/CarouselWithNavAndDetails';
+import "@Utils/toggleMobileNavMenu";
 
 function ProductsDetail() {
   const [tabs, setTabs] = useState(useProductDetailsTabs(products[0]));
