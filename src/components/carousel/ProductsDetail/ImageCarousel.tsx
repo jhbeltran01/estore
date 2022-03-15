@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import "@Utils/toggleMobileNavMenu";
 import CarouselOverlay from '../CarouselOverlay';
 
 type ImageCarouselProps = {
   images: {
     id: string,
-    imgSrc: string,
-    isClone: boolean
+    imgSrc: string
   }[],
   activeImgId: string
 }
 
 const ImageCarousel = ({ images, activeImgId }: ImageCarouselProps): JSX.Element => {
   return (
-    <div className='carousel carousel-product-view overflow-hidden'>
+    <div className='carousel carousel-product-view overflow-hidden' id='js-product-view-carousel'>
       <CarouselOverlay />
       <div className='carousel-product__slider flex'>
         {

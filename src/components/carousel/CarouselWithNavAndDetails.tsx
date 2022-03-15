@@ -26,10 +26,7 @@ type CarouselWithNavProps = {
 function CarouselWithNav({ products }: CarouselWithNavProps) {
   const [activeImgId, setActiveImgId] = useState(products[0].id);
   const [productDetails, setProductDetails] = useState(products[0])
-  const [imagesForCarousel, setImagesForCarousel] = useState<Image[]>([])
   const [imagesForSlider, setImagesForSlider] = useState<Image[]>([])
-
-
 
   const getImagesWithClones = (products: Image[], numberOfClones: number): Image[] => {
     const clonesInTheFront: Image[] = [];
@@ -53,15 +50,72 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
   }
 
 
-  const changeActiveImage = (images: Image[]) => {
-    let index = 1;
 
-    setInterval(() => {
-      setActiveImgId(images[index].id)
-      setProductDetails(products[index])
+  const sliderTransition = (carousel: HTMLDivElement, indexObj: { index: number }): void => {
+    const slider = carousel.querySelector('#js-product-view-slider') as HTMLDivElement;
 
-      index = index === images.length - 1 ? 0 : index + 1;
-    }, 10000)
+    slider.style.transition = 'none';
+    slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 2}px)`
+  }
+
+
+
+  const changeDisplayedProduct = (images: Image[]): void => {
+    let indexObj = {
+      index: 0
+    };
+    let interval: NodeJS.Timer;
+
+    const updateDisplayedProduct = (): void => {
+      setActiveImgId(images[indexObj.index].id)
+      setProductDetails(products[indexObj.index])
+    }
+
+    const decrement = (): void => {
+      const hasReachedFirstElement = indexObj.index === 0;
+      indexObj.index = hasReachedFirstElement ? images.length - 1 : indexObj.index - 1
+    }
+
+    const increment = (): void => {
+      const hasReachedLastElement = indexObj.index === images.length - 1;
+      indexObj.index = hasReachedLastElement ? 0 : indexObj.index + 1;
+    }
+
+    const updateIndex = (operation: () => void) => {
+      clearInterval(interval);
+      operation()
+      updateDisplayedProduct()
+
+      interval = setInterval(() => {
+        operation();
+        updateDisplayedProduct()
+      }, 1000)
+    }
+
+    // initial interval
+    interval = setInterval(() => {
+      increment();
+      updateDisplayedProduct()
+    }, 1000)
+
+    const clickEvents = (id: string) => {
+      const carousel = document.getElementById(id) as HTMLDivElement;
+      const leftCarouselArrow = carousel.querySelector('#js-arrow-left') as HTMLDivElement;
+      const rightCarouselArrow = carousel.querySelector('#js-arrow-right') as HTMLDivElement;
+
+      const leftArrowHandler = () => updateIndex(decrement)
+      const rightArrowHandler = () => updateIndex(increment)
+
+      leftCarouselArrow.addEventListener('click', leftArrowHandler);
+      rightCarouselArrow.addEventListener('click', rightArrowHandler);
+
+      return carousel;
+    }
+
+    // product-view-carousel
+    clickEvents('js-product-view-carousel')
+    const productViewNavCarousel = clickEvents('js-product-view-nav');
+    sliderTransition(productViewNavCarousel, indexObj)
   }
 
 
@@ -77,10 +131,8 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
     const tempImagesForSlider = getImagesWithClones(tempImages, 5)
 
-    setImagesForCarousel(tempImages)
     setImagesForSlider(tempImagesForSlider)
-
-    changeActiveImage(tempImages);
+    changeDisplayedProduct(tempImages)
   }, [products])
 
 
@@ -89,10 +141,10 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
     <React.Fragment>
       <div>
         <div className='mar-bot-3'>
-          <ImageCarousel images={imagesForCarousel} activeImgId={activeImgId} />
+          <ImageCarousel images={products} activeImgId={activeImgId} />
         </div>
         <div className='border-red mar overflow-hidden'>
-          <ImageSlider images={imagesForSlider} activeImgId={activeImgId} />
+          <ImageSlider images={imagesForSlider} />
         </div>
       </div>
 
