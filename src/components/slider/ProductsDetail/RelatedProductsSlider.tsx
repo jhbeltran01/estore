@@ -41,7 +41,8 @@ function RelatedProductsSlider({ products, name }: RelatedProductsSliderProps) {
       name: name,
       contentLength: tempClones.length,
       intervalTime: 5000,
-      numberOfClones: numberOfClones
+      numberOfClones: numberOfClones,
+      hasSlider: true
     }
 
     const { slider, sliderInterval, transitionEndHandler } = isForSmallViewport ? useCarouselTransition(props) : useSliderTransition(props)
