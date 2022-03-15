@@ -27,6 +27,7 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
   const [activeImgId, setActiveImgId] = useState(products[0].id);
   const [productDetails, setProductDetails] = useState(products[0])
   const [imagesForSlider, setImagesForSlider] = useState<Image[]>([])
+  const [displayedContent, setDisplayedContent] = useState(0);
 
   const getImagesWithClones = (products: Image[], numberOfClones: number): Image[] => {
     const clonesInTheFront: Image[] = [];
@@ -51,34 +52,35 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
 
 
-  const sliderTransition = (carousel: HTMLDivElement, indexObj: { index: number }): void => {
+  useEffect(() => {
+    const carousel = document.getElementById('js-product-view-nav') as HTMLDivElement;
     const slider = carousel.querySelector('#js-product-view-slider') as HTMLDivElement;
-
-    slider.style.transition = 'none';
-    slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 2}px)`
-  }
+    console.log(displayedContent)
+    // slider.style.transition = 'none';
+    // slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 2}px)`
+  }, [displayedContent])
 
 
 
   const changeDisplayedProduct = (images: Image[]): void => {
-    let indexObj = {
-      index: 0
-    };
+    let index = 0;
     let interval: NodeJS.Timer;
 
     const updateDisplayedProduct = (): void => {
-      setActiveImgId(images[indexObj.index].id)
-      setProductDetails(products[indexObj.index])
+      setActiveImgId(images[index].id)
+      setProductDetails(products[index])
     }
 
     const decrement = (): void => {
-      const hasReachedFirstElement = indexObj.index === 0;
-      indexObj.index = hasReachedFirstElement ? images.length - 1 : indexObj.index - 1
+      const hasReachedFirstElement = index === 0;
+      index = hasReachedFirstElement ? images.length - 1 : index - 1
+      setDisplayedContent(index)
     }
 
     const increment = (): void => {
-      const hasReachedLastElement = indexObj.index === images.length - 1;
-      indexObj.index = hasReachedLastElement ? 0 : indexObj.index + 1;
+      const hasReachedLastElement = index === images.length - 1;
+      index = hasReachedLastElement ? 0 : index + 1;
+      setDisplayedContent(index)
     }
 
     const updateIndex = (operation: () => void) => {
@@ -108,14 +110,10 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
       leftCarouselArrow.addEventListener('click', leftArrowHandler);
       rightCarouselArrow.addEventListener('click', rightArrowHandler);
-
-      return carousel;
     }
 
-    // product-view-carousel
     clickEvents('js-product-view-carousel')
-    const productViewNavCarousel = clickEvents('js-product-view-nav');
-    sliderTransition(productViewNavCarousel, indexObj)
+    clickEvents('js-product-view-nav');
   }
 
 
