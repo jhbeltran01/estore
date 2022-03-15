@@ -23,7 +23,7 @@ const useSliderTransition = ({ name, contentLength, intervalTime, numberOfClones
 
 
   const slideLeft = (): void => {
-    if (displayedContent > contentLength - numberOfClones) { return }
+    if (displayedContent >= contentLength - numberOfClones) { return }
 
     ++displayedContent;
     slide();
