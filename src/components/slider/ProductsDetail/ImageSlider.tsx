@@ -3,53 +3,67 @@ import React, { useEffect, useState } from 'react'
 
 type ImageSliderProps = {
   images: {
-    id: string
     imgSrc: string,
-    isClone: boolean
   }[],
   displayedContent: number,
   isSlidingLeft: boolean
 }
 
 const ImageSlider = ({ images, displayedContent, isSlidingLeft }: ImageSliderProps): JSX.Element => {
-  useEffect(() => {
-    const carousel = document.getElementById('js-product-view-nav') as HTMLDivElement;
-    const slider = carousel.querySelector('#js-product-view-slider') as HTMLDivElement;
+  const [carousel, setCarousel] = useState<HTMLDivElement>();
+  const [slider, setSlider] = useState<HTMLDivElement>();
+  const [content, setContent] = useState<HTMLImageElement>();
 
-    slider.style.transition = 'none';
-    slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 3}px)`
-    console.log((carousel.clientWidth / 5))
+  useEffect(() => {
+    const tempContent = slider?.querySelector('#js-nav-img') as HTMLImageElement;
+    setContent(tempContent)
+  }, [slider, images])
+
+
+
+  useEffect(() => {
+    const tempCarousel = document.getElementById('js-product-view-nav') as HTMLDivElement;
+    const tempSlider = tempCarousel.querySelector('#js-product-view-slider') as HTMLDivElement;
+    tempSlider.style.transition = 'none';
+    tempSlider.style.transform = `translateX(-${(tempCarousel.clientWidth / 5) * 3}px)`
+
+    setCarousel(tempCarousel);
+    setSlider(tempSlider);
   }, [])
 
 
+
   useEffect(() => {
-    const carousel = document.getElementById('js-product-view-nav') as HTMLDivElement;
-    const slider = carousel.querySelector('#js-product-view-slider') as HTMLDivElement;
-    const content = slider.querySelector('#js-nav-img') as HTMLImageElement;
+    if (!slider || !content || !carousel) { return };
 
     const currDisplayed = displayedContent + 3;
     const width = content?.offsetWidth;
+
     slider.style.transition = '250ms ease-in-out';
     slider.style.transform = `translateX(-${width * currDisplayed}px)`;
 
     const transitionEndHandler = (): void => {
-      if (currDisplayed >= 12 && isSlidingLeft) {
+      const hasReachedLastElement = currDisplayed >= 12;
+      if (hasReachedLastElement && isSlidingLeft) {
         slider.style.transition = 'none';
-        slider.style.transform = `translateX(-${width * 2}px)`
+        slider.style.transform = `translateX(-${width * 2}px)`;
       }
 
-      if (currDisplayed <= 3 && !isSlidingLeft) {
+      const hasReachedFirstElement = currDisplayed <= 3;
+      if (hasReachedFirstElement && !isSlidingLeft) {
         slider.style.transition = 'none';
-        slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 13}px)`
+        slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 13}px)`;
       }
     }
 
     slider.addEventListener('transitionend', transitionEndHandler);
-    console.log(currDisplayed)
+
     return () => {
       slider.removeEventListener('transitionend', transitionEndHandler);
     }
-  }, [displayedContent])
+  }, [displayedContent, carousel, slider, content])
+
+
 
   return (
     <div className='carousel carousel-product-view-nav overflow-hidden' id='js-product-view-nav'>
