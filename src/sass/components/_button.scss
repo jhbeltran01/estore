@@ -87,10 +87,35 @@
   background-color: transparent;
   margin: 0 0.2rem;
   transition: var.$transition-primary;
+  width: 30px;
+  height: 30px;
 
   &:hover {
     background-color: var.$light-red;
     color: var.$white;
+  }
+  &:hover .left-arrow::before,
+  &:hover .right-arrow::before {
+    color: var.$white;
+  }
+
+  .left-arrow {
+    &::before {
+      content: "\f104";
+      @extend %icon;
+      color: var.$light-red;
+      font-size: 18px;
+    }
+  }
+
+
+  .right-arrow {
+    &::before {
+      content: "\f105";
+      @extend %icon;
+      color: var.$light-red;
+      font-size: 20px;
+    }
   }
 }
 
@@ -119,7 +144,7 @@
     transform: translateX(40px);
   }
 
-  &:is(.right) {
+  &:is(.right) {  
     transform: translateX(-40px);
   }
 

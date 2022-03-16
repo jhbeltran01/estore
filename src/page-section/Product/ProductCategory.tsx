@@ -13,11 +13,15 @@ function ProductCategory({ productCategory, name, children }: ProductCategoryPro
         <div className='pad-3 flex-container-3'>
           <h1 className='section__title'>{productCategory}</h1>
           <div className='flex'>
-            <div><button className='btn-next' id='js-arrow-left'>
-              <i className="fas fa-chevron-left"></i></button>
+            <div>
+              <button className='btn-next' id='js-arrow-left'>
+                <span className='left-arrow'></span>
+              </button>
             </div>
-            <div><button className='btn-next' id='js-arrow-right'>
-              <i className="fas fa-chevron-right"></i></button>
+            <div>
+              <button className='btn-next' id='js-arrow-right'>
+                <span className='right-arrow'></span>
+              </button>
             </div>
           </div>
         </div>
