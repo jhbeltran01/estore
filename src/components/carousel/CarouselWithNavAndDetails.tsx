@@ -28,6 +28,7 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
   const [productDetails, setProductDetails] = useState(products[0])
   const [imagesForSlider, setImagesForSlider] = useState<Image[]>([])
   const [displayedContent, setDisplayedContent] = useState(0);
+  const [isSlidingLeft, setIsSlidingLeft] = useState(true);
 
   const getImagesWithClones = (products: Image[], numberOfClones: number): Image[] => {
     const clonesInTheFront: Image[] = [];
@@ -47,18 +48,25 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
       isClone: true
     }
 
-    return [...clonesInTheFront, ...products, image];
+    const image2 = {
+      id: products[1].id,
+      imgSrc: products[1].imgSrc,
+      isClone: true
+    }
+
+    const image3 = {
+      id: products[2].id,
+      imgSrc: products[2].imgSrc,
+      isClone: true
+    }
+
+    const image4 = {
+      id: products[3].id,
+      imgSrc: products[3].imgSrc,
+      isClone: true
+    }
+    return [...clonesInTheFront, ...products, image, image2, image4];
   }
-
-
-
-  useEffect(() => {
-    const carousel = document.getElementById('js-product-view-nav') as HTMLDivElement;
-    const slider = carousel.querySelector('#js-product-view-slider') as HTMLDivElement;
-    console.log(displayedContent)
-    // slider.style.transition = 'none';
-    // slider.style.transform = `translateX(-${(carousel.clientWidth / 5) * 2}px)`
-  }, [displayedContent])
 
 
 
@@ -75,38 +83,47 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
       const hasReachedFirstElement = index === 0;
       index = hasReachedFirstElement ? images.length - 1 : index - 1
       setDisplayedContent(index)
+      setIsSlidingLeft(false)
     }
 
     const increment = (): void => {
       const hasReachedLastElement = index === images.length - 1;
       index = hasReachedLastElement ? 0 : index + 1;
       setDisplayedContent(index)
+      setIsSlidingLeft(true)
     }
 
-    const updateIndex = (operation: () => void) => {
-      clearInterval(interval);
+
+    const displayNewProduct = (operation: () => void) => {
       operation()
       updateDisplayedProduct()
+    }
 
+    const createNewInterval = (operation: () => void) => {
+      clearInterval(interval);
       interval = setInterval(() => {
-        operation();
-        updateDisplayedProduct()
-      }, 1000)
+        displayNewProduct(operation)
+      }, 5000)
     }
 
     // initial interval
     interval = setInterval(() => {
-      increment();
-      updateDisplayedProduct()
-    }, 1000)
+      displayNewProduct(increment)
+    }, 5000)
+
+    const leftArrowHandler = () => {
+      displayNewProduct(decrement)
+      createNewInterval(decrement)
+    }
+    const rightArrowHandler = () => {
+      displayNewProduct(increment)
+      createNewInterval(increment)
+    }
 
     const clickEvents = (id: string) => {
       const carousel = document.getElementById(id) as HTMLDivElement;
       const leftCarouselArrow = carousel.querySelector('#js-arrow-left') as HTMLDivElement;
       const rightCarouselArrow = carousel.querySelector('#js-arrow-right') as HTMLDivElement;
-
-      const leftArrowHandler = () => updateIndex(decrement)
-      const rightArrowHandler = () => updateIndex(increment)
 
       leftCarouselArrow.addEventListener('click', leftArrowHandler);
       rightCarouselArrow.addEventListener('click', rightArrowHandler);
@@ -127,7 +144,7 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
       }
     })
 
-    const tempImagesForSlider = getImagesWithClones(tempImages, 5)
+    const tempImagesForSlider = getImagesWithClones(tempImages, 6)
 
     setImagesForSlider(tempImagesForSlider)
     changeDisplayedProduct(tempImages)
@@ -142,7 +159,11 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
           <ImageCarousel images={products} activeImgId={activeImgId} />
         </div>
         <div className='border-red mar overflow-hidden'>
-          <ImageSlider images={imagesForSlider} />
+          <ImageSlider
+            images={imagesForSlider}
+            displayedContent={displayedContent}
+            isSlidingLeft={isSlidingLeft}
+          />
         </div>
       </div>
 
