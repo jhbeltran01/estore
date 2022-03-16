@@ -6,7 +6,6 @@ import ImageCarousel from './ProductsDetail/ImageCarousel'
 type Image = {
   id: string,
   imgSrc: string,
-  isClone: boolean
 }
 
 type Product = {
@@ -32,40 +31,16 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
   const getImagesWithClones = (products: Image[], numberOfClones: number): Image[] => {
     const clonesInTheFront: Image[] = [];
-    let image: Image;
-
     for (let i = numberOfClones - 1; i > 0; --i) {
-      image = {
-        id: products[products.length - i].id,
-        imgSrc: products[products.length - i].imgSrc,
-        isClone: true
-      }
-      clonesInTheFront.push(image);
-    }
-    image = {
-      id: products[0].id,
-      imgSrc: products[0].imgSrc,
-      isClone: true
+      clonesInTheFront.push(products[products.length - i]);
     }
 
-    const image2 = {
-      id: products[1].id,
-      imgSrc: products[1].imgSrc,
-      isClone: true
+    const clonesInTheEnd: Image[] = [];
+    for (let i = 0; i < 3; ++i) {
+      clonesInTheEnd.push(products[i]);
     }
 
-    const image3 = {
-      id: products[2].id,
-      imgSrc: products[2].imgSrc,
-      isClone: true
-    }
-
-    const image4 = {
-      id: products[3].id,
-      imgSrc: products[3].imgSrc,
-      isClone: true
-    }
-    return [...clonesInTheFront, ...products, image, image2, image4];
+    return [...clonesInTheFront, ...products, ...clonesInTheEnd];
   }
 
 
@@ -73,6 +48,7 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
   const changeDisplayedProduct = (images: Image[]): void => {
     let index = 0;
     let interval: NodeJS.Timer;
+    const INTERVAL_TIME = 5000;
 
     const updateDisplayedProduct = (): void => {
       setActiveImgId(images[index].id)
@@ -93,7 +69,6 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
       setIsSlidingLeft(true)
     }
 
-
     const displayNewProduct = (operation: () => void) => {
       operation()
       updateDisplayedProduct()
@@ -103,27 +78,28 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
       clearInterval(interval);
       interval = setInterval(() => {
         displayNewProduct(operation)
-      }, 5000)
+      }, INTERVAL_TIME)
     }
 
     // initial interval
     interval = setInterval(() => {
       displayNewProduct(increment)
-    }, 5000)
-
-    const leftArrowHandler = () => {
-      displayNewProduct(decrement)
-      createNewInterval(decrement)
-    }
-    const rightArrowHandler = () => {
-      displayNewProduct(increment)
-      createNewInterval(increment)
-    }
+    }, INTERVAL_TIME)
 
     const clickEvents = (id: string) => {
       const carousel = document.getElementById(id) as HTMLDivElement;
       const leftCarouselArrow = carousel.querySelector('#js-arrow-left') as HTMLDivElement;
       const rightCarouselArrow = carousel.querySelector('#js-arrow-right') as HTMLDivElement;
+
+      const leftArrowHandler = () => {
+        displayNewProduct(decrement)
+        createNewInterval(decrement)
+      }
+
+      const rightArrowHandler = () => {
+        displayNewProduct(increment)
+        createNewInterval(increment)
+      }
 
       leftCarouselArrow.addEventListener('click', leftArrowHandler);
       rightCarouselArrow.addEventListener('click', rightArrowHandler);
@@ -136,18 +112,10 @@ function CarouselWithNav({ products }: CarouselWithNavProps) {
 
 
   useEffect(() => {
-    const tempImages = products.map(product => {
-      return {
-        id: product.id,
-        imgSrc: product.imgSrc,
-        isClone: false
-      }
-    })
-
-    const tempImagesForSlider = getImagesWithClones(tempImages, 6)
+    const tempImagesForSlider = getImagesWithClones(products, 6)
 
     setImagesForSlider(tempImagesForSlider)
-    changeDisplayedProduct(tempImages)
+    changeDisplayedProduct(products)
   }, [products])
 
 
